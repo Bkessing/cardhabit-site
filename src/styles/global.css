@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c0c0e;
+  --color-bg-elev: #16161a;
+  --color-bg-elev-2: #1d1d22;
+  --color-bg-warm: #100f12;
+  --color-border: rgba(201, 168, 76, 0.18);
+  --color-border-strong: rgba(201, 168, 76, 0.35);
+  --color-text: #f0ebe0;
+  --color-text-dim: #a39e92;
+  --color-text-fade: #6b6760;
+  --color-gold: #c9a84c;
+  --color-gold-bright: #d9b86b;
+  --color-gold-soft: rgba(201, 168, 76, 0.1);
+  --color-gold-deep: #8a7530;
+  --color-ember: #c47148;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+body {
+  background-color: #0c0c0e;
+  color: #f0ebe0;
+  font-family: "Jost", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+}
+
+/* Diamond crosshatch (card-back pattern) */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon points='12,2 22,12 12,22 2,12' fill='none' stroke='%23c9a84c' stroke-width='0.5'/%3E%3C/svg%3E");
+  opacity: 0.05;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Archetype card top-edge gradient */
+.archetype-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.archetype-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201, 168, 76, 0.4), transparent);
+}
+
+/* Waitlist form submitted state */
+.waitlist-form.is-submitted .form-fields {
+  display: none;
+}
+
+.waitlist-form.is-submitted .form-note {
+  display: none;
+}
+
+.waitlist-form .form-success {
+  display: none;
+}
+
+.waitlist-form.is-submitted .form-success {
+  display: block;
+}
+
+/* Hero card deck pulse */
+@keyframes deckPulse {
+  0%, 100% { opacity: 0.10; }
+  50% { opacity: 0.14; }
+}
+
+.card-deck {
+  animation: deckPulse 60s ease-in-out infinite;
+}

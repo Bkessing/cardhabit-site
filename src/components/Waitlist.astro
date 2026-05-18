@@ -1,0 +1,71 @@
+---
+---
+
+<section
+  id="waitlist"
+  style="background:#100f12;border-top:0.5px solid rgba(201,168,76,0.18);border-bottom:0.5px solid rgba(201,168,76,0.18);padding:5rem 1.5rem;text-align:center;"
+>
+  <div style="max-width:600px;margin:0 auto;">
+    <!-- Eyebrow -->
+    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+      Be early
+    </p>
+
+    <!-- H2 -->
+    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,6.5vw,3.25rem);line-height:1.05;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 1.5rem;">
+      Among the <em style="color:#c9a84c;font-style:italic;">first thousand.</em>
+    </h2>
+
+    <!-- Lede -->
+    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.65;color:#a39e92;max-width:480px;margin:0 auto 2.5rem;">
+      Founder pricing. Early archetype access. A seat in The Arena when it opens. Your name on the cards if you want it.
+    </p>
+
+    <!-- Form -->
+    <!-- TODO: Replace YOUR_FORMSPREE_ID with your actual Formspree form ID -->
+    <form
+      action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+      method="POST"
+      class="fade-in waitlist-form"
+      id="waitlist-form"
+      style="max-width:440px;margin:0 auto;"
+    >
+      <div class="form-fields" style="display:flex;gap:8px;flex-wrap:wrap;">
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          style="flex:1;min-width:200px;min-height:48px;background:#16161a;border:0.5px solid rgba(201,168,76,0.35);border-radius:3px;padding:0 1rem;font-family:'Jost',system-ui,sans-serif;font-size:15px;color:#f0ebe0;outline:none;transition:border-color 0.2s;"
+          class="waitlist-email-input"
+        />
+        <button
+          type="submit"
+          id="waitlist-submit"
+          style="background:#c9a84c;color:#0c0c0e;font-family:'Jost',system-ui,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;min-height:48px;padding:0 1.5rem;border:none;border-radius:3px;cursor:pointer;transition:background 0.2s;white-space:nowrap;"
+        >
+          Join
+        </button>
+      </div>
+
+      <p class="form-note" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin:1rem 0 0;">
+        No spam. One email at launch. That's it.
+      </p>
+
+      <!-- Success state -->
+      <p class="form-success" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.35rem;color:#c9a84c;margin:0;">
+        You're in. We'll be in touch.
+      </p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .waitlist-email-input:focus {
+    border-color: #c9a84c;
+  }
+
+  #waitlist-submit:hover {
+    background: #d9b86b;
+  }
+</style>

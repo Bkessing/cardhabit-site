@@ -1,17 +1,29 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Ornament from '../components/Ornament.astro';
+import TheHook from '../components/TheHook.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Archetypes from '../components/Archetypes.astro';
+import Waitlist from '../components/Waitlist.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Nav />
+  <main>
+    <Hero />
+    <Ornament />
+    <TheHook />
+    <Ornament />
+    <HowItWorks />
+    <Ornament />
+    <Archetypes />
+    <Ornament />
+    <Waitlist />
+  </main>
+  <SiteFooter />
+
+  <script src="../scripts/waitlist.ts"></script>
+</BaseLayout>

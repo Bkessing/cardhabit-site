@@ -1,0 +1,86 @@
+---
+
+const archetypes = [
+  {
+    numeral: 'I',
+    name: 'Ironclad',
+    category: 'Physical · Discipline',
+    motto: 'Strength through suffering.',
+  },
+  {
+    numeral: 'II',
+    name: 'Sage',
+    category: 'Mental · Clarity',
+    motto: 'Knowledge as power.',
+  },
+  {
+    numeral: 'III',
+    name: 'Alchemist',
+    category: 'Nutrition · Balance',
+    motto: 'Transformation through intention.',
+  },
+  {
+    numeral: 'IV',
+    name: 'Phantom',
+    category: 'Recovery · Silence',
+    motto: 'Rest is not weakness.',
+  },
+  {
+    numeral: 'V',
+    name: 'Vanguard',
+    category: 'Breadth · Range',
+    motto: 'Volume builds what intensity cannot.',
+  },
+];
+---
+
+<section style="padding:5rem 1.5rem;max-width:1100px;margin:0 auto;">
+  <!-- Eyebrow -->
+  <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;text-align:center;">
+    The paths
+  </p>
+
+  <!-- H2 -->
+  <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 1.5rem;text-align:center;">
+    Five archetypes. <em style="color:#c9a84c;font-style:italic;">Earn yours.</em>
+  </h2>
+
+  <!-- Lede -->
+  <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.7;color:#a39e92;max-width:580px;margin:0 auto 3rem;text-align:center;">
+    You don't pick your archetype. You earn it. The first ten cards you complete shape who you become. Each path rewards a different way of being. Each unlocks abilities that bend your deck toward what makes you stronger.
+  </p>
+
+  <!-- Grid -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+    {archetypes.map((arch) => (
+      <div class="fade-in archetype-card" style="background:#16161a;border:0.5px solid rgba(201,168,76,0.18);border-radius:8px;padding:1.5rem;transition:border-color 0.2s,transform 0.2s;">
+        <!-- Numeral -->
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#6b6760;margin:0 0 0.75rem;">
+          {arch.numeral}
+        </p>
+
+        <!-- Name -->
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.75rem;color:#c9a84c;margin:0 0 0.4rem;line-height:1.1;">
+          {arch.name}
+        </h3>
+
+        <!-- Category -->
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#6b6760;margin:0 0 1rem;">
+          {arch.category}
+        </p>
+
+        <!-- Motto -->
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1rem;color:#a39e92;margin:0;line-height:1.5;">
+          "{arch.motto}"
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .archetype-card:hover {
+    border-color: rgba(201, 168, 76, 0.35);
+    transform: translateY(-2px);
+  }
+</style>
