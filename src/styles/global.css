@@ -111,12 +111,3 @@ body::after {
   display: block;
 }
 
-/* Hero card deck pulse */
-@keyframes deckPulse {
-  0%, 100% { opacity: 0.10; }
-  50% { opacity: 0.14; }
-}
-
-.card-deck {
-  animation: deckPulse 60s ease-in-out infinite;
-}
