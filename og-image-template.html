@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #100f12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Diamond crosshatch background */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon points='12,2 22,12 12,22 2,12' fill='none' stroke='%23c9a84c' stroke-width='0.5'/%3E%3C/svg%3E");
+      opacity: 0.06;
+    }
+
+    /* Subtle radial glow behind text */
+    body::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 70%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .star {
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 24px;
+    }
+
+    .headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 88px;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: #f0ebe0;
+      margin-bottom: 32px;
+    }
+
+    .headline em {
+      font-style: italic;
+      color: #c9a84c;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .divider-line {
+      width: 48px;
+      height: 0.5px;
+      background: rgba(201,168,76,0.35);
+    }
+
+    .subline {
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: #6b6760;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- 4-point star -->
+    <div class="star">
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16,2 L17.4,13.6 L28,16 L17.4,18.4 L16,30 L14.6,18.4 L4,16 L14.6,13.6 Z" fill="#c9a84c"/>
+      </svg>
+    </div>
+
+    <p class="eyebrow">CardHabit &nbsp;·&nbsp; iOS &nbsp;·&nbsp; August 2026</p>
+
+    <h1 class="headline">Show up. <em>Every day.</em></h1>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <svg width="12" height="12" viewBox="0 0 32 32" fill="none">
+        <path d="M16,2 L17.4,13.6 L28,16 L17.4,18.4 L16,30 L14.6,18.4 L4,16 L14.6,13.6 Z" fill="#c9a84c"/>
+      </svg>
+      <div class="divider-line"></div>
+    </div>
+
+    <p class="subline">cardhabitapp.com</p>
+  </div>
+</body>
+</html>

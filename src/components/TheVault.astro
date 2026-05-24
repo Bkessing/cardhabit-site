@@ -1,0 +1,146 @@
+---
+---
+
+<section style="padding:5rem 0;">
+  <div style="max-width:780px;margin:0 auto;padding:0 1.5rem;">
+
+    <!-- Eyebrow -->
+    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;text-align:center;">
+      The vault
+    </p>
+
+    <!-- H2 -->
+    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 2rem;text-align:center;">
+      Every card you finish <em style="color:#c9a84c;font-style:italic;">earns a play.</em>
+    </h2>
+
+    <!-- Body -->
+    <div class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;max-width:600px;margin:0 auto 3rem;text-align:center;">
+      <p style="margin:0 0 1.25em;">
+        Completing a challenge drops a vault card. The rarer the card you finish, the better the play you earn. Common to Legendary — the drop table rewards the hard work.
+      </p>
+      <p style="margin:0;">
+        Vault cards are currency. Hold them, or spend them.
+      </p>
+    </div>
+
+    <!-- Sabotage / Buff split -->
+    <div class="fade-in vault-split">
+
+      <div class="vault-col vault-col--sabotage">
+        <p class="vault-col-label">Sabotage</p>
+        <h3 class="vault-col-heading">Make their next draw harder.</h3>
+        <p class="vault-col-body">
+          Queue a play before they draw tomorrow. Swap in a tougher card. Force a commit before they've seen the hand. Obscure the whole draw so they pick blind.
+        </p>
+        <p class="vault-col-note">They'll know it came from you.</p>
+      </div>
+
+      <div class="vault-divider" aria-hidden="true">
+        <div class="vault-divider-line"></div>
+        <svg width="10" height="10" viewBox="0 0 32 32" fill="none">
+          <path d="M16,2 L17.4,13.6 L28,16 L17.4,18.4 L16,30 L14.6,18.4 L4,16 L14.6,13.6 Z" fill="#c9a84c"/>
+        </svg>
+        <div class="vault-divider-line"></div>
+      </div>
+
+      <div class="vault-col vault-col--buff">
+        <p class="vault-col-label">Buff</p>
+        <h3 class="vault-col-heading">Or make theirs better.</h3>
+        <p class="vault-col-body">
+          Upgrade a friend's next draw. Double their XP on a card you know they'll crush. Shield their streak through a missed day. Give them something to work with.
+        </p>
+        <p class="vault-col-note">Support is still pressure.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .vault-split {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .vault-col {
+    flex: 1;
+    padding: 0 1.5rem;
+  }
+
+  .vault-col-label {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #6b6760;
+    margin: 0 0 0.75rem;
+  }
+
+  .vault-col-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    color: #f0ebe0;
+    margin: 0 0 0.85rem;
+  }
+
+  .vault-col-body {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #a39e92;
+    margin: 0 0 0.85rem;
+  }
+
+  .vault-col-note {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #6b6760;
+    margin: 0;
+  }
+
+  .vault-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .vault-divider-line {
+    width: 0.5px;
+    height: 60px;
+    background: rgba(201, 168, 76, 0.25);
+  }
+
+  @media (max-width: 560px) {
+    .vault-split {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .vault-col {
+      padding: 0;
+    }
+
+    .vault-divider {
+      flex-direction: row;
+      padding-top: 0;
+    }
+
+    .vault-divider-line {
+      width: 60px;
+      height: 0.5px;
+    }
+  }
+</style>
