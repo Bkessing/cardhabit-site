@@ -5,42 +5,21 @@
   id="waitlist"
   style="background:#100f12;border-top:0.5px solid rgba(201,168,76,0.18);border-bottom:0.5px solid rgba(201,168,76,0.18);padding:5rem 1.5rem;text-align:center;"
 >
-  <div style="max-width:640px;margin:0 auto;">
+  <div style="max-width:600px;margin:0 auto;">
     <!-- Eyebrow -->
     <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
       Be early
     </p>
 
     <!-- H2 -->
-    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,6.5vw,3.25rem);line-height:1.05;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 1rem;">
+    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,6.5vw,3.25rem);line-height:1.05;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 1.5rem;">
       Among the <em style="color:#c9a84c;font-style:italic;">first thousand.</em>
     </h2>
 
-    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:0.95rem;line-height:1.65;color:#6b6760;margin:0 0 3rem;">
-      Founder pricing locks in before we ship. It goes up at launch.
+    <!-- Lede -->
+    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.65;color:#a39e92;max-width:480px;margin:0 auto 2.5rem;">
+      Founder pricing, locked forever. Beta access before the public. A seat in The Arena when it opens.
     </p>
-
-    <!-- 3-benefit row -->
-    <div class="fade-in founder-benefits">
-      <div class="founder-benefit">
-        <p class="benefit-label">Founder Pricing</p>
-        <p class="benefit-body">Locked in before we launch. Early members never pay the public rate.</p>
-      </div>
-
-      <div class="benefit-divider" aria-hidden="true"></div>
-
-      <div class="founder-benefit">
-        <p class="benefit-label">Beta Access</p>
-        <p class="benefit-body">On your phone before anyone else. Shape the game before it ships.</p>
-      </div>
-
-      <div class="benefit-divider" aria-hidden="true"></div>
-
-      <div class="founder-benefit">
-        <p class="benefit-label">The Arena</p>
-        <p class="benefit-body">First seat in the social layer when it opens. The founding round of rivals.</p>
-      </div>
-    </div>
 
     <!-- Form -->
     <form
@@ -79,67 +58,11 @@
 </section>
 
 <style>
-  .founder-benefits {
-    display: flex;
-    align-items: flex-start;
-    gap: 0;
-    margin-bottom: 3rem;
-  }
-
-  .founder-benefit {
-    flex: 1;
-    padding: 0 1.5rem;
-  }
-
-  .benefit-label {
-    font-family: 'Jost', system-ui, sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #c9a84c;
-    margin: 0 0 0.6rem;
-  }
-
-  .benefit-body {
-    font-family: 'Jost', system-ui, sans-serif;
-    font-weight: 300;
-    font-size: 0.88rem;
-    line-height: 1.65;
-    color: #a39e92;
-    margin: 0;
-  }
-
-  .benefit-divider {
-    width: 0.5px;
-    background: rgba(201, 168, 76, 0.2);
-    align-self: stretch;
-    min-height: 60px;
-    flex-shrink: 0;
-  }
-
   .waitlist-email-input:focus {
     border-color: #c9a84c;
   }
 
   #waitlist-submit:hover {
     background: #d9b86b;
-  }
-
-  @media (max-width: 560px) {
-    .founder-benefits {
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .founder-benefit {
-      padding: 0;
-    }
-
-    .benefit-divider {
-      width: 100%;
-      height: 0.5px;
-      min-height: unset;
-    }
   }
 </style>
