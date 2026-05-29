@@ -1,0 +1,77 @@
+---
+const faqs = [
+  {
+    q: 'What is CardHabit?',
+    a: 'CardHabit is a card-based habit tracker for iOS. Every morning you draw five challenge cards across five categories. You commit to two or three. Your friends can spend cards from their own vault to make your next draw harder — or better.',
+  },
+  {
+    q: 'How does the daily ritual work?',
+    a: 'Draw five cards at dawn — one per category: Physical, Mental, Nutrition, Recovery, Wildcard. Commit to two or three. Hold a card to lock it in. Completing it earns a vault card you can spend on yourself or others.',
+  },
+  {
+    q: 'What can your friends actually do?',
+    a: 'Friends can only touch tomorrow\'s draw, never today\'s commitments. They can swap in a harder card, force a commit before you\'ve seen the hand, or obscure the draw so you pick blind. They can also buff: upgrade a card, double XP, or shield a streak. Completed cards are immune.',
+  },
+  {
+    q: 'What is an archetype?',
+    a: 'A path that shapes your deck. The first ten cards you complete determine which of five archetypes you earn: Ironclad (Physical), Sage (Mental), Alchemist (Nutrition), Phantom (Recovery), or Vanguard (Breadth). Each unlocks abilities that bend your deck toward what makes you stronger.',
+  },
+  {
+    q: 'When does CardHabit launch?',
+    a: 'August 2026 on the iOS App Store. Waitlist members get beta access before public release and founder pricing locked for life.',
+  },
+  {
+    q: 'What does CardHabit cost?',
+    a: 'A free tier covers the daily draw and the core mechanic. Pro is $7.99 a month or $79.99 a year. Elite is $14.99 a month or $149.99 a year. Beta is free for waitlist members. Founder pricing is locked at signup.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
+---
+
+<section style="padding:5rem 0;">
+  <div style="max-width:780px;margin:0 auto;padding:0 1.5rem;">
+
+    <!-- Eyebrow -->
+    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;text-align:center;">
+      The details
+    </p>
+
+    <!-- H2 -->
+    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 3rem;text-align:center;">
+      Questions, <em style="color:#c9a84c;font-style:italic;">answered.</em>
+    </h2>
+
+    <!-- FAQ list -->
+    <div style="max-width:640px;margin:0 auto;">
+      {faqs.map((item, i) => (
+        <div
+          class="fade-in"
+          style={`padding:2rem 0;${i > 0 ? 'border-top:0.5px solid rgba(201,168,76,0.18);' : ''}`}
+        >
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;line-height:1.3;color:#f0ebe0;margin:0 0 0.75rem;">
+            {item.q}
+          </h3>
+          <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:0.98rem;line-height:1.7;color:#a39e92;margin:0;">
+            {item.a}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQPage structured data -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

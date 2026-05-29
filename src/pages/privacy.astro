@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const lastUpdated = 'May 28, 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy — CardHabit"
+  description="How CardHabit collects, uses, and protects your information."
+>
+  <Nav />
+  <main class="policy-main">
+    <article class="policy-article">
+      <p class="policy-eyebrow">Privacy</p>
+      <h1 class="policy-h1">Privacy Policy</h1>
+      <p class="policy-updated">Last updated: {lastUpdated}</p>
+
+      <section class="policy-section">
+        <p>
+          CardHabit ("we", "us", "our") respects your privacy. This policy explains what information we collect when you visit cardhabitapp.com or join our waitlist, how we use it, and the choices you have.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Information we collect</h2>
+        <p>
+          <strong>Waitlist signups.</strong> When you join the waitlist, we collect your email address so we can notify you about beta access and launch.
+        </p>
+        <p>
+          <strong>Usage analytics.</strong> We use PostHog to understand how visitors interact with the site. This includes anonymized data like pages viewed, device type, approximate location (country/region), and referring source. We do not sell this data.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>How we use information</h2>
+        <ul>
+          <li>To send you product updates related to CardHabit's launch.</li>
+          <li>To improve the site and understand what's working.</li>
+          <li>To honor your requests (e.g., unsubscribing or deleting your data).</li>
+        </ul>
+      </section>
+
+      <section class="policy-section">
+        <h2>How we share information</h2>
+        <p>
+          We share information only with the service providers we use to operate the site and waitlist (currently PostHog for analytics and an email service for waitlist notifications). We do not sell your personal information.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Your choices</h2>
+        <p>
+          You can unsubscribe from waitlist emails at any time using the link in any message we send you. You can request access to or deletion of your data by emailing <a href="mailto:hello@cardhabitapp.com">hello@cardhabitapp.com</a>.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Data retention</h2>
+        <p>
+          We retain waitlist emails until you unsubscribe or request deletion. Analytics data is retained according to PostHog's default retention policies.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Children</h2>
+        <p>
+          CardHabit is not intended for children under 13. We do not knowingly collect information from children under 13.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Changes to this policy</h2>
+        <p>
+          We may update this policy as the product evolves. We will update the "Last updated" date above when we do.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Contact</h2>
+        <p>
+          Questions about this policy? Reach out at <a href="mailto:hello@cardhabitapp.com">hello@cardhabitapp.com</a>.
+        </p>
+      </section>
+    </article>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .policy-main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .policy-eyebrow {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin: 0 0 1.25rem;
+  }
+
+  .policy-h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f0ebe0;
+    margin: 0 0 0.75rem;
+  }
+
+  .policy-updated {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6b6760;
+    margin: 0 0 3rem;
+  }
+
+  .policy-section {
+    margin: 0 0 2.5rem;
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #a39e92;
+  }
+
+  .policy-section h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: #f0ebe0;
+    margin: 0 0 1rem;
+  }
+
+  .policy-section p {
+    margin: 0 0 1em;
+  }
+
+  .policy-section ul {
+    margin: 0 0 1em;
+    padding-left: 1.25rem;
+  }
+
+  .policy-section li {
+    margin: 0 0 0.5em;
+  }
+
+  .policy-section a {
+    color: #c9a84c;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .policy-section strong {
+    color: #f0ebe0;
+    font-weight: 500;
+  }
+</style>

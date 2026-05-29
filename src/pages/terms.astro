@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const lastUpdated = 'May 28, 2026';
+---
+
+<BaseLayout
+  title="Terms of Service — CardHabit"
+  description="The terms governing your use of the CardHabit website and waitlist."
+>
+  <Nav />
+  <main class="policy-main">
+    <article class="policy-article">
+      <p class="policy-eyebrow">Terms</p>
+      <h1 class="policy-h1">Terms of Service</h1>
+      <p class="policy-updated">Last updated: {lastUpdated}</p>
+
+      <section class="policy-section">
+        <p>
+          These Terms of Service ("Terms") govern your use of the cardhabitapp.com website and the CardHabit waitlist (the "Service"). By using the Service, you agree to these Terms.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>The Service</h2>
+        <p>
+          CardHabit is a card-based habit app currently in pre-release development. This website provides information about the app and an option to join the waitlist for beta access at launch.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Eligibility</h2>
+        <p>
+          You must be at least 13 years old to join the waitlist or use the Service.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Waitlist</h2>
+        <p>
+          Joining the waitlist does not guarantee access to the app at any specific time. We reserve the right to manage the waitlist at our discretion, including timing of beta invitations and any founder pricing offers.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Acceptable use</h2>
+        <p>
+          You agree not to misuse the Service. You will not attempt to gain unauthorized access to our systems, scrape the site at a rate that disrupts service, or use the waitlist to submit information you don't have the right to provide.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Intellectual property</h2>
+        <p>
+          The CardHabit name, logo, copy, and design are owned by CardHabit. You may not copy or reuse them without permission.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Disclaimers</h2>
+        <p>
+          The Service is provided "as is" without warranties of any kind. We do not guarantee that the Service will be available, error-free, or meet your expectations. CardHabit is a productivity tool, not a substitute for medical, mental health, or professional advice.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Limitation of liability</h2>
+        <p>
+          To the maximum extent permitted by law, CardHabit and its operators are not liable for any indirect, incidental, or consequential damages arising from your use of the Service.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Changes</h2>
+        <p>
+          We may update these Terms as the product evolves. We will update the "Last updated" date above when we do. Continued use of the Service after changes constitutes acceptance.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Contact</h2>
+        <p>
+          Questions about these Terms? Email <a href="mailto:hello@cardhabitapp.com">hello@cardhabitapp.com</a>.
+        </p>
+      </section>
+    </article>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  .policy-main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .policy-eyebrow {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin: 0 0 1.25rem;
+  }
+
+  .policy-h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f0ebe0;
+    margin: 0 0 0.75rem;
+  }
+
+  .policy-updated {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6b6760;
+    margin: 0 0 3rem;
+  }
+
+  .policy-section {
+    margin: 0 0 2.5rem;
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #a39e92;
+  }
+
+  .policy-section h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: #f0ebe0;
+    margin: 0 0 1rem;
+  }
+
+  .policy-section p {
+    margin: 0 0 1em;
+  }
+
+  .policy-section a {
+    color: #c9a84c;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
