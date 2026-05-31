@@ -6,7 +6,7 @@ CardHabit is an iOS app currently in late-stage development by Brandon Kessinger
 
 ## What it is
 
-Every morning, the app deals five challenge cards — one per category (Physical, Mental, Nutrition, Recovery, Wildcard). You commit to two or three. Completing a card earns a "vault card" — a play that can be spent on a friend's next draw to make it harder (Sabotage) or better (Buff). What you commit to is locked: friends can only affect tomorrow's hand, never today's commitments.
+Every morning, the app deals five habit cards — one per category (Physical, Mental, Nutrition, Recovery, Wildcard). You commit to two or three. Completing a card earns a "vault card" — a play that can be spent on a friend's next draw to make it harder (Challenge) or better (Buff). What you commit to is locked: friends can only affect tomorrow's hand, never today's commitments.
 
 After completing the first ten cards, you unlock one of five archetypes that shape your deck: Ironclad (Physical · Discipline), Sage (Mental · Clarity), Alchemist (Nutrition · Balance), Phantom (Recovery · Silence), or Vanguard (Breadth · Range).
 
@@ -16,7 +16,7 @@ After completing the first ten cards, you unlock one of five archetypes that sha
 - **Category**: Habit tracker, lifestyle app
 - **Launch**: August 2026
 - **Pricing**: Free tier; Pro $7.99/mo or $79.99/yr; Elite $14.99/mo or $149.99/yr. Founder pricing locked for waitlist signups.
-- **Differentiator**: Social sabotage mechanic — friends can modify each other's next-day card draws
+- **Differentiator**: Social challenge mechanic — friends can modify each other's next-day card draws
 - **Founder**: Brandon Kessinger (Twitter/X: @KessingerBuilds)
 - **TikTok**: @cardhabitapp
 
