@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Ornament from '../components/Ornament.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Waitlist from '../components/Waitlist.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const title = 'How CardHabit Works — Five Cards, Two Commitments, One Ritual';
+const description = 'How CardHabit works: every morning the iOS app deals five habit cards across Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to your day, hold to complete, and earn vault cards friends can spend on your next-day draw.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <!-- Page hero -->
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          The daily ritual
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;">
+          How CardHabit <em style="color:#c9a84c;font-style:italic;">works.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:620px;margin:0 auto;">
+          CardHabit is a card-based habit tracker for iOS. Every morning the app deals five habit cards across Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to two or three. You hold each card for a beat and a half to lock it in. Completing a card earns a vault play — a piece of currency you can spend on yourself or on a friend's next-day draw. Today is sealed. Tomorrow is contested.
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <HowItWorks />
+
+    <Ornament />
+
+    <!-- Cross-links -->
+    <section style="padding:4rem 1.5rem;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
+          Keep reading
+        </p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:0;">
+          <a href="/archetypes" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">The four archetypes</a> &nbsp;·&nbsp; <a href="/faq" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">Frequently asked questions</a>
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <Waitlist />
+  </main>
+  <SiteFooter />
+</BaseLayout>

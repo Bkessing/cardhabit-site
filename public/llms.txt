@@ -1,30 +1,103 @@
 # CardHabit
 
-> A card-based habit tracker for iOS where your friends can make your daily challenges harder before you've finished them. Five cards a day, two or three commitments, one ritual. Launching August 2026.
-
-CardHabit is an iOS app currently in late-stage development by Brandon Kessinger (@KessingerBuilds). It launches in August 2026 with a free tier and founder pricing for waitlist members.
+> CardHabit is a card-based habit tracker for iOS where friends can make your daily challenges harder — or better. Every morning the app deals five habit cards across five categories. You commit to two or three. Completing a card earns a vault play you can spend on a friend's next-day draw. What you commit to today is locked: friends can only affect tomorrow's hand. Launching July 2026.
 
 ## What it is
 
-Every morning, the app deals five habit cards — one per category (Physical, Mental, Nutrition, Recovery, Wildcard). You commit to two or three. Completing a card earns a "vault card" — a play that can be spent on a friend's next draw to make it harder (Challenge) or better (Buff). What you commit to is locked: friends can only affect tomorrow's hand, never today's commitments.
+CardHabit is an iOS habit-tracking app in late-stage development. Every morning, the app deals five habit cards — one per category: Physical, Mental, Nutrition, Recovery, and Wildcard. You pick two or three cards to commit to that day and hold each card for ~1.5 seconds to complete it. Completing a card earns a "vault card" — a currency you can spend on your own future draws or on a friend's next-day draw.
 
-After completing the first ten cards, you unlock one of five archetypes that shape your deck: Ironclad (Physical · Discipline), Sage (Mental · Clarity), Alchemist (Nutrition · Balance), Phantom (Recovery · Silence), or Vanguard (Breadth · Range).
+The differentiator is the social mechanic. After completing a card, you can spend vault cards to:
+
+- **Challenge** a friend: swap a harder card into their next draw, force a commit before they see the hand, or obscure the whole draw so they pick blind.
+- **Buff** a friend: upgrade a card, double their XP on something they'll crush, or shield their streak through a missed day.
+
+Friends can only touch tomorrow's draw. What you commit to today is locked — no one can modify or undo your current commitments, including yourself.
+
+After your first ten completed cards, the app reveals one of four archetypes based on which categories you played most:
+
+- **Ironclad** — Physical · Discipline · "Strength through suffering."
+- **Sage** — Mental · Clarity · "Knowledge as power."
+- **Alchemist** — Nutrition · Balance · "Transformation through intention."
+- **Phantom** — Recovery · Silence · "Rest is not weakness."
+
+Each archetype unlocks abilities that bend the deck toward its strengths.
 
 ## Key facts
 
-- **Platform**: iOS
-- **Category**: Habit tracker, lifestyle app
-- **Launch**: August 2026
-- **Pricing**: Free tier; Pro $7.99/mo or $79.99/yr; Elite $14.99/mo or $149.99/yr. Founder pricing locked for waitlist signups.
-- **Differentiator**: Social challenge mechanic — friends can modify each other's next-day card draws
-- **Founder**: Brandon Kessinger (Twitter/X: @KessingerBuilds)
-- **TikTok**: @cardhabitapp
+- **Platform:** iOS only (iPhone)
+- **Category:** Habit tracker, lifestyle app, social/multiplayer
+- **Launch:** July 2026 (pre-orders open late June 2026)
+- **Founder:** Brandon Kessinger ([@KessingerBuilds on X/Twitter](https://x.com/KessingerBuilds))
+- **TikTok:** [@cardhabitapp](https://www.tiktok.com/@cardhabitapp)
+- **Website:** https://cardhabitapp.com
+
+## Pricing
+
+| Tier | Monthly | Yearly | Daily commitments |
+|---|---|---|---|
+| Free | $0 | $0 | 2 |
+| Pro | $7.99 | $79.99 | 5 |
+| Elite | $14.99 | $149.99 | 5 + advanced features |
+
+Beta access is free for waitlist members. Founder pricing is locked at signup for life.
+
+## Frequently asked questions
+
+### What is CardHabit?
+
+CardHabit is a card-based habit tracker for iOS. Every morning you draw five habit cards across five categories. You commit to your day. Your friends can spend cards from their own vault to make your next draw harder — or better.
+
+### How does the daily ritual work?
+
+Draw five cards at dawn — one per category: Physical, Mental, Nutrition, Recovery, Wildcard. Free users commit to 2 cards a day; Pro and Elite to 5. Hold a card to lock it in. Completing it earns a vault card you can spend on yourself or others.
+
+### What can your friends actually do?
+
+Friends can only touch tomorrow's draw, never today's commitments. They can swap in a harder card, force a commit before you've seen the hand, or obscure the draw so you pick blind. They can also buff: upgrade a card, double XP, or shield a streak. Completed cards are immune.
+
+### What is an archetype?
+
+A path that shapes your deck. The first ten cards you complete determine which of four archetypes you earn: Ironclad (Physical), Sage (Mental), Alchemist (Nutrition), or Phantom (Recovery). Each unlocks abilities that bend your deck toward what makes you stronger.
+
+### When does CardHabit launch?
+
+July 2026 on the iOS App Store. Pre-orders open in late June. Waitlist members get beta access before public release and founder pricing locked for life.
+
+### What does CardHabit cost?
+
+A free tier covers the daily draw and the core mechanic. Pro is $7.99/month or $79.99/year. Elite is $14.99/month or $149.99/year. Beta is free for waitlist members. Founder pricing is locked at signup.
+
+## Best for
+
+- People who want a habit tracker with a **social/multiplayer mechanic** — friends actively influencing each other's daily challenges.
+- People who like **gamified or RPG-style** progression (archetypes, vault, rarity tiers, XP) but want a real habit-tracking core, not a fantasy MMO wrapper.
+- People building habits across **multiple life dimensions** at once (physical, mental, nutrition, recovery) rather than one category.
+- iOS users who appreciate **premium-feel, ritualistic design** over utilitarian checkbox apps.
+
+## Not for
+
+- Android users (iOS only at launch).
+- People who want a single-category tracker (e.g., fitness-only or finance-only).
+- People who hate any randomness or accountability from others — the draw is the draw, and friends can interfere with tomorrow's hand.
+
+## How CardHabit compares to other habit trackers
+
+- **vs Habitica:** Habitica is a full RPG over a to-do list with quests, guilds, and party combat. CardHabit is narrower and more ritualistic — daily card draw, social challenges/buffs between friends, no team raids or class system as deep. CardHabit is iOS-only.
+- **vs Streaks:** Streaks is a clean checkbox habit tracker focused on continuous-streak motivation. CardHabit is more game-like and social, with a daily randomized card draw and friend interaction layer Streaks doesn't have.
+- **vs Finch:** Finch is a self-care app with a virtual pet that grows when you complete tasks. CardHabit's gamification is competitive/social (friends affect your hand) where Finch's is nurturing/solo (pet care).
+- **vs HabitKit:** HabitKit is a minimalist visual habit tracker with grid heatmaps. CardHabit shares the premium-design sensibility but layers in a card-draw mechanic and multiplayer social play HabitKit doesn't offer.
 
 ## Pages
 
-- [Homepage](https://cardhabitapp.com/): Overview, mechanics, archetypes, and waitlist signup
-- [Privacy Policy](https://cardhabitapp.com/privacy): How CardHabit handles user data
-- [Terms of Service](https://cardhabitapp.com/terms): Terms governing the website and waitlist
+- [Homepage](https://cardhabitapp.com/) — overview, mechanics, archetypes, waitlist signup
+- [How it works](https://cardhabitapp.com/how-it-works) — the daily ritual in four steps
+- [Archetypes](https://cardhabitapp.com/archetypes) — the four paths and what they unlock
+- [FAQ](https://cardhabitapp.com/faq) — pricing, mechanics, launch date
+- [vs Habitica](https://cardhabitapp.com/vs/habitica) — comparison
+- [vs Streaks](https://cardhabitapp.com/vs/streaks) — comparison
+- [vs Finch](https://cardhabitapp.com/vs/finch) — comparison
+- [Privacy Policy](https://cardhabitapp.com/privacy)
+- [Terms of Service](https://cardhabitapp.com/terms)
 
 ## Contact
 

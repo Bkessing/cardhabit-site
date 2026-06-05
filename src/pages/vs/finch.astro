@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Ornament from '../../components/Ornament.astro';
+import Waitlist from '../../components/Waitlist.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const title = 'CardHabit vs Finch — Card-Based vs Pet-Based Habit Tracker';
+const description = 'CardHabit compared to Finch. Finch grows a virtual pet when you complete self-care tasks. CardHabit deals five habit cards every morning and lets friends affect tomorrow\'s hand. Different gamification: nurturing solo vs competitive social.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          Comparison
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;">
+          CardHabit <em style="color:#c9a84c;font-style:italic;">vs Finch.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:620px;margin:0 auto;">
+          Finch turned self-care into a beloved pet-care game and has shipped millions of installs. CardHabit takes a different angle on the same problem. Both gamify daily habits. The motivational source could not be more opposite.
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:3rem 1.5rem;">
+      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;">
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">The short version</h2>
+        <p style="margin:0 0 2rem;">Choose Finch if nurturing a small creature that depends on you sounds like the right motivational lever — soft, warm, low-pressure self-care gamified through pet ownership. Choose CardHabit if you'd rather be in a daily ritual with friends who can make tomorrow harder, with stakes you earn through your own discipline.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">At a glance</h2>
+
+        <div style="overflow-x:auto;margin:0 0 2rem;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+            <thead>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.35);">
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Feature</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">CardHabit</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Finch</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Platform</td><td style="padding:0.85rem 0.5rem;">iOS</td><td style="padding:0.85rem 0.5rem;">iOS, Android</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Motivational lever</td><td style="padding:0.85rem 0.5rem;">Friends + earned vault plays</td><td style="padding:0.85rem 0.5rem;">Virtual pet care</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Tone</td><td style="padding:0.85rem 0.5rem;">Ritualistic, premium, competitive</td><td style="padding:0.85rem 0.5rem;">Soft, cozy, encouraging</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Social</td><td style="padding:0.85rem 0.5rem;">Yes — friends modify your draws</td><td style="padding:0.85rem 0.5rem;">Limited (friend codes, gifting)</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Daily structure</td><td style="padding:0.85rem 0.5rem;">5-card draw across 5 categories</td><td style="padding:0.85rem 0.5rem;">User-defined goals</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Free tier</td><td style="padding:0.85rem 0.5rem;">Yes (2 daily commits)</td><td style="padding:0.85rem 0.5rem;">Yes (most features)</td></tr>
+              <tr><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Premium</td><td style="padding:0.85rem 0.5rem;">$7.99/mo Pro, $14.99/mo Elite</td><td style="padding:0.85rem 0.5rem;">~$5.99/mo Finch Plus</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Where Finch wins</h2>
+        <p style="margin:0 0 1rem;">Finch is gentle by design. The pet care metaphor turns "I need to drink water" into "Finch is thirsty too" — externalizing the motivation in a way that lowers the activation cost of self-care. The platform reach is also broader (Android + iOS), and the soft tone is right for people who bounce off discipline-coded apps.</p>
+        <p style="margin:0 0 2rem;">If your habit-app history is "I keep downloading these and they make me feel bad," Finch's nurturing frame is built for you.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Where CardHabit is different</h2>
+        <p style="margin:0 0 1rem;">CardHabit isn't soft. The daily hand is dealt to you. Your friends can make tomorrow harder. The vault, the archetypes, the rarity tiers — they're game systems with stakes you earn through completion, not through nurturing a creature.</p>
+        <p style="margin:0;">If Finch is a self-care companion, CardHabit is a daily ritual played with people who hold you accountable in real time. Different frames for different temperaments.</p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:4rem 1.5rem;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
+          Other comparisons
+        </p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:0;">
+          <a href="/vs/habitica" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Habitica</a> &nbsp;·&nbsp; <a href="/vs/streaks" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Streaks</a> &nbsp;·&nbsp; <a href="/how-it-works" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">How CardHabit works</a>
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <Waitlist />
+  </main>
+  <SiteFooter />
+</BaseLayout>
