@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "X45DX5G52J.com.cardhabitapp.cardhabit",
+        "paths": [
+          "/invite/*"
+        ]
+      }
+    ]
+  }
+}
