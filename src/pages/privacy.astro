@@ -19,89 +19,166 @@ const lastUpdated = 'June 5, 2026';
 
       <section class="policy-section">
         <p>
-          CardHabit ("we", "us", "our") operates the CardHabit iOS application and cardhabitapp.com. This policy explains what data we collect, why, and how you can control it.
+          CardHabit ("we", "us", "our") operates the CardHabit iOS application and cardhabitapp.com (together, the "Service"). CardHabit is an independent app built by a sole developer in Phoenix, Arizona, USA. This policy explains what data we collect, why, who processes it, and how you can control it.
+        </p>
+        <p>
+          If you have any questions, email <a href="mailto:hello@cardhabitapp.com">hello@cardhabitapp.com</a>.
         </p>
       </section>
 
       <section class="policy-section">
-        <h2>Information we collect</h2>
+        <h2>What we collect and who processes it</h2>
+        <p>
+          We collect only the data needed to run the app and the website. Below is each data type, what it is, and the service provider that handles it on our behalf.
+        </p>
+        <h3>Account data</h3>
         <ul>
-          <li><strong>Account data.</strong> Your email address and display name when you sign up to the app, or your email address when you join the waitlist.</li>
-          <li><strong>Usage data.</strong> Which cards you draw, commit to, and complete; streak counts; archetype progression; social actions you send or receive.</li>
-          <li><strong>Device data.</strong> APNs device token for push notifications; device type and OS version for crash reporting; anonymized device identifiers for product analytics.</li>
-          <li><strong>Purchase data.</strong> Subscription tier (Pro or Elite) and renewal status. We do not store payment card information — all payments are handled by Apple.</li>
-          <li><strong>Social data.</strong> Friend connections you initiate and the sabotage and buff actions you send or receive.</li>
-          <li><strong>Diagnostic data.</strong> Crash reports, error logs, and performance metrics.</li>
+          <li><strong>What:</strong> Email address, display name, account ID. Friend connections you initiate or accept.</li>
+          <li><strong>Processed by:</strong> Supabase (authentication and database).</li>
+        </ul>
+        <h3>Habit and gameplay data</h3>
+        <ul>
+          <li><strong>What:</strong> Daily habit cards drawn, cards you commit to, completions, streaks, vault cards, archetype progression, Challenge and Buff cards sent or received between friends.</li>
+          <li><strong>Processed by:</strong> Supabase (database and realtime sync).</li>
+        </ul>
+        <h3>Subscription data</h3>
+        <ul>
+          <li><strong>What:</strong> Subscription tier (Pro or Elite), trial status, renewal state, purchase history. We do not store payment card details — all payments are processed by Apple.</li>
+          <li><strong>Processed by:</strong> RevenueCat (subscription management), Apple (payment processing).</li>
+        </ul>
+        <h3>Product analytics</h3>
+        <ul>
+          <li><strong>What:</strong> Anonymized device identifier, app events (screens viewed, cards drawn, features used), device type, OS version.</li>
+          <li><strong>Processed by:</strong> PostHog (product analytics, US region).</li>
+        </ul>
+        <h3>Crash and diagnostic data</h3>
+        <ul>
+          <li><strong>What:</strong> Crash reports, error logs, performance metrics, other diagnostic data. We have explicitly disabled screenshot capture and view-hierarchy capture in our crash reporter to avoid sending any personal content along with crash reports.</li>
+          <li><strong>Processed by:</strong> Sentry (crash and error reporting).</li>
+        </ul>
+        <h3>Push notifications</h3>
+        <ul>
+          <li><strong>What:</strong> Apple Push Notification service (APNs) device token.</li>
+          <li><strong>Processed by:</strong> Apple (APNs).</li>
+        </ul>
+        <h3>Waitlist</h3>
+        <ul>
+          <li><strong>What:</strong> Email address you provide on the waitlist form.</li>
+          <li><strong>Processed by:</strong> Supabase.</li>
+        </ul>
+        <p>
+          We do not collect precise location, contacts, photos, microphone audio, health data, or biometric data.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Required Reason API disclosures</h2>
+        <p>
+          Per Apple's privacy requirements, our app accesses the following APIs for the following reasons:
+        </p>
+        <ul>
+          <li><strong>File timestamp (C617.1):</strong> to display the time content was last updated to the user.</li>
+          <li><strong>System boot time (35F9.1):</strong> to measure time elapsed between events that occur within the app.</li>
+          <li><strong>Disk space (E174.1):</strong> to write user-generated content to disk.</li>
         </ul>
       </section>
 
       <section class="policy-section">
-        <h2>How we use your information</h2>
+        <h2>Why we collect it</h2>
         <ul>
-          <li>Deliver and personalize the app experience (daily card draws, archetype assignment, streak tracking, social mechanics).</li>
-          <li>Send push notifications about your daily ritual, streak alerts, and social actions from friends.</li>
-          <li>Understand how the app is used so we can improve it.</li>
-          <li>Diagnose crashes and errors so we can fix them.</li>
-          <li>Manage subscriptions and entitlements.</li>
+          <li><strong>Run the core app:</strong> deliver daily card draws, track streaks, manage your vault, sync between your devices, deliver Challenge and Buff cards between friends, assign and track your archetype.</li>
+          <li><strong>Manage your subscription:</strong> activate the right entitlement tier, handle trials, and process renewals.</li>
+          <li><strong>Send notifications:</strong> deliver morning draw reminders, incoming Challenges, Buffs, streak alerts, and archetype reveals.</li>
+          <li><strong>Improve the product:</strong> understand which features are used so we can fix what is confusing and double down on what works.</li>
+          <li><strong>Diagnose problems:</strong> find crashes and bugs and fix them.</li>
+        </ul>
+        <p>
+          We do not sell your personal information. We do not share your data with advertisers. We do not use your data to train AI models.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>How long we keep it</h2>
+        <ul>
+          <li><strong>Account data, habit data, vault, archetype, social graph:</strong> kept for the lifetime of your account. When you delete your account from inside the app (<strong>Profile → Delete Account</strong>), everything is permanently deleted within 30 days.</li>
+          <li><strong>Subscription records:</strong> retained as required by Apple and tax law (typically up to 7 years from the last transaction).</li>
+          <li><strong>Crash reports and analytics events:</strong> retained up to 12 months, then purged.</li>
+          <li><strong>Waitlist email:</strong> retained until you unsubscribe or request deletion.</li>
         </ul>
       </section>
 
       <section class="policy-section">
-        <h2>Third-party services</h2>
-        <p>
-          CardHabit uses the following service providers. Each has its own privacy policy linked below.
-        </p>
+        <h2>Your rights</h2>
+        <p>You can, at any time:</p>
         <ul>
-          <li><strong>Supabase</strong> — database, authentication, and realtime infrastructure. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></li>
-          <li><strong>PostHog</strong> — product analytics. <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a></li>
-          <li><strong>RevenueCat</strong> — subscription management. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></li>
-          <li><strong>Sentry</strong> — crash and error reporting. <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a></li>
-          <li><strong>Apple (APNs)</strong> — push notification delivery and payment processing. <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></li>
+          <li><strong>Access</strong> the data we hold about you.</li>
+          <li><strong>Export</strong> your account and habit data in a portable format.</li>
+          <li><strong>Delete</strong> your account and all associated data from inside the app at <strong>Profile → Delete Account</strong>, or by emailing us. Deletion is irreversible.</li>
+          <li><strong>Object</strong> to processing or <strong>restrict</strong> specific uses.</li>
+          <li><strong>Withdraw consent</strong> to optional processing (e.g., analytics — if you opt out, we still collect crash data necessary to keep the app running).</li>
         </ul>
         <p>
-          We share information only with these providers as required to operate the app. We do not sell your personal information to anyone.
+          To exercise any of these rights, email <a href="mailto:hello@cardhabitapp.com">hello@cardhabitapp.com</a>. We respond within 30 days.
+        </p>
+        <p>
+          Your iOS subscription must be cancelled separately through the App Store (<strong>Settings → [your name] → Subscriptions</strong>). Deleting your CardHabit account does not cancel an active App Store subscription.
+        </p>
+        <h3>California (CCPA/CPRA)</h3>
+        <p>
+          California residents have the right to know what personal information we collect, to request deletion, to correct inaccurate information, and to opt out of sale or sharing. We do not sell or share personal information in the CCPA sense.
+        </p>
+        <h3>Europe / UK (GDPR/UK GDPR)</h3>
+        <p>
+          Our lawful bases for processing are: (1) performance of the contract to provide you the app, (2) our legitimate interest in improving and securing the app, and (3) your consent where required (e.g., analytics in jurisdictions that require opt-in). You have the right to lodge a complaint with your local data protection authority.
         </p>
       </section>
 
       <section class="policy-section">
-        <h2>Data retention</h2>
+        <h2>International data transfers</h2>
         <p>
-          We retain your account data for as long as your account is active. When you delete your account, all of your data — cards, streaks, commitments, social history, friend connections — is permanently deleted within 24 hours. Waitlist emails are retained until you unsubscribe or request deletion.
-        </p>
-      </section>
-
-      <section class="policy-section">
-        <h2>Deleting your account</h2>
-        <p>
-          You can permanently delete your account and all associated data from inside the app at <strong>Profile → Delete Account</strong>. This action is irreversible. Your subscription, if any, must be cancelled separately through the iOS App Store.
-        </p>
-      </section>
-
-      <section class="policy-section">
-        <h2>Your choices</h2>
-        <p>
-          You can request access to or deletion of your data at any time by emailing <a href="mailto:brandkessinger@gmail.com">brandkessinger@gmail.com</a>. You can unsubscribe from waitlist emails using the link in any message we send you.
+          CardHabit is operated from the United States. Our service providers (Supabase, PostHog, RevenueCat, Sentry, Apple) may process data in the United States and other jurisdictions. Where required, we rely on Standard Contractual Clauses or equivalent safeguards published by each provider.
         </p>
       </section>
 
       <section class="policy-section">
         <h2>Children</h2>
         <p>
-          CardHabit is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal data, contact us and we will delete it.
+          CardHabit is rated 13+ on the App Store and is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, email <a href="mailto:hello@cardhabitapp.com">hello@cardhabitapp.com</a> and we will delete it.
         </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Security</h2>
+        <p>
+          We use Apple's Sign in with Apple and standard authentication tokens. Data in transit is encrypted via TLS. Data at rest is encrypted at our service providers. No system is perfectly secure; if we learn of a breach affecting your data, we will notify you in accordance with applicable law.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <h2>Third-party privacy policies</h2>
+        <p>Each of our processors maintains its own privacy policy:</p>
+        <ul>
+          <li><strong>Supabase</strong> — <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a></li>
+          <li><strong>PostHog</strong> — <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a></li>
+          <li><strong>RevenueCat</strong> — <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></li>
+          <li><strong>Sentry</strong> — <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a></li>
+          <li><strong>Apple (APNs and App Store)</strong> — <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></li>
+        </ul>
       </section>
 
       <section class="policy-section">
         <h2>Changes to this policy</h2>
         <p>
-          We may update this policy as the product evolves. We will update the "Last updated" date above and, for material changes, notify you inside the app. Continued use after changes take effect constitutes acceptance.
+          We may update this policy as the product evolves. We will update the "Last updated" date above and, for material changes, notify you inside the app or by email. Continued use after changes take effect constitutes acceptance.
         </p>
       </section>
 
       <section class="policy-section">
         <h2>Contact</h2>
         <p>
-          Questions about this policy or requests regarding your data: <a href="mailto:brandkessinger@gmail.com">brandkessinger@gmail.com</a>.
+          CardHabit<br />
+          Phoenix, Arizona, USA<br />
+          <a href="mailto:hello@cardhabitapp.com">hello@cardhabitapp.com</a>
         </p>
       </section>
     </article>
@@ -161,6 +238,14 @@ const lastUpdated = 'June 5, 2026';
     font-size: 1.6rem;
     color: #f0ebe0;
     margin: 0 0 1rem;
+  }
+
+  .policy-section h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #f0ebe0;
+    margin: 1.5rem 0 0.5rem;
   }
 
   .policy-section p {
