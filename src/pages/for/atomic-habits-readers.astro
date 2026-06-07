@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Ornament from '../../components/Ornament.astro';
+import Waitlist from '../../components/Waitlist.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const title = 'CardHabit for Atomic Habits Readers — The Implementation with Stakes';
+const description = 'For people who read Atomic Habits and want a system instead of willpower. CardHabit honors James Clear\'s framework — small actions compound, identity-based habits, environment design — and adds the friend accountability and scoped daily stakes the book describes but no app delivers.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          For Atomic Habits readers
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;">
+          Atomic Habits, <em style="color:#c9a84c;font-style:italic;">with stakes.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:640px;margin:0 auto;">
+          You read the book. You know small actions compound. You know identity is the operating system. You know systems beat goals. But the book ends and you're back to your phone, alone, with an app that wants you to check a box. CardHabit is the implementation James Clear's framework deserves — with friends who believe you can handle harder.
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:3rem 1.5rem;">
+      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;">
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Where every habit app falls short of the book</h2>
+        <p style="margin:0 0 1rem;">Atomic Habits is one of the best-selling habit books of the last decade. James Clear's framework — cue, craving, response, reward; the four laws of behavior change; identity-based habits — is canonical. Anyone serious about their habits has read it.</p>
+        <p style="margin:0 0 2rem;">The official Atomic Habits app, Atoms, was supposed to be the implementation. Users have mixed feelings about it: $120/year for a subscription, only 1 habit tracked in the free tier, 3-6 habits at higher tiers. The reviews surface a clear gap — Clear's audience wants more system than Atoms delivers.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">How CardHabit honors the framework</h2>
+
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#c9a84c;margin:0 0 0.5rem;">Make it obvious (cue)</h3>
+        <p style="margin:0 0 1.5rem;">Every morning at dawn, CardHabit deals five habit cards across Physical, Mental, Nutrition, Recovery, and Wildcard. The deal itself is the cue. You don't have to design an implementation intention — the app puts the day's options in front of you and asks you to commit.</p>
+
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#c9a84c;margin:0 0 0.5rem;">Make it attractive (craving)</h3>
+        <p style="margin:0 0 1.5rem;">Cards have rarity tiers — Common, Uncommon, Rare, Epic, Legendary. Completing harder cards earns better vault plays. The reward isn't a tick on a checklist; it's currency you can spend on yourself or send to a friend. The craving is for the next draw.</p>
+
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#c9a84c;margin:0 0 0.5rem;">Make it easy (response)</h3>
+        <p style="margin:0 0 1.5rem;">Cards are scoped on purpose. Not full workouts. Not multi-hour commitments. Small enough that you can actually do them every morning. Hold a card for a beat and a half to lock it in. The response is calibrated for daily, not heroic.</p>
+
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#c9a84c;margin:0 0 0.5rem;">Make it satisfying (reward)</h3>
+        <p style="margin:0 0 2rem;">Completing a card earns a vault card and XP toward your archetype. Every ten cards reveals or shifts your archetype. The reward loop runs daily — and the archetype reveal at Day 10 is the identity payoff Clear's book is built around. You don't pick who you become. The cards tell you.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">What Clear's book describes but no other app delivers</h2>
+        <p style="margin:0 0 1rem;"><strong style="color:#f0ebe0;">Friends as accountability infrastructure.</strong> The book repeatedly emphasizes social environment as the most powerful behavior-change lever. Atoms has friend features in a limited way. Most habit apps treat the social layer as an optional add-on. CardHabit makes it core: friends can spend earned vault plays to raise the bar on your next draw, send you a streak shield, or upgrade your XP. Every Challenge is a friend saying they believe you can handle harder.</p>
+        <p style="margin:0 0 1rem;"><strong style="color:#f0ebe0;">Identity-based progression.</strong> Atomic Habits' core insight is that habits build identity. After your first ten completed cards, CardHabit reveals one of four archetypes — Ironclad (Physical · Discipline), Sage (Mental · Clarity), Alchemist (Nutrition · Balance), Phantom (Recovery · Silence). You don't pick. You earn. The archetype isn't a personality test result; it's an emergent classification based on the work you actually did.</p>
+        <p style="margin:0 0 2rem;"><strong style="color:#f0ebe0;">A system that survives missed days.</strong> Clear's book warns against the "all-or-nothing" trap and the perils of breaking streaks. CardHabit treats a missed day as a streak reset, not a personal failure. Friends can send Streak Shields to carry you through a missed day. Recovery Mode pauses incoming Challenges for a week. The system is built for the day you almost quit.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Hard things, every day. Not extreme things, once.</h2>
+        <p style="margin:0;">If you read Atomic Habits and still struggle to stick to your habits — not because Clear is wrong, but because you need stakes and accountability the book describes but doesn't deliver — CardHabit was built for you.</p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:4rem 1.5rem;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
+          Keep reading
+        </p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:0;">
+          <a href="/vs/75-hard" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs 75 Hard</a> &nbsp;·&nbsp; <a href="/how-it-works" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">How CardHabit works</a> &nbsp;·&nbsp; <a href="/archetypes" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">The four archetypes</a>
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <Waitlist />
+  </main>
+  <SiteFooter />
+</BaseLayout>

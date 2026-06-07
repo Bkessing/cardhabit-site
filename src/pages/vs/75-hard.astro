@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Ornament from '../../components/Ornament.astro';
+import Waitlist from '../../components/Waitlist.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const title = 'CardHabit vs 75 Hard — A Sustainable Alternative for Habit Builders';
+const description = 'How CardHabit compares to 75 Hard for the people who finished a 75 Hard once and now want a system that sustains. Hard things every day, not extreme things once. Built for second-time-around habit builders who want friend accountability without burnout.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          Comparison
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;">
+          CardHabit <em style="color:#c9a84c;font-style:italic;">vs 75 Hard.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:640px;margin:0 auto;">
+          75 Hard taught you that you could. CardHabit is what comes next. A system for the days after the 75-day program ended — when the habits you built need to survive year two, year three, year ten.
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:3rem 1.5rem;">
+      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;">
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">The short version</h2>
+        <p style="margin:0 0 1rem;">75 Hard is a structured challenge for people who need extreme proof they can do something hard. It works for the 5% who finish — and most of the rest learn something valuable from trying.</p>
+        <p style="margin:0 0 2rem;">CardHabit is what comes after. A daily card system for people who already know they can push hard and now want a sustainable version. Hard things every day, not extreme things once.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">At a glance</h2>
+
+        <div style="overflow-x:auto;margin:0 0 2rem;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+            <thead>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.35);">
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Feature</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">CardHabit</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">75 Hard</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Duration</td><td style="padding:0.85rem 0.5rem;">Indefinite. The system survives.</td><td style="padding:0.85rem 0.5rem;">75 days, binary pass/fail.</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Daily commitment</td><td style="padding:0.85rem 0.5rem;">2-5 scoped cards</td><td style="padding:0.85rem 0.5rem;">2 × 45-min workouts + diet + reading + water + photo</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Missed day</td><td style="padding:0.85rem 0.5rem;">Streak resets. New one starts tomorrow.</td><td style="padding:0.85rem 0.5rem;">Restart from Day 1.</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Categories</td><td style="padding:0.85rem 0.5rem;">5 (Physical, Mental, Nutrition, Recovery, Wildcard)</td><td style="padding:0.85rem 0.5rem;">Fitness + mindset + diet (no recovery focus)</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Social mechanic</td><td style="padding:0.85rem 0.5rem;">Friends raise the bar on your draws</td><td style="padding:0.85rem 0.5rem;">Solo by design</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Recovery built in</td><td style="padding:0.85rem 0.5rem;">Phantom archetype rewards rest</td><td style="padding:0.85rem 0.5rem;">No rest day allowed</td></tr>
+              <tr><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Built for</td><td style="padding:0.85rem 0.5rem;">Sustained persistence</td><td style="padding:0.85rem 0.5rem;">Proof of extreme effort</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">What 75 Hard taught you</h2>
+        <p style="margin:0 0 1rem;">75 Hard is a useful crucible. People who finish it learn something real about themselves — that they can do hard things, that discipline is a muscle, that the brain that quits at Day 4 isn't telling the truth. That's worth a lot.</p>
+        <p style="margin:0 0 2rem;">But 75 days end. The system was never designed for Day 76, Day 100, Day 365. The graduation problem is real: most people who finish a 75 Hard don't successfully port the discipline to year two. The challenge gave them belief; it didn't give them an ongoing system.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">What CardHabit is for</h2>
+        <p style="margin:0 0 1rem;">CardHabit picks up where the challenge ended. Cards are scoped on purpose — small enough that you can actually do them every morning, hard enough to feel like work. The friend mechanic adds the stakes that disappeared when the challenge clock ran out. The system survives missed days, because real life has them.</p>
+        <p style="margin:0;">Hard things, every day. Not extreme things, once. Persistence is the practice — and you already proved you have it. Now use a system that keeps it going.</p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:4rem 1.5rem;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
+          Keep reading
+        </p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:0;">
+          <a href="/for/atomic-habits-readers" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">For Atomic Habits readers</a> &nbsp;·&nbsp; <a href="/how-it-works" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">How CardHabit works</a> &nbsp;·&nbsp; <a href="/faq" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">FAQ</a>
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <Waitlist />
+  </main>
+  <SiteFooter />
+</BaseLayout>
