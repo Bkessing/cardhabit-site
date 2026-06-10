@@ -6,10 +6,10 @@ interface Props {
   description?: string;
 }
 
-const APP_DESCRIPTION = 'CardHabit is a card-based habit tracker for iOS, built for the second time around — for people who read Atomic Habits and want a system with friend accountability. Hard things every day, not extreme things once. Five habit cards a day, friends who believe you can handle harder, one ritual. Coming July 2026.';
+const APP_DESCRIPTION = 'CardHabit is a card-based habit tracker for iOS, built for the second time around, for people who read Atomic Habits and want a system with friend accountability. Hard things every day, not extreme things once. Five habit cards a day, friends who believe you can handle harder, one ritual. Coming July 2026.';
 
 const {
-  title = 'CardHabit — A Sustainable Habit Tracker with Friend Accountability',
+  title = 'CardHabit: A Sustainable Habit Tracker with Friend Accountability',
   description = APP_DESCRIPTION,
 } = Astro.props;
 
@@ -66,7 +66,7 @@ const structuredData = {
     <link rel="canonical" href={canonicalUrl} />
 
     <!--
-      Search engine verification — paste tokens then uncomment.
+      Search engine verification: paste tokens then uncomment.
       Get GSC token: https://search.google.com/search-console (Add Property → cardhabitapp.com → HTML tag method)
       Get Bing token: https://www.bing.com/webmasters (Add a Site → HTML Meta Tag method)
     -->
@@ -79,7 +79,7 @@ const structuredData = {
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="CardHabit — Show up. Every day." />
+    <meta property="og:image:alt" content="CardHabit. Show up. Every day." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="CardHabit" />
@@ -90,7 +90,7 @@ const structuredData = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content="CardHabit — Show up. Every day." />
+    <meta name="twitter:image:alt" content="CardHabit. Show up. Every day." />
     <meta name="twitter:site" content="@KessingerBuilds" />
     <meta name="twitter:creator" content="@KessingerBuilds" />
 

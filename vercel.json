@@ -3,9 +3,37 @@
     {
       "source": "/.well-known/apple-app-site-association",
       "headers": [
-        { "key": "Content-Type", "value": "application/json" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/tiktok",
+      "destination": "/?src=tiktok",
+      "permanent": false
+    },
+    {
+      "source": "/ig",
+      "destination": "/?src=instagram",
+      "permanent": false
+    },
+    {
+      "source": "/x",
+      "destination": "/?src=x",
+      "permanent": false
+    },
+    {
+      "source": "/pin",
+      "destination": "/?src=pinterest",
+      "permanent": false
     }
   ]
 }
