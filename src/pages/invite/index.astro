@@ -42,20 +42,21 @@ const TESTFLIGHT_URL = '';
           <p style="margin:0;"><span style="color:#c9a84c;font-weight:500;">3.</span> Enter your invite code. Your friend appears across the table.</p>
         </div>
 
-        <!-- CTA: TestFlight during beta, App Store at launch -->
-        <div style="margin-top:2.5rem;">
-          {TESTFLIGHT_URL ? (
-            <a
-              href={TESTFLIGHT_URL}
-              style="display:inline-block;background:#c9a84c;color:#0c0c0e;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;text-decoration:none;border:1px solid #c9a84c;"
-            >
-              Join the beta on TestFlight
-            </a>
-          ) : (
-            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.2rem;color:#c9a84c;margin:0;">
-              The beta opens this week. Hold onto your code.
-            </p>
-          )}
+        <!-- CTA: copies the invite link (the app detects it after install),
+             then forwards to TestFlight during beta / App Store at launch -->
+        <div style="margin-top:2.5rem;" data-store-url={TESTFLIGHT_URL} id="cta-wrap">
+          <button
+            id="copy-go"
+            style="display:inline-block;background:#c9a84c;color:#0c0c0e;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;border:1px solid #c9a84c;cursor:pointer;"
+          >
+            Copy code &amp; get CardHabit
+          </button>
+          <p id="copy-note" style="display:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:#c9a84c;margin:1rem 0 0;">
+            Copied. CardHabit will find it when you open the app.
+          </p>
+          <p id="beta-pending" style="display:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:#c9a84c;margin:1rem 0 0;">
+            The beta opens this week. Your code is copied and waiting.
+          </p>
           <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin-top:1.25rem;">
             Already have CardHabit? Tap your invite link again and it opens in the app.
           </p>
@@ -69,12 +70,28 @@ const TESTFLIGHT_URL = '';
   <script is:inline>
     // /invite/<CODE> is rewritten to this page; pull the code from the path.
     const seg = window.location.pathname.split('/').filter(Boolean);
+    let code = '';
     if (seg.length >= 2 && seg[0] === 'invite') {
-      const code = decodeURIComponent(seg[1]).toUpperCase().replace(/[^A-Z0-9-]/g, '');
+      code = decodeURIComponent(seg[1]).toUpperCase().replace(/[^A-Z0-9-]/g, '');
       if (code) {
         document.getElementById('invite-code').textContent = code;
         document.getElementById('code-block').style.display = 'block';
       }
     }
+    const btn = document.getElementById('copy-go');
+    const storeUrl = document.getElementById('cta-wrap').getAttribute('data-store-url') || '';
+    if (!code) { btn.textContent = storeUrl ? 'Get CardHabit' : 'Coming this week'; }
+    btn.addEventListener('click', async () => {
+      if (code) {
+        // Copy the FULL link: the app's clipboard detection looks for a URL.
+        try { await navigator.clipboard.writeText('https://cardhabitapp.com/invite/' + code); } catch (e) {}
+      }
+      if (storeUrl) {
+        if (code) document.getElementById('copy-note').style.display = 'block';
+        setTimeout(() => { window.location.href = storeUrl; }, code ? 700 : 0);
+      } else if (code) {
+        document.getElementById('beta-pending').style.display = 'block';
+      }
+    });
   </script>
 </BaseLayout>
