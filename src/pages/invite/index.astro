@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Ornament from '../../components/Ornament.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const title = 'You Have Been Invited to CardHabit';
+const description = 'A friend invited you to CardHabit, the card-based habit tracker with friend accountability. Get the app, enter your invite code, and take your seat at the table.';
+
+// Swap to the App Store URL at launch (2026-07-07). While empty, the page
+// shows the beta-pending note instead of a download button.
+const TESTFLIGHT_URL = '';
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;min-height:60vh;">
+      <div style="max-width:640px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          You're invited
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,7vw,3.5rem);line-height:1.05;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.25rem;">
+          A friend wants you <em style="color:#c9a84c;font-style:italic;">across the table.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.65;color:#a39e92;max-width:520px;margin:0 auto 2.5rem;">
+          CardHabit deals five habit cards every morning. Friends can buff your hand or raise the bar on tomorrow's draw. Yours sent you a seat.
+        </p>
+
+        <!-- Invite code (filled from the URL by the script below) -->
+        <div id="code-block" style="display:none;margin:0 0 2.5rem;">
+          <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#6b6760;margin:0 0 0.75rem;">
+            Your invite code
+          </p>
+          <p id="invite-code" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,8vw,3rem);letter-spacing:0.35em;color:#c9a84c;margin:0;"></p>
+        </div>
+
+        <!-- Steps -->
+        <div style="max-width:440px;margin:0 auto;text-align:left;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.7;color:#a39e92;">
+          <p style="margin:0 0 0.9em;"><span style="color:#c9a84c;font-weight:500;">1.</span> Get the app below.</p>
+          <p style="margin:0 0 0.9em;"><span style="color:#c9a84c;font-weight:500;">2.</span> Open CardHabit and head to The Arena.</p>
+          <p style="margin:0;"><span style="color:#c9a84c;font-weight:500;">3.</span> Enter your invite code. Your friend appears across the table.</p>
+        </div>
+
+        <!-- CTA: TestFlight during beta, App Store at launch -->
+        <div style="margin-top:2.5rem;">
+          {TESTFLIGHT_URL ? (
+            <a
+              href={TESTFLIGHT_URL}
+              style="display:inline-block;background:#c9a84c;color:#0c0c0e;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;text-decoration:none;border:1px solid #c9a84c;"
+            >
+              Join the beta on TestFlight
+            </a>
+          ) : (
+            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.2rem;color:#c9a84c;margin:0;">
+              The beta opens this week. Hold onto your code.
+            </p>
+          )}
+          <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin-top:1.25rem;">
+            Already have CardHabit? Tap your invite link again and it opens in the app.
+          </p>
+        </div>
+      </div>
+    </section>
+    <Ornament />
+  </main>
+  <SiteFooter />
+
+  <script is:inline>
+    // /invite/<CODE> is rewritten to this page; pull the code from the path.
+    const seg = window.location.pathname.split('/').filter(Boolean);
+    if (seg.length >= 2 && seg[0] === 'invite') {
+      const code = decodeURIComponent(seg[1]).toUpperCase().replace(/[^A-Z0-9-]/g, '');
+      if (code) {
+        document.getElementById('invite-code').textContent = code;
+        document.getElementById('code-block').style.display = 'block';
+      }
+    }
+  </script>
+</BaseLayout>
