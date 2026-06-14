@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Ornament from '../components/Ornament.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const title = 'CardHabit Press Kit';
+const description = 'Press kit for CardHabit, a card-based daily challenge for iOS. Positioning, founder story, key facts, screenshots, and contact. Launching July 7, 2026.';
+
+const facts = [
+  ['Name', 'CardHabit'],
+  ['Category', 'Lifestyle / habits'],
+  ['Platform', 'iOS (iPhone), iOS 18 and later'],
+  ['Launch', 'July 7, 2026. Pre-orders from June 23, 2026.'],
+  ['Price', 'Free to start. Pro at founder pricing: $4.99/month or $39.99/year, with a 7-day free trial.'],
+  ['Developer', 'Brandon Kessinger (solo)'],
+  ['Location', 'Phoenix, Arizona'],
+  ['At launch', 'App Intents for Siri and Shortcuts, Sign in with Apple, Family Sharing on subscriptions, no third-party tracking.'],
+];
+
+const shots = [
+  ['/press/01-challenge.png', 'A friend plays a Challenge card into tomorrow\'s draw'],
+  ['/press/02-draw.png', 'The morning draw: five habit cards on the table'],
+  ['/press/03-archetype.png', 'Earning an archetype from the first weeks of play'],
+  ['/press/04-vault.png', 'The vault of cards earned by showing up'],
+  ['/press/05-all-done.png', 'The day completed, the streak held'],
+  ['/press/06-welcome.png', 'Show up. Every day.'],
+];
+
+const labelStyle = "font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;";
+const bodyStyle = "font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;";
+const h2Style = "font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,5vw,2.5rem);line-height:1.1;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 1.5rem;";
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <!-- Header -->
+    <section style="padding:4.5rem 1.5rem 2.5rem;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;">
+        <p style={labelStyle + 'margin:0 0 1.25rem;'}>Press kit</p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,7vw,3.5rem);line-height:1.05;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.25rem;">
+          CardHabit <em style="color:#c9a84c;font-style:italic;">press kit.</em>
+        </h1>
+        <p style={bodyStyle + 'max-width:560px;margin:0 auto;'}>
+          Everything you need to write about CardHabit. Lift any of it. For anything else, the developer answers email directly.
+        </p>
+      </div>
+    </section>
+
+    <!-- The pitch -->
+    <section style="padding:2.5rem 1.5rem;">
+      <div style="max-width:680px;margin:0 auto;">
+        <h2 style={h2Style}>The short version</h2>
+        <p style={bodyStyle + 'margin:0 0 1.25rem;'}>
+          CardHabit is a daily challenge built on collectible-card-game mechanics. Every morning it deals five habit cards across Physical, Mental, Nutrition, Recovery, and a Wildcard. You commit to what you can hold, and friends play Challenge cards into each other's next-day draws, raising the bar on tomorrow's commitments. It is accountability designed for small groups, not viral networks.
+        </p>
+        <p style={bodyStyle + 'margin:0;'}>
+          It is built for the people who read Atomic Habits and burned out on 75 Hard, and now want something hard every day instead of extreme once. You don't pick what to track, only whether you show up. Cormorant Garamond typography and a dark-and-gold visual system make it the quiet-intensity counter to all-or-nothing fitness culture.
+        </p>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section style="padding:2.5rem 1.5rem;">
+      <div style="max-width:680px;margin:0 auto;">
+        <h2 style={h2Style}>The developer</h2>
+        <p style={bodyStyle + 'margin:0;'}>
+          CardHabit is built by Brandon Kessinger, a solo developer in Phoenix, Arizona. He shipped it on roughly an hour a day, around a CTO job and a newborn at home, building in public toward a July 7, 2026 launch. The constraint shaped the product: scoped cards small enough to do every morning, a system that survives missed days, and a thesis that persistence beats grind.
+        </p>
+      </div>
+    </section>
+
+    <!-- Key facts -->
+    <section style="padding:2.5rem 1.5rem;">
+      <div style="max-width:680px;margin:0 auto;">
+        <h2 style={h2Style}>Key facts</h2>
+        <dl style="margin:0;display:grid;grid-template-columns:1fr;gap:0;">
+          {facts.map(([k, v]) => (
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;padding:0.9rem 0;border-bottom:0.5px solid rgba(201,168,76,0.15);">
+              <dt style={labelStyle + 'flex:0 0 120px;padding-top:3px;'}>{k}</dt>
+              <dd style={bodyStyle + 'flex:1;min-width:200px;margin:0;font-size:1rem;'}>{v}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section style="padding:2.5rem 1.5rem;">
+      <div style="max-width:920px;margin:0 auto;">
+        <h2 style={h2Style + 'text-align:center;'}>Screenshots</h2>
+        <p style={bodyStyle + 'text-align:center;max-width:520px;margin:0 auto 2.5rem;'}>
+          In launch order. Click any image for the full-resolution file.
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;">
+          {shots.map(([src, alt]) => (
+            <figure style="margin:0;text-align:center;">
+              <a href={src} target="_blank" rel="noopener">
+                <img
+                  src={src}
+                  alt={alt}
+                  loading="lazy"
+                  style="width:100%;border-radius:18px;border:1px solid rgba(201,168,76,0.3);box-shadow:0 20px 50px rgba(0,0,0,0.5);display:block;"
+                />
+              </a>
+              <figcaption style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:300;line-height:1.5;color:#6b6760;margin-top:0.75rem;">{alt}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand -->
+    <section style="padding:2.5rem 1.5rem;">
+      <div style="max-width:680px;margin:0 auto;">
+        <h2 style={h2Style}>Brand</h2>
+        <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+          <img src="/press/app-icon.png" alt="CardHabit app icon" width="88" style="width:88px;height:88px;border-radius:20px;border:1px solid rgba(201,168,76,0.3);" />
+          <div style={bodyStyle + 'flex:1;min-width:240px;font-size:1rem;'}>
+            Wordmark: CardHabit, one word. Typeface: Cormorant Garamond (display) and Jost (interface). Primary color: gold <span style="color:#c9a84c;">#C9A84C</span> on near-black <span style="color:#c9a84c;">#0A0806</span>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section style="padding:2.5rem 1.5rem 4rem;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;">
+        <h2 style={h2Style + 'text-align:center;'}>Contact</h2>
+        <p style={bodyStyle + 'margin:0 0 1.5rem;'}>
+          Brandon Kessinger answers press email directly, usually same day.
+        </p>
+        <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.5rem;">
+          <a href="mailto:hello@cardhabitapp.com" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#c9a84c;text-decoration:none;">hello@cardhabitapp.com</a>
+          <a href="https://x.com/KessingerBuilds" target="_blank" rel="noopener" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#c9a84c;text-decoration:none;">@KessingerBuilds</a>
+          <a href="https://cardhabitapp.com" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#c9a84c;text-decoration:none;">cardhabitapp.com</a>
+        </div>
+      </div>
+    </section>
+    <Ornament />
+  </main>
+  <SiteFooter />
+</BaseLayout>
