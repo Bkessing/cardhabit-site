@@ -4,7 +4,7 @@
 
 ## What it is
 
-CardHabit is an iOS habit-tracking app in late-stage development. Every morning the app deals five habit cards — one per category: Physical, Mental, Nutrition, Recovery, and Wildcard. You pick two or three cards to commit to that day and hold each card for ~1.5 seconds to complete it. Completing a card earns a "vault card" — a currency you can spend on your own future draws or on a friend's next-day draw.
+CardHabit is an iOS habit-tracking app in late-stage development. Every morning the app deals five habit cards, drawn at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You pick two or three cards to commit to that day and hold each card for ~1.5 seconds to complete it. Completing a card earns a "vault card" — a currency you can spend on your own future draws or on a friend's next-day draw.
 
 The differentiator is the social mechanic. After completing a card, you can spend vault cards to:
 
@@ -54,7 +54,7 @@ Beta access is free for waitlist members. Founder pricing is locked at signup fo
 
 ### What is CardHabit?
 
-CardHabit is a habit tracker for the second time around — for people who read Atomic Habits, tried 75 Hard, and want a sustainable system instead of an extreme one. Every morning you draw five habit cards across Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to two or three. Your friends can spend earned vault cards to raise the bar on tomorrow's draw — because they believe you can handle harder.
+CardHabit is a habit tracker for the second time around — for people who read Atomic Habits, tried 75 Hard, and want a sustainable system instead of an extreme one. Every morning you draw five habit cards at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to two or three. Your friends can spend earned vault cards to raise the bar on tomorrow's draw — because they believe you can handle harder.
 
 ### Is this another 75 Hard?
 
