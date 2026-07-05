@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Ornament from '../components/Ornament.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const title = 'CardHabit Support';
+const description = 'Get help with CardHabit. Contact support, manage your subscription, delete your account, and find answers to common questions.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          We're here
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;">
+          <em style="color:#c9a84c;font-style:italic;">Support.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:620px;margin:0 auto;">
+          Questions, bugs, account help, or subscription trouble. Reach us directly and we'll get back to you.
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:3.5rem 1.5rem;">
+      <div style="max-width:680px;margin:0 auto;">
+        <div style="text-align:center;margin-bottom:3rem;">
+          <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 0.75rem;">Contact</p>
+          <a href="mailto:hello@cardhabitapp.com" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.75rem;color:#f0ebe0;text-decoration:none;border-bottom:1px solid #c9a84c;">hello@cardhabitapp.com</a>
+          <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:0.95rem;line-height:1.7;color:#a39e92;margin:1rem auto 0;max-width:520px;">
+            We usually reply within a day. Include your device and iOS version if you're reporting a bug.
+          </p>
+        </div>
+
+        <div style="display:grid;gap:1.25rem;">
+          <div style="border:1px solid #2a2620;border-radius:12px;padding:1.5rem;">
+            <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.3rem;color:#f0ebe0;margin:0 0 0.5rem;">Manage your subscription</h2>
+            <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:0.95rem;line-height:1.7;color:#a39e92;margin:0;">
+              CardHabit Pro is billed through Apple. Manage or cancel any time in the iOS Settings app under your Apple Account &rsaquo; Subscriptions. In the app, tap Restore Purchases on the paywall or in Profile to re-sync an existing subscription.
+            </p>
+          </div>
+          <div style="border:1px solid #2a2620;border-radius:12px;padding:1.5rem;">
+            <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.3rem;color:#f0ebe0;margin:0 0 0.5rem;">Delete your account</h2>
+            <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:0.95rem;line-height:1.7;color:#a39e92;margin:0;">
+              Open the app, go to Profile, and tap Delete Account. This permanently removes your cards, streaks, and progress. You can also email us to request deletion.
+            </p>
+          </div>
+          <div style="border:1px solid #2a2620;border-radius:12px;padding:1.5rem;">
+            <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.3rem;color:#f0ebe0;margin:0 0 0.5rem;">Common questions</h2>
+            <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:0.95rem;line-height:1.7;color:#a39e92;margin:0;">
+              How the daily ritual works, what friends can do, archetypes, and pricing are covered on the <a href="/faq" style="color:#c9a84c;text-decoration:none;border-bottom:1px solid #4a4335;">FAQ</a> page.
+            </p>
+          </div>
+        </div>
+
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:0.85rem;color:#6f6a5f;text-align:center;margin:2.5rem 0 0;">
+          <a href="/privacy" style="color:#a39e92;text-decoration:none;border-bottom:1px solid #3a352c;">Privacy Policy</a>
+          &nbsp;&middot;&nbsp;
+          <a href="/terms" style="color:#a39e92;text-decoration:none;border-bottom:1px solid #3a352c;">Terms of Use</a>
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+    <SiteFooter />
+  </main>
+</BaseLayout>
