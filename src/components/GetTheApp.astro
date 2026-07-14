@@ -1,0 +1,46 @@
+---
+const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
+---
+
+<section
+  id="download"
+  style="background:#100f12;border-top:0.5px solid rgba(201,168,76,0.18);border-bottom:0.5px solid rgba(201,168,76,0.18);padding:5rem 1.5rem;text-align:center;"
+>
+  <div style="max-width:600px;margin:0 auto;">
+    <!-- Eyebrow -->
+    <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+      Available now
+    </p>
+
+    <!-- H2 -->
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,6.5vw,3.25rem);line-height:1.05;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 1.5rem;">
+      Your first hand is <em style="color:#c9a84c;font-style:italic;">waiting.</em>
+    </h2>
+
+    <!-- Lede -->
+    <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.65;color:#a39e92;max-width:480px;margin:0 auto 2.5rem;">
+      CardHabit is live on the iOS App Store. Free to start. Founder pricing on Pro is live in the app, $4.99 a month or $39.99 a year with a 7-day free trial, locked in at signup.
+    </p>
+
+    <!-- CTA -->
+    <a
+      href={STORE_URL}
+      class="store-cta"
+      data-appstore-cta="section"
+      style="display:inline-block;background:#c9a84c;color:#0c0c0e;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;text-decoration:none;transition:background 0.2s,transform 0.2s;border:1px solid #c9a84c;"
+    >
+      Download on the App Store
+    </a>
+
+    <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin:1.25rem 0 0;">
+      iOS 18 and later &nbsp;·&nbsp; Free to download
+    </p>
+  </div>
+</section>
+
+<style>
+  .store-cta:hover {
+    background: #d9b86b;
+    transform: translateY(-1px);
+  }
+</style>

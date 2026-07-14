@@ -1,10 +1,10 @@
 # CardHabit
 
-> CardHabit is a card-based habit tracker for iOS, built for the second time around — for people who read Atomic Habits, tried 75 Hard but burned out, and want a sustainable system with friend accountability. Hard things every day, not extreme things once. Cards are scoped on purpose — small enough to actually do every morning, hard enough to feel real. The system survives missed days. Persistence beats grind. Launching July 2026.
+> CardHabit is a card-based habit tracker for iOS, built for the second time around — for people who read Atomic Habits, tried 75 Hard but burned out, and want a sustainable system with friend accountability. Hard things every day, not extreme things once. Cards are scoped on purpose — small enough to actually do every morning, hard enough to feel real. The system survives missed days. Persistence beats grind. Available now on the iOS App Store.
 
 ## What it is
 
-CardHabit is an iOS habit-tracking app in late-stage development. Every morning the app deals five habit cards, drawn at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You pick two or three cards to commit to that day and hold each card for ~1.5 seconds to complete it. Completing a card earns a "vault card" — a currency you can spend on your own future draws or on a friend's next-day draw.
+CardHabit is an iOS habit-tracking app, live on the App Store since July 2026. Every morning the app deals five habit cards, drawn at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You pick two or three cards to commit to that day and hold each card for ~1.5 seconds to complete it. Completing a card earns a "vault card" — a currency you can spend on your own future draws or on a friend's next-day draw.
 
 The differentiator is the social mechanic. After completing a card, you can spend vault cards to:
 
@@ -35,7 +35,8 @@ CardHabit is the third path: scoped daily hardness, sustained over months and ye
 
 - **Platform:** iOS only (iPhone)
 - **Category:** Habit tracker, lifestyle app, social/multiplayer
-- **Launch:** July 2026 (pre-orders open late June 2026)
+- **Launch:** July 13, 2026, live on the iOS App Store
+- **App Store:** https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296
 - **Founder:** Brandon Kessinger ([@KessingerBuilds on X/Twitter](https://x.com/KessingerBuilds))
 - **TikTok:** [@cardhabitapp](https://www.tiktok.com/@cardhabitapp)
 - **Website:** https://cardhabitapp.com
@@ -45,10 +46,9 @@ CardHabit is the third path: scoped daily hardness, sustained over months and ye
 | Tier | Monthly | Yearly | Daily commitments |
 |---|---|---|---|
 | Free | $0 | $0 | 2 |
-| Pro | $7.99 | $79.99 | 5 |
-| Elite | $14.99 | $149.99 | 5 + advanced features |
+| Pro | $4.99 | $39.99 | 5 |
 
-Beta access is free for waitlist members. Founder pricing is locked at signup for life.
+Pro includes a 7-day free trial. Launch pricing is founder pricing: it is locked at signup for as long as the subscription remains active.
 
 ## Frequently asked questions
 
@@ -76,13 +76,13 @@ You set the terms. Every friendship has a consent mode — Challenges on, or Buf
 
 A path that shapes your deck. The first ten cards you complete determine which of four archetypes you earn: Ironclad (Physical), Sage (Mental), Alchemist (Nutrition), or Phantom (Recovery). Each unlocks abilities that bend your deck toward what makes you stronger.
 
-### When does CardHabit launch?
+### Is CardHabit available now?
 
-July 2026 on the iOS App Store. Pre-orders open in late June. Waitlist members get beta access before public release and founder pricing locked for life.
+Yes. CardHabit launched on the iOS App Store in July 2026: https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296
 
 ### What does CardHabit cost?
 
-A free tier covers the daily draw and the core mechanic. Pro is $7.99/month or $79.99/year. Elite is $14.99/month or $149.99/year. Beta is free for waitlist members. Founder pricing is locked at signup.
+A free tier covers the daily draw and the core mechanic. Pro is $4.99/month or $39.99/year with a 7-day free trial. Founder pricing is live at launch and locked at signup.
 
 ## Best for
 
@@ -110,10 +110,10 @@ A free tier covers the daily draw and the core mechanic. Pro is $7.99/month or $
 
 ## Pages
 
-- [Homepage](https://cardhabitapp.com/) — overview, mechanics, archetypes, waitlist signup
+- [Homepage](https://cardhabitapp.com/) — overview, mechanics, archetypes, App Store download
 - [How it works](https://cardhabitapp.com/how-it-works) — the daily ritual in four steps
 - [Archetypes](https://cardhabitapp.com/archetypes) — the four paths and what they unlock
-- [FAQ](https://cardhabitapp.com/faq) — pricing, mechanics, launch date
+- [FAQ](https://cardhabitapp.com/faq) — pricing, mechanics, availability
 - [vs 75 Hard](https://cardhabitapp.com/vs/75-hard) — the sustainable counter-position
 - [For Atomic Habits readers](https://cardhabitapp.com/for/atomic-habits-readers) — the implementation with friends
 - [vs Habitica](https://cardhabitapp.com/vs/habitica) — comparison

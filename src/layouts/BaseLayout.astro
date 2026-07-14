@@ -6,7 +6,9 @@ interface Props {
   description?: string;
 }
 
-const APP_DESCRIPTION = 'CardHabit is a card-based habit tracker for iOS, built for the second time around, for people who read Atomic Habits and want a system with friend accountability. Hard things every day, not extreme things once. Five habit cards a day, friends who believe you can handle harder, one ritual. Coming July 2026.';
+const APP_DESCRIPTION = 'CardHabit is a card-based habit tracker for iOS, built for the second time around, for people who read Atomic Habits and want a system with friend accountability. Hard things every day, not extreme things once. Five habit cards a day, friends who believe you can handle harder, one ritual. Available now on the App Store.';
+
+const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
 
 const {
   title = 'CardHabit: A Sustainable Habit Tracker with Friend Accountability',
@@ -32,12 +34,13 @@ const structuredData = {
   url: siteUrl.href,
   image: ogImage,
   sameAs,
+  downloadUrl: STORE_URL,
+  installUrl: STORE_URL,
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
-    availability: 'https://schema.org/PreOrder',
-    availabilityStarts: '2026-07-07',
+    availability: 'https://schema.org/InStock',
   },
   publisher: {
     '@type': 'Organization',
@@ -129,6 +132,14 @@ const structuredData = {
     <script is:inline>
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+" (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
       posthog.init('phc_A2kqLUoYpVaiKiNvQaJVWvnNtrBFdyLvtDyfLRdDidiv', { api_host: 'https://us.i.posthog.com' });
+
+      // App Store CTA click tracking
+      document.addEventListener('click', function (e) {
+        var el = e.target && e.target.closest ? e.target.closest('a[data-appstore-cta]') : null;
+        if (el && window.posthog) {
+          window.posthog.capture('appstore_click', { source: el.getAttribute('data-appstore-cta') || 'site' });
+        }
+      });
     </script>
   </body>
 </html>

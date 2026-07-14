@@ -3,11 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Ornament from '../components/Ornament.astro';
 import Faq from '../components/Faq.astro';
-import Waitlist from '../components/Waitlist.astro';
+import GetTheApp from '../components/GetTheApp.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-const title = 'CardHabit FAQ: Pricing, Mechanics, Launch Date';
-const description = 'Frequently asked questions about CardHabit. What is it, how the daily ritual works, what friends can actually do, what archetypes are, when it launches (July 2026), and pricing (free tier plus CardHabit Pro with a 7-day trial at founder pricing).';
+const title = 'CardHabit FAQ: Pricing, Mechanics, Availability';
+const description = 'Frequently asked questions about CardHabit. What is it, how the daily ritual works, what friends can actually do, what archetypes are, where to get it (live now on the iOS App Store), and pricing (free tier plus CardHabit Pro with a 7-day trial at founder pricing).';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -23,7 +23,7 @@ const description = 'Frequently asked questions about CardHabit. What is it, how
           Frequently asked <em style="color:#c9a84c;font-style:italic;">questions.</em>
         </h1>
         <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:620px;margin:0 auto;">
-          What CardHabit is, how the daily ritual works, what friends can actually do, when it launches, what it costs. All the answers in one place.
+          What CardHabit is, how the daily ritual works, what friends can actually do, where to get it, what it costs. All the answers in one place.
         </p>
       </div>
     </section>
@@ -48,7 +48,7 @@ const description = 'Frequently asked questions about CardHabit. What is it, how
 
     <Ornament />
 
-    <Waitlist />
+    <GetTheApp />
   </main>
   <SiteFooter />
 </BaseLayout>

@@ -9,7 +9,7 @@ const description = 'A friend invited you to CardHabit, the card-based habit tra
 
 // LIVE on the App Store as of 2026-07-13. (Beta-era TestFlight link retired:
 // testflight.apple.com/join/yYrE4GXV)
-const TESTFLIGHT_URL = 'https://apps.apple.com/app/id6768107296';
+const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -43,8 +43,8 @@ const TESTFLIGHT_URL = 'https://apps.apple.com/app/id6768107296';
         </div>
 
         <!-- CTA: copies the invite link (the app detects it after install),
-             then forwards to TestFlight during beta / App Store at launch -->
-        <div style="margin-top:2.5rem;" data-store-url={TESTFLIGHT_URL} id="cta-wrap">
+             then forwards to the App Store -->
+        <div style="margin-top:2.5rem;" data-store-url={STORE_URL} id="cta-wrap">
           <button
             id="copy-go"
             style="display:inline-block;background:#c9a84c;color:#0c0c0e;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;border:1px solid #c9a84c;cursor:pointer;"
@@ -53,9 +53,6 @@ const TESTFLIGHT_URL = 'https://apps.apple.com/app/id6768107296';
           </button>
           <p id="copy-note" style="display:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:#c9a84c;margin:1rem 0 0;">
             Copied. CardHabit will find it when you open the app.
-          </p>
-          <p id="beta-pending" style="display:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:#c9a84c;margin:1rem 0 0;">
-            The beta opens this week. Your code is copied and waiting.
           </p>
           <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin-top:1.25rem;">
             Already have CardHabit? Tap your invite link again and it opens in the app.
@@ -80,18 +77,15 @@ const TESTFLIGHT_URL = 'https://apps.apple.com/app/id6768107296';
     }
     const btn = document.getElementById('copy-go');
     const storeUrl = document.getElementById('cta-wrap').getAttribute('data-store-url') || '';
-    if (!code) { btn.textContent = storeUrl ? 'Get CardHabit' : 'Coming this week'; }
+    if (!code) { btn.textContent = 'Get CardHabit'; }
     btn.addEventListener('click', async () => {
       if (code) {
         // Copy the FULL link: the app's clipboard detection looks for a URL.
         try { await navigator.clipboard.writeText('https://cardhabitapp.com/invite/' + code); } catch (e) {}
       }
-      if (storeUrl) {
-        if (code) document.getElementById('copy-note').style.display = 'block';
-        setTimeout(() => { window.location.href = storeUrl; }, code ? 700 : 0);
-      } else if (code) {
-        document.getElementById('beta-pending').style.display = 'block';
-      }
+      if (window.posthog) window.posthog.capture('appstore_click', { source: 'invite' });
+      if (code) document.getElementById('copy-note').style.display = 'block';
+      setTimeout(() => { window.location.href = storeUrl; }, code ? 700 : 0);
     });
   </script>
 </BaseLayout>
