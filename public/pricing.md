@@ -1,6 +1,6 @@
 # Pricing — CardHabit (iOS)
 
-Last updated: 2026-07-14. Prices in USD, billed through the Apple App Store.
+Last updated: 2026-07-15. Prices in USD, billed through the Apple App Store.
 App Store page: https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296
 
 ## Free
@@ -18,13 +18,12 @@ App Store page: https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768
 - Free trial: 7 days
 - More daily commits than Free
 - Larger hand: hold more vault cards at once
-- Better odds on action-card drops
 - Family Sharing enabled
 
 ## Notes for evaluation
 
 - No ads on any tier.
-- The full game is playable free; Pro raises intensity (more commits, bigger hand, better drop odds) rather than gating core features.
+- The full game is playable free; Pro raises intensity (commit to all five daily cards, hold 7 vault cards instead of 3) rather than gating core features.
 - Subscriptions are managed through the App Store; cancel anytime in iOS Settings.
 - Privacy policy: https://cardhabitapp.com/privacy
 - Terms (Apple standard EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
