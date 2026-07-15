@@ -119,6 +119,7 @@ A free tier covers the daily draw and the core mechanic. Pro is $4.99/month or $
 - [vs Habitica](https://cardhabitapp.com/vs/habitica) — comparison
 - [vs Streaks](https://cardhabitapp.com/vs/streaks) — comparison
 - [vs Finch](https://cardhabitapp.com/vs/finch) — comparison
+- [Pricing (machine-readable)](https://cardhabitapp.com/pricing.md) — tiers, prices, limits
 - [Privacy Policy](https://cardhabitapp.com/privacy)
 - [Terms of Service](https://cardhabitapp.com/terms)
 
