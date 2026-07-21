@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Ornament from '../../components/Ornament.astro';
+import GetTheApp from '../../components/GetTheApp.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const title = 'CardHabit for 75 Hard Quitters: Discipline Without the Burnout';
+const description = 'You started 75 Hard, pushed hard, and still didn\'t finish, or you did and couldn\'t keep it going. CardHabit is a daily card ritual built for the same discipline without the all-or-nothing collapse: scoped cards, friends who raise the bar, a system that survives a missed day.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          For 75 Hard quitters
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;">
+          You didn't fail. <em style="color:#c9a84c;font-style:italic;">The math did.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:640px;margin:0 auto;">
+          Two 45-minute workouts, a gallon of water, a diet with no cheat days, ten pages, a progress photo. Every day. Miss one requirement on Day 61 and you start over at Day 1. That's not a discipline problem. That's a design that was never built to survive a bad Tuesday. CardHabit keeps the discipline and drops the all-or-nothing.
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:3rem 1.5rem;">
+      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;">
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">What 75 Hard actually proved</h2>
+        <p style="margin:0 0 1rem;">Whether you finished or not, you learned something true: you can do hard things on purpose. That's not nothing. Most people never test it. The program's binary structure, restart from Day 1 on any miss, was the point while you were in it. It's also why almost nobody keeps the program running past the 75 days. The system was built to prove a ceiling exists, not to hold you at that ceiling for year two.</p>
+        <p style="margin:0 0 2rem;">If you're reading this because you're mid-restart, or because you finished once and the habits quietly evaporated by October, the problem was never your discipline. It was a system with no room for a human life.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">What CardHabit does instead</h2>
+        <p style="margin:0 0 1.5rem;">Every morning CardHabit deals five habit cards at random across Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to what you can hold, not everything on the list. Cards are scoped on purpose: small enough to actually do before your day starts, hard enough to feel real. Hold a card for a beat and a half to lock it in.</p>
+        <p style="margin:0 0 1.5rem;">Miss a day and your streak resets. That's it. No restart from zero, no purity test, no photo audit. A new streak starts the next morning, because a missed Tuesday isn't a referendum on your character. Recovery Mode pauses incoming friend Challenges for a week when you need it, invisible to everyone but you.</p>
+        <p style="margin:0 0 2rem;">The accountability is real, just aimed differently. Friends can spend earned vault cards to raise the bar on your next draw, swap in a harder card, or hide the hand so you pick blind. It reads as a dare, not a drill sergeant. A Challenge from a friend means they believe you can handle harder. You show up anyway. That's the same discipline 75 Hard asked for, minus the cliff at Day 76.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Hard things every day. Not extreme things, once.</h2>
+        <p style="margin:0;">You don't need another 75-day program to prove you can push. You already know. What you need is a system built to survive the years after the program ends. CardHabit is the version of hard that lasts.</p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:4rem 1.5rem;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
+          Keep reading
+        </p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:0;">
+          <a href="/vs/75-hard" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs 75 Hard</a> &nbsp;·&nbsp; <a href="/how-it-works" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">How CardHabit works</a> &nbsp;·&nbsp; <a href="/for/atomic-habits-readers" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">For Atomic Habits readers</a>
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <GetTheApp source="for-75hard-quitters" />
+  </main>
+  <SiteFooter />
+</BaseLayout>

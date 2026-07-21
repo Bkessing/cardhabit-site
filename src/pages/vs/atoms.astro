@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Ornament from '../../components/Ornament.astro';
+import GetTheApp from '../../components/GetTheApp.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const title = 'CardHabit vs Atoms: Two Takes on the Atomic Habits Framework';
+const description = 'CardHabit compared to Atoms, the official Atomic Habits app. Atoms is the canonical implementation of James Clear\'s Four Laws. CardHabit takes the same identity-based-habit idea and adds a daily card draw with rarity tiers and a friend layer that raises the bar on tomorrow\'s hand.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          Comparison
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;">
+          CardHabit <em style="color:#c9a84c;font-style:italic;">vs Atoms.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:640px;margin:0 auto;">
+          Atoms is James Clear's own app, built to be the direct implementation of Atomic Habits. CardHabit reads the same book and builds a different kind of system: a daily card draw with stakes, rarity, and friends who can raise the bar on tomorrow. Both take identity-based habits seriously. They diverge on how you're held to them.
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:3rem 1.5rem;">
+      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;">
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">The short version</h2>
+        <p style="margin:0 0 2rem;">Choose Atoms if you want the direct, official implementation of the Four Laws from the author himself, with habit science content and a minimalist tracker built around the book's structure. Choose CardHabit if you've read the book, know the framework, and want a daily ritual with real stakes: a random morning draw, rarity tiers, and friends who can make tomorrow's hand harder because they believe you can handle it.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">At a glance</h2>
+
+        <div style="overflow-x:auto;margin:0 0 2rem;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+            <thead>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.35);">
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Feature</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">CardHabit</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Atoms</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Platform</td><td style="padding:0.85rem 0.5rem;">iOS</td><td style="padding:0.85rem 0.5rem;">iOS, Android</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Core mechanic</td><td style="padding:0.85rem 0.5rem;">Daily 5-card draw, scoped commitments</td><td style="padding:0.85rem 0.5rem;">Identity-based habit tracking, Four Laws framework</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Social mechanic</td><td style="padding:0.85rem 0.5rem;">Friends raise the bar on tomorrow's draw</td><td style="padding:0.85rem 0.5rem;">Community feed, light friend accountability</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Gamification</td><td style="padding:0.85rem 0.5rem;">Rarity tiers, vault cards, emergent archetypes</td><td style="padding:0.85rem 0.5rem;">Streaks, progress charts</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Free tier</td><td style="padding:0.85rem 0.5rem;">2 daily commits</td><td style="padding:0.85rem 0.5rem;">1 habit tracked</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Missed-day system</td><td style="padding:0.85rem 0.5rem;">Streak resets, Recovery Mode, friend streak shields</td><td style="padding:0.85rem 0.5rem;">No dedicated missed-day system</td></tr>
+              <tr><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Price</td><td style="padding:0.85rem 0.5rem;">Free, Pro $4.99/mo or $39.99/yr (7-day trial)</td><td style="padding:0.85rem 0.5rem;">Subscription, roughly $70-120/yr depending on billing</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Where Atoms wins</h2>
+        <p style="margin:0 0 1rem;">Atoms is the official app, built with James Clear's own team, and it stays closest to the book's actual language: the Four Laws, habit stacking, identity votes. If you want a minimalist tracker that mirrors the book chapter for chapter, with habit-science lessons built in, Atoms is the direct line to the source. It's also the broader platform: iOS and Android, where CardHabit is iOS only.</p>
+        <p style="margin:0 0 2rem;">If what you need is fidelity to the book itself, not a different system inspired by it, Atoms is the more literal choice.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Where CardHabit is different</h2>
+        <p style="margin:0 0 1rem;">CardHabit takes the same underlying idea, small actions compound, identity is built through repetition, and turns it into something with visible stakes. The morning draw across Physical, Mental, Nutrition, Recovery, and Wildcard means you don't design your own habit list from a blank page; the app puts a hand in front of you and you commit to what you can hold. Completing cards earns vault cards, a currency with a rarity structure (Common through Legendary), and after your first ten completed cards, an archetype: Ironclad, Sage, Alchemist, or Phantom. You don't pick your identity. You earn it.</p>
+        <p style="margin:0;">The friend layer is the biggest divergence. In CardHabit, friends can spend earned vault cards to raise the bar on your next draw, swap in a harder card, or hide the hand so you pick blind. It's built as the core loop, not an add-on feature. If Atoms is the book made into software, CardHabit is the book made into a ritual you play with people who believe you can handle harder.</p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:4rem 1.5rem;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
+          Other comparisons
+        </p>
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:0;">
+          <a href="/for/atomic-habits-readers" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">For Atomic Habits readers</a> &nbsp;·&nbsp; <a href="/vs/habitica" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Habitica</a> &nbsp;·&nbsp; <a href="/vs/streaks" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Streaks</a>
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <GetTheApp source="vs-atoms" />
+  </main>
+  <SiteFooter />
+</BaseLayout>

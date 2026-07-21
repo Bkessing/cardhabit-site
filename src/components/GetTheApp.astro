@@ -1,4 +1,10 @@
 ---
+interface Props {
+  source?: string;
+}
+
+const { source = 'section' } = Astro.props;
+
 const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
 ---
 
@@ -26,7 +32,7 @@ const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6
     <a
       href={STORE_URL}
       class="store-cta"
-      data-appstore-cta="section"
+      data-appstore-cta={source}
       style="display:inline-block;background:#c9a84c;color:#0c0c0e;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;text-decoration:none;transition:background 0.2s,transform 0.2s;border:1px solid #c9a84c;"
     >
       Download on the App Store
