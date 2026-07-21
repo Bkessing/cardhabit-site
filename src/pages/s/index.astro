@@ -38,10 +38,23 @@ const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6
     function goShareRedirect() {
       var params = new URLSearchParams(window.location.search);
       var src = params.get('src') || 'unknown';
-      if (window.posthog) {
-        window.posthog.capture('share_link_opened', { src: src });
+      var done = false;
+      function go() {
+        if (done) return;
+        done = true;
+        window.location.replace(STORE_URL);
       }
-      window.location.replace(STORE_URL);
+      if (window.posthog && typeof window.posthog.capture === 'function') {
+        try { window.posthog.capture('share_link_opened', { src: src }); } catch (e) {}
+        // Give the event a moment to leave the page before navigating away —
+        // redirecting in the same tick cancels PostHog's in-flight request and
+        // loses the click. The visible button below covers anyone impatient.
+        setTimeout(go, 450);
+      } else {
+        go();
+      }
+      // Absolute safety net: never strand a visitor on /s.
+      setTimeout(go, 1500);
     }
     document.addEventListener('DOMContentLoaded', goShareRedirect);
   </script>
