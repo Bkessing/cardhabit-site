@@ -1,4 +1,4 @@
-# Pricing — CardHabit (iOS)
+# Pricing: CardHabit (iOS)
 
 Last updated: 2026-07-15. Prices in USD, billed through the Apple App Store.
 App Store page: https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296

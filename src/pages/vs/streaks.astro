@@ -2,14 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Ornament from '../../components/Ornament.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import GetTheApp from '../../components/GetTheApp.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'CardHabit vs Streaks: Solo Checkbox vs Friend-Accountable Habit System';
 const description = 'Streaks is a quiet checkbox habit tracker. CardHabit is a daily card ritual for second-time-around habit builders who want friend accountability without solo grinding. Different bets on what makes habits stick.';
+
+// Content last substantively changed: July 2026. Update by hand when the page changes.
+const updated = 'July 2026';
 ---
 
 <BaseLayout title={title} description={description}>
+  <Breadcrumbs section="Comparisons" name="CardHabit vs Streaks" />
   <Nav />
   <main>
     <section style="padding:5rem 1.5rem 3rem;text-align:center;">
@@ -22,6 +28,9 @@ const description = 'Streaks is a quiet checkbox habit tracker. CardHabit is a d
         </h1>
         <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:620px;margin:0 auto;">
           Streaks is one of the best-designed checkbox habit apps on iOS. CardHabit answers a different question. Both are premium iOS-first apps with strong design; the difference is whether you want a solitary focus tool or a daily ritual that friends can play with.
+        </p>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin:1.5rem 0 0;">
+          Updated {updated}
         </p>
       </div>
     </section>
@@ -61,23 +70,24 @@ const description = 'Streaks is a quiet checkbox habit tracker. CardHabit is a d
         <p style="margin:0 0 2rem;">If you want a tool that gets out of your way and just keeps score, Streaks is the answer.</p>
 
         <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Where CardHabit is different</h2>
-        <p style="margin:0 0 1rem;">CardHabit isn't trying to be quiet. The draw is randomized to a point: your archetype shapes the deck, but the morning hand surprises you. The hold-to-complete gesture is deliberate. The vault drops a card every time you finish one. The social layer (friends spending vault cards on tomorrow's draw) is the whole point.</p>
+        <p style="margin:0 0 2rem;">CardHabit isn't trying to be quiet. The draw is randomized to a point: your archetype shapes the deck, but the morning hand surprises you. The hold-to-complete gesture is deliberate. The vault drops a card every time you finish one. The social layer is the whole point.</p>
+
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#c9a84c;margin:0 0 0.5rem;">Fixed tasks vs a dealt hand</h3>
+        <p style="margin:0 0 1.5rem;">Streaks asks you to define up to 24 tasks and repeat them. CardHabit deals a fresh hand of five habit cards each morning across Physical, Mental, Nutrition, Recovery, and Wildcard, so hard days and easy days get different hands. You commit to what you can hold before the day starts, and completed cards are immune to anything a friend plays later.</p>
+
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#c9a84c;margin:0 0 0.5rem;">Other players at the table</h3>
+        <p style="margin:0 0 1.5rem;">Streaks is solo by design. In CardHabit, your friend Alex can spend cards he earned to play a Challenge card into your next draw: Raise the Bar swaps in a harder card, Fog of War hides the hand so you pick blind, The Tempter dares you to hold the line. He can also send Buffs like Double XP, Streak Shield, Second Wind, or Gilded Draw. Every Challenge is a friend saying they believe you can handle harder, and you set the consent terms per friendship.</p>
+
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#c9a84c;margin:0 0 0.5rem;">A streak that isn't the whole game</h3>
+        <p style="margin:0 0 1.5rem;">In Streaks, the streak count is the scoreboard. In CardHabit it's one system among several: XP builds toward an archetype (Ironclad, Sage, Alchemist, or Phantom, earned from your first ten completed cards), the vault holds what you've banked, and a Streak Shield from a friend can carry you through a missed day without pretending the miss didn't happen.</p>
+
         <p style="margin:0;">CardHabit treats habits as a game with stakes and other players. Streaks treats them as a personal contract. Different bets on what motivates you.</p>
       </div>
     </section>
 
     <Ornament />
 
-    <section style="padding:4rem 1.5rem;text-align:center;">
-      <div style="max-width:680px;margin:0 auto;">
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
-          Other comparisons
-        </p>
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:0;">
-          <a href="/vs/habitica" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Habitica</a> &nbsp;·&nbsp; <a href="/vs/finch" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Finch</a> &nbsp;·&nbsp; <a href="/how-it-works" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">How CardHabit works</a>
-        </p>
-      </div>
-    </section>
+    <RelatedPages current="/vs/streaks" />
 
     <Ornament />
 

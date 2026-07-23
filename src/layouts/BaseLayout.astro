@@ -10,6 +10,19 @@ const APP_DESCRIPTION = 'CardHabit is a card-based habit tracker for iOS, built 
 
 const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
 
+// The canonical entity sentence. Used verbatim on every surface (site, App
+// Store, directories) so answer engines can pattern-match one identity string.
+const CANONICAL_ENTITY =
+  'CardHabit is an iOS daily challenge app that deals you five habit cards each morning, built on trading-card-game mechanics.';
+
+// Exact App Store title. Sanctioned keyword surface; matches the listing verbatim.
+const APP_STORE_TITLE = 'CardHabit: TCG Habit Tracker';
+
+// Refresh on deploy (hardcoded on purpose so builds stay hermetic):
+//   curl -s "https://itunes.apple.com/lookup?id=6768107296" | jq '.results[0].averageUserRating, .results[0].userRatingCount'
+// Last refreshed 2026-07-22: averageUserRating 5, userRatingCount 2.
+const APP_RATING = { value: 5, count: 2 };
+
 const {
   title = 'CardHabit: A Sustainable Habit Tracker with Friend Accountability',
   description = APP_DESCRIPTION,
@@ -28,18 +41,28 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'MobileApplication',
   name: 'CardHabit',
-  description: APP_DESCRIPTION,
+  alternateName: APP_STORE_TITLE,
+  description: CANONICAL_ENTITY,
   datePublished: '2026-07-13',
   // Build-time stamp: every deploy refreshes the freshness signal AI engines
-  // weight. Cheap and honest — deploys only happen when content changes.
+  // weight. Cheap and honest; deploys only happen when content changes.
   dateModified: new Date().toISOString().split('T')[0],
   applicationCategory: 'LifestyleApplication',
   operatingSystem: 'iOS',
   url: siteUrl.href,
   image: ogImage,
-  sameAs,
+  sameAs: [...sameAs, STORE_URL],
   downloadUrl: STORE_URL,
   installUrl: STORE_URL,
+  ...(APP_RATING.count >= 1 && {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: APP_RATING.value,
+      ratingCount: APP_RATING.count,
+      bestRating: 5,
+      worstRating: 1,
+    },
+  }),
   offers: {
     '@type': 'Offer',
     price: '0',

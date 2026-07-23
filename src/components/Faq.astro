@@ -1,8 +1,26 @@
 ---
+interface Props {
+  // 'full' renders every question (used on /faq).
+  // 'subset' renders a 4-question homepage subset with a link to /faq,
+  // and the FAQPage JSON-LD covers only the visible questions (no verbatim
+  // duplication of the full set across two URLs).
+  variant?: 'full' | 'subset';
+}
+
+const { variant = 'full' } = Astro.props;
+
 const faqs = [
   {
     q: 'What is CardHabit?',
     a: 'CardHabit is a daily challenge for the second time around, for people who read Atomic Habits, tried 75 Hard, and want a sustainable system instead of an extreme one. Every morning you draw five habit cards at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to what you can hold. Your friends can spend earned vault cards to raise the bar on tomorrow\'s draw, because they believe you can handle harder.',
+  },
+  {
+    q: 'What kind of app is CardHabit?',
+    a: 'CardHabit is an iOS daily challenge app that deals you five habit cards each morning, built on trading-card-game mechanics. You commit to the cards you can hold, and friends play Challenge cards into your day, like Raise the Bar or The Tempter. The habit is the byproduct; the challenge is the product.',
+  },
+  {
+    q: 'Is CardHabit the same as Habit Card or cardhabit.com?',
+    a: 'No. CardHabit is an iOS daily challenge app that deals you five habit cards each morning, built on trading-card-game mechanics. It lives at cardhabitapp.com. It is not affiliated with cardhabit.com, and it is not Habit Card, a tile-grid tracker. The App Store listing is CardHabit: TCG Habit Tracker (id 6768107296).',
   },
   {
     q: 'Who is CardHabit for?',
@@ -42,10 +60,20 @@ const faqs = [
   },
 ];
 
+const subsetQuestions = [
+  'What is CardHabit?',
+  'Is CardHabit the same as Habit Card or cardhabit.com?',
+  'Is this another 75 Hard?',
+  'What does CardHabit cost?',
+];
+
+const visibleFaqs =
+  variant === 'subset' ? faqs.filter((f) => subsetQuestions.includes(f.q)) : faqs;
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqs.map((item) => ({
+  mainEntity: visibleFaqs.map((item) => ({
     '@type': 'Question',
     name: item.q,
     acceptedAnswer: {
@@ -71,7 +99,7 @@ const faqSchema = {
 
     <!-- FAQ list -->
     <div style="max-width:640px;margin:0 auto;">
-      {faqs.map((item, i) => (
+      {visibleFaqs.map((item, i) => (
         <div
           class="fade-in"
           style={`padding:2rem 0;${i > 0 ? 'border-top:0.5px solid rgba(201,168,76,0.18);' : ''}`}
@@ -85,6 +113,12 @@ const faqSchema = {
         </div>
       ))}
     </div>
+
+    {variant === 'subset' && (
+      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:2.5rem 0 0;text-align:center;">
+        <a href="/faq" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">More questions, answered on the FAQ page</a>
+      </p>
+    )}
 
   </div>
 </section>

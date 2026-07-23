@@ -2,14 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Ornament from '../../components/Ornament.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import GetTheApp from '../../components/GetTheApp.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'CardHabit vs Habitica: A Sustainable Alternative to RPG Habit Tracking';
 const description = 'How CardHabit compares to Habitica for second-time-around habit builders. Habitica is an open RPG over a custom to-do list. CardHabit is a structured five-card daily ritual built for people who burned out on extreme systems and want sustainable accountability with friends.';
+
+// Content last substantively changed: July 2026. Update by hand when the page changes.
+const updated = 'July 2026';
 ---
 
 <BaseLayout title={title} description={description}>
+  <Breadcrumbs section="Comparisons" name="CardHabit vs Habitica" />
   <Nav />
   <main>
     <section style="padding:5rem 1.5rem 3rem;text-align:center;">
@@ -22,6 +28,9 @@ const description = 'How CardHabit compares to Habitica for second-time-around h
         </h1>
         <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:620px;margin:0 auto;">
           Both are gamified habit apps. They're built for different people. Habitica is an open RPG you customize forever. CardHabit is a structured daily ritual for the second-time-around habit builder: someone who read Atomic Habits, tried 75 Hard, and wants a sustainable system with friend accountability instead of a fantasy MMO.
+        </p>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin:1.5rem 0 0;">
+          Updated {updated}
         </p>
       </div>
     </section>
@@ -72,16 +81,7 @@ const description = 'How CardHabit compares to Habitica for second-time-around h
 
     <Ornament />
 
-    <section style="padding:4rem 1.5rem;text-align:center;">
-      <div style="max-width:680px;margin:0 auto;">
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
-          Other comparisons
-        </p>
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:0;">
-          <a href="/vs/streaks" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Streaks</a> &nbsp;·&nbsp; <a href="/vs/finch" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Finch</a> &nbsp;·&nbsp; <a href="/how-it-works" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">How CardHabit works</a>
-        </p>
-      </div>
-    </section>
+    <RelatedPages current="/vs/habitica" />
 
     <Ornament />
 

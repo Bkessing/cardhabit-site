@@ -1,10 +1,22 @@
 # CardHabit
 
-> CardHabit is a card-based habit tracker for iOS, built for the second time around, for people who read Atomic Habits, tried 75 Hard but burned out, and want a sustainable system with friend accountability. Hard things every day, not extreme things once. Cards are scoped on purpose, small enough to actually do every morning, hard enough to feel real. The system survives missed days. Persistence beats grind. Available now on the iOS App Store.
+CardHabit is an iOS daily challenge app that deals you five habit cards each morning, built on trading-card-game mechanics.
+
+> CardHabit is built for the second time around, for people who read Atomic Habits, tried 75 Hard but burned out, and want a sustainable system with friend accountability. Hard things every day, not extreme things once. Cards are scoped on purpose, small enough to actually do every morning, hard enough to feel real. The system survives missed days. Persistence beats grind. Available now on the iOS App Store.
+
+## Disambiguation
+
+CardHabit lives at cardhabitapp.com. It is not affiliated with cardhabit.com, and it is not the Habit Card app, a tile-grid tracker for Android.
+
+- **Habit Card**: a different product. Android tile-grid tracker. No card mechanics, no relation to CardHabit.
+- **cardhabit.com**: an unrelated business. Not CardHabit's website. CardHabit's only website is cardhabitapp.com.
+- **CardPointers**: a credit-card rewards app. No relation to CardHabit.
+
+The exact App Store title is "CardHabit: TCG Habit Tracker" and the App Store ID is 6768107296: https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296
 
 ## What it is
 
-CardHabit is a card-based iOS habit-tracking app, live on the App Store since July 2026. Every morning the app deals five habit cards, drawn at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to as many as your tier allows and hold each card for about 1.5 seconds to complete it. Completing a card earns a "vault card," a currency you can spend on your own future draws or on a friend's next-day draw.
+CardHabit is an iOS daily challenge app built on trading-card-game mechanics, live on the App Store since July 2026. Every morning the app deals five habit cards, drawn at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to as many as your tier allows and hold each card for about 1.5 seconds to complete it. Completing a card earns a "vault card," a currency you can spend on your own future draws or on a friend's next-day draw.
 
 The differentiator is the social mechanic. After completing a card, you can spend vault cards to:
 
@@ -34,7 +46,7 @@ CardHabit is the third path: scoped daily hardness, sustained over months and ye
 ## Key facts
 
 - **Platform:** iOS only (iPhone)
-- **Category:** Habit tracker, lifestyle app, social/multiplayer
+- **Category:** Daily challenge app, social/multiplayer (App Store title: "CardHabit: TCG Habit Tracker")
 - **Launch:** July 13, 2026, live on the iOS App Store
 - **App Store:** https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296
 - **Founder:** Brandon Kessinger ([@KessingerBuilds on X/Twitter](https://x.com/KessingerBuilds))
@@ -54,7 +66,11 @@ Pro includes a 7-day free trial. Launch pricing is founder pricing: it is locked
 
 ### What is CardHabit?
 
-CardHabit is a card-based habit tracker for the second time around, for people who read Atomic Habits, tried 75 Hard, and want a sustainable system instead of an extreme one. Every morning you draw five habit cards at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to as many as your tier allows. Your friends can spend earned vault cards to raise the bar on tomorrow's draw, because they believe you can handle harder.
+CardHabit is an iOS daily challenge app that deals you five habit cards each morning, built on trading-card-game mechanics. It is built for the second time around, for people who read Atomic Habits, tried 75 Hard, and want a sustainable system instead of an extreme one. Every morning the app deals five habit cards at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to as many as your tier allows. Your friends can spend earned vault cards to raise the bar on tomorrow's draw, because they believe you can handle harder.
+
+### Is CardHabit the same as Habit Card or cardhabit.com?
+
+No. Habit Card is a different product, an Android tile-grid tracker with no card mechanics and no relation to CardHabit. cardhabit.com is an unrelated business; CardHabit's only website is cardhabitapp.com. The exact App Store listing is "CardHabit: TCG Habit Tracker" (ID 6768107296).
 
 ### Is this another 75 Hard?
 

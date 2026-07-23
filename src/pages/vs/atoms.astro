@@ -2,14 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Nav from '../../components/Nav.astro';
 import Ornament from '../../components/Ornament.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
 import GetTheApp from '../../components/GetTheApp.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'CardHabit vs Atoms: Two Takes on the Atomic Habits Framework';
 const description = 'CardHabit compared to Atoms, the official Atomic Habits app. Atoms is the canonical implementation of James Clear\'s Four Laws. CardHabit takes the same identity-based-habit idea and adds a daily card draw with rarity tiers and a friend layer that raises the bar on tomorrow\'s hand.';
+
+// Content last substantively changed: July 2026. Update by hand when the page changes.
+const updated = 'July 2026';
 ---
 
 <BaseLayout title={title} description={description}>
+  <Breadcrumbs section="Comparisons" name="CardHabit vs Atoms" />
   <Nav />
   <main>
     <section style="padding:5rem 1.5rem 3rem;text-align:center;">
@@ -22,6 +28,9 @@ const description = 'CardHabit compared to Atoms, the official Atomic Habits app
         </h1>
         <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:640px;margin:0 auto;">
           Atoms is James Clear's own app, built to be the direct implementation of Atomic Habits. CardHabit reads the same book and builds a different kind of system: a daily card draw with stakes, rarity, and friends who can raise the bar on tomorrow. Both take identity-based habits seriously. They diverge on how you're held to them.
+        </p>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin:1.5rem 0 0;">
+          Updated {updated}
         </p>
       </div>
     </section>
@@ -68,16 +77,7 @@ const description = 'CardHabit compared to Atoms, the official Atomic Habits app
 
     <Ornament />
 
-    <section style="padding:4rem 1.5rem;text-align:center;">
-      <div style="max-width:680px;margin:0 auto;">
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
-          Other comparisons
-        </p>
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#a39e92;margin:0;">
-          <a href="/for/atomic-habits-readers" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">For Atomic Habits readers</a> &nbsp;·&nbsp; <a href="/vs/habitica" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Habitica</a> &nbsp;·&nbsp; <a href="/vs/streaks" style="color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);">vs Streaks</a>
-        </p>
-      </div>
-    </section>
+    <RelatedPages current="/vs/atoms" />
 
     <Ornament />
 

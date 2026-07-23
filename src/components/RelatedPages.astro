@@ -1,0 +1,39 @@
+---
+// Related-pages mesh for the 7 money pages (/vs/* and /for/*) plus /how-it-works.
+// Every money page links to all of its siblings so none is footer-only.
+interface Props {
+  current?: string;
+}
+
+const { current = '' } = Astro.props;
+
+const pages = [
+  { href: '/vs/75-hard', label: 'CardHabit vs 75 Hard' },
+  { href: '/vs/habitica', label: 'CardHabit vs Habitica' },
+  { href: '/vs/streaks', label: 'CardHabit vs Streaks' },
+  { href: '/vs/finch', label: 'CardHabit vs Finch' },
+  { href: '/vs/atoms', label: 'CardHabit vs Atoms' },
+  { href: '/for/75-hard-quitters', label: 'If you quit 75 Hard' },
+  { href: '/for/atomic-habits-readers', label: 'If you read Atomic Habits' },
+  { href: '/how-it-works', label: 'How CardHabit works' },
+];
+
+const links = pages.filter((p) => p.href !== current);
+const linkStyle = 'color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);';
+---
+
+<section style="padding:4rem 1.5rem;text-align:center;">
+  <div style="max-width:680px;margin:0 auto;">
+    <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.5rem;">
+      Related
+    </p>
+    <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.9;color:#a39e92;margin:0;">
+      {links.map((l, i) => (
+        <>
+          {i > 0 && <span> &nbsp;·&nbsp; </span>}
+          <a href={l.href} style={linkStyle}>{l.label}</a>
+        </>
+      ))}
+    </p>
+  </div>
+</section>

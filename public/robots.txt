@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI / LLM crawlers — explicitly allowed for indexing and citation
+# AI / LLM crawlers: explicitly allowed for indexing and citation
 User-agent: GPTBot
 Allow: /
 

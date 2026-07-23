@@ -33,7 +33,7 @@ const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6
     // Log the click with the src param preserved, then hand off to the App
     // Store. Deferred to DOMContentLoaded so window.posthog (initialized by
     // BaseLayout's script, which sits later in the DOM) is guaranteed to
-    // exist before capture() is called — this inline script runs during
+    // exist before capture() is called; this inline script runs during
     // initial parse, before BaseLayout's own script tag has executed.
     function goShareRedirect() {
       var params = new URLSearchParams(window.location.search);
@@ -46,7 +46,7 @@ const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6
       }
       if (window.posthog && typeof window.posthog.capture === 'function') {
         try { window.posthog.capture('share_link_opened', { src: src }); } catch (e) {}
-        // Give the event a moment to leave the page before navigating away —
+        // Give the event a moment to leave the page before navigating away;
         // redirecting in the same tick cancels PostHog's in-flight request and
         // loses the click. The visible button below covers anyone impatient.
         setTimeout(go, 450);
