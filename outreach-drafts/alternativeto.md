@@ -22,13 +22,13 @@ Submission notes:
 **Short description:**
 
 ```
-TCG habit tracker for iOS. CardHabit is an iOS daily challenge app that deals you five habit cards each morning, built on trading-card-game mechanics.
+TCG habit tracker for iOS. CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day.
 ```
 
 **Full description:**
 
 ```
-CardHabit is an iOS daily challenge app that deals you five habit cards each morning, built on trading-card-game mechanics. You commit to the cards you can hold that day. Completed cards earn XP and build your streak. Friends can play Challenge cards into your day, like Raise the Bar or The Tempter, and Buffs like Streak Shield and Double XP change how a week plays out. Four archetypes (Ironclad, Sage, Alchemist, Phantom) fit different styles of discipline.
+CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. You commit to the cards you can hold that day. Completed cards earn XP and build your streak. Friends can play Challenge cards into your day, like Raise the Bar or The Tempter, and Buffs like Streak Shield and Double XP change how a week plays out. Four archetypes (Ironclad, Sage, Alchemist, Phantom) fit different styles of discipline.
 
 CardHabit lives at cardhabitapp.com. It is not affiliated with cardhabit.com, and it is not the Habit Card app, a tile-grid tracker for Android.
 ```

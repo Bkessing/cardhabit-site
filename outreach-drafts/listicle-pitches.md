@@ -41,7 +41,7 @@ A daily challenge that deals your habits as cards
 **Description:**
 
 ```
-CardHabit is an iOS daily challenge app that deals you five habit cards each morning, built on trading-card-game mechanics. You commit to the cards you can hold. Friends play Challenge cards into your day. The habit is the byproduct.
+CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. You commit to the cards you can hold. Friends play Challenge cards into your day. The habit is the byproduct.
 ```
 
 **Maker first comment:**
@@ -53,5 +53,5 @@ I made CardHabit after watching people around me quit 75 Hard and conclude they 
 ## 3. Indie Dev Monday "Look at Me" form blurb
 
 ```
-CardHabit is an iOS daily challenge app that deals you five habit cards each morning, built on trading-card-game mechanics. You commit to the cards you can hold, friends play Challenge cards into your day, and four archetypes shape how you play. Built solo with SwiftUI and Supabase. https://cardhabitapp.com
+CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. You commit to the cards you can hold, friends play Challenge cards into your day, and four archetypes shape how you play. Built solo with SwiftUI and Supabase. https://cardhabitapp.com
 ```
