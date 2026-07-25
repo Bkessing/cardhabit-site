@@ -12,51 +12,51 @@ const { variant = 'full' } = Astro.props;
 const faqs = [
   {
     q: 'What is CardHabit?',
-    a: 'CardHabit is a daily challenge for the second time around, for people who read Atomic Habits, tried 75 Hard, and want a sustainable system instead of an extreme one. Every morning you draw five habit cards at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to what you can handle. Your friends can spend earned vault cards to raise the bar on tomorrow\'s draw, because they believe you can handle more.',
+    a: 'CardHabit is a daily challenge app for people who read Atomic Habits, tried 75 Hard, and want a system they can sustain instead of one that burns them out. Every morning it deals you five habit cards drawn at random from Physical, Mental, Nutrition, Recovery, and Wildcard, and you commit to the ones you can handle. Friends who believe you can handle more can spend cards they have earned to raise the bar on your next morning\'s draw.',
   },
   {
     q: 'What kind of app is CardHabit?',
-    a: 'CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. Friends can play Challenge cards into your day, like Raise the Bar or The Tempter. The habit is the byproduct; the challenge is the product.',
+    a: 'CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. Friends can raise the stakes by playing Challenge cards, like Raise the Bar or The Tempter, into your next draw. You show up for the daily challenge, and the habits are what it leaves behind.',
   },
   {
     q: 'Is CardHabit the same as Habit Card or cardhabit.com?',
-    a: 'No. CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. It lives at cardhabitapp.com. It is not affiliated with cardhabit.com, and it is not Habit Card, a tile-grid tracker. The App Store listing is CardHabit: TCG Habit Tracker (id 6768107296).',
+    a: 'No. CardHabit is the iOS app that deals you five habit cards every morning, and its only website is cardhabitapp.com. It is not affiliated with cardhabit.com, and it is not Habit Card, a tile-grid tracker. The App Store listing is CardHabit: TCG Habit Tracker (id 6768107296).',
   },
   {
     q: 'Who is CardHabit for?',
-    a: 'People who read Atomic Habits and want a system instead of willpower. People who did 75 Hard, burned out, and want sustainable instead of extreme. People who want friend accountability without solo grinding. If you want hard things every day rather than extreme things once, this was built for you.',
+    a: 'CardHabit is for people who read Atomic Habits and want a system instead of willpower, and for people who did 75 Hard, burned out, and want something sustainable that still feels hard. If you want a daily challenge you can keep up for years, with friends involved instead of grinding alone, it was built for you.',
   },
   {
     q: 'Is this another 75 Hard?',
-    a: 'No, and the difference is the point. 75 Hard is extreme things once, a 75-day binary system. CardHabit is hard things every day. Cards are scoped on purpose: small enough to actually do every morning, hard enough to feel real. The system survives missed days. Persistence beats grind.',
+    a: 'No, and the difference is the point. 75 Hard asks for extreme things once, over a 75-day pass-or-fail run. CardHabit asks for hard things every day: each card is scoped small enough to actually do every morning and hard enough to feel real, and the system survives missed days instead of sending you back to Day 1.',
   },
   {
     q: 'What if I miss a day?',
-    a: 'Your streak ends, and a new one starts the next morning. There\'s no purity test, no restart-from-zero penance. Streak Shields from friends can carry you through a miss. The whole point: a system that survives missed days, not one that punishes you for being human.',
+    a: 'Your streak ends, and a new one starts the next morning. There is no purity test and no restart-from-zero penance. A friend can also send you a Streak Shield, a card that carries your streak through a missed day. The whole system is built to survive missed days rather than punish you for being human.',
   },
   {
     q: 'How does the daily ritual work?',
-    a: 'Draw five cards at dawn, a random mix from Physical, Mental, Nutrition, Recovery, Wildcard. Free commits to 2 cards a day; Pro commits to all 5. Hold a card to lock it in. Completing it earns a vault card you can spend on yourself or others.',
+    a: 'Every morning you draw five cards, a random mix from Physical, Mental, Nutrition, Recovery, and Wildcard. You hold a card to lock in your commitment: two cards a day on the free tier, all five on Pro. Each card you complete earns a vault card, a piece of currency you can spend on your own future draws or on a friend\'s.',
   },
   {
     q: 'What can your friends actually do?',
-    a: 'Friends can only touch tomorrow\'s draw, never today\'s commitments. They can raise the bar: swap in a harder card, lock in a commit before you\'ve seen the hand, or hide the draw so you pick blind. They can also send Buffs: extra XP, a streak shield, an upgrade. Every Challenge is a friend saying they believe you can handle more. Completed cards are immune. That\'s the deal.',
+    a: 'Friends can only touch tomorrow\'s draw, never today\'s commitments. They can raise the bar by swapping in a harder card, locking in a commitment before you\'ve seen the hand, or hiding the draw so you pick blind. They can also send Buffs, helpful cards like extra XP or a shield for your streak. Every Challenge is a friend saying they believe you can handle more, and once you complete a card it is immune to all of it.',
   },
   {
     q: 'What if my friends push too hard?',
-    a: 'You set the terms. Every friendship has a consent mode: Challenges on, or Buffs only. You can flip it any time. Recovery Mode pauses incoming Challenges for a week, no questions asked, invisible to your friends. The Challenge is a vote of confidence, but only if you\'ve opted in.',
+    a: 'You set the terms. Every friendship has a consent setting, Challenges on or Buffs only, and you can flip it at any time. Recovery Mode pauses incoming Challenges for a week, no questions asked and invisible to your friends. A Challenge only reads as a vote of confidence because you opted in to receiving it.',
   },
   {
     q: 'What is an archetype?',
-    a: 'A path that shapes your deck. The first ten cards you complete determine which of four archetypes you earn: Ironclad (Physical), Sage (Mental), Alchemist (Nutrition), or Phantom (Recovery). Each unlocks abilities that bend your deck toward what makes you stronger.',
+    a: 'An archetype is the play style you earn from the work you actually do. The first ten cards you complete determine which of four you get: Ironclad (Physical), Sage (Mental), Alchemist (Nutrition), or Phantom (Recovery). Each one unlocks abilities that bend your future draws toward what makes you stronger.',
   },
   {
     q: 'Is CardHabit available now?',
-    a: 'Yes. CardHabit launched on the iOS App Store in July 2026. Download the app, draw your first hand, and begin the ritual tomorrow morning.',
+    a: 'Yes. CardHabit launched on the iOS App Store in July 2026. Download the app today and draw your first hand of cards tomorrow morning.',
   },
   {
     q: 'What does CardHabit cost?',
-    a: 'A free tier covers the daily draw and the core mechanic. CardHabit Pro unlocks all five daily commits, a hand with no ceiling, and the full Ledger, with a 7-day free trial. Founder pricing is live in the app now: $4.99 a month or $39.99 a year, locked in at signup for as long as your subscription stays active.',
+    a: 'The free tier covers the daily draw and lets you commit to two cards a day. CardHabit Pro unlocks all five daily commits and the full record of everything you have played, with a 7-day free trial. Founder pricing is live in the app now: $4.99 a month or $39.99 a year, locked in at signup for as long as your subscription stays active.',
   },
 ];
 
