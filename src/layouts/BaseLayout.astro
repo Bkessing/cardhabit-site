@@ -90,6 +90,18 @@ const structuredData = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0c0c0e" />
 
+    <!--
+      Apple Smart App Banner. Safari on iOS renders a native install strip at
+      the top of every page, with a real App Store button.
+
+      Added 2026-07-30 because it was simply missing. Apple's own analytics show
+      ZERO web-referrer impressions above their reporting threshold, i.e. the
+      site was sending effectively nobody to the App Store, while every visitor
+      arriving on an iPhone had no native install affordance at all. The in-page
+      links are fine on desktop and easy to scroll past on mobile.
+    -->
+    <meta name="apple-itunes-app" content="app-id=6768107296" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
