@@ -1,18 +1,21 @@
 ---
 // Related-pages mesh for the 7 money pages (/vs/* and /for/*) plus /how-it-works.
 // Every money page links to all of its siblings so none is footer-only.
+import { competitors } from '../data/competitors';
+
 interface Props {
   current?: string;
 }
 
 const { current = '' } = Astro.props;
 
+// Comparison links derive from the data module so a new competitor joins the
+// mesh automatically instead of needing a second edit here.
 const pages = [
-  { href: '/vs/75-hard', label: 'CardHabit vs 75 Hard' },
-  { href: '/vs/habitica', label: 'CardHabit vs Habitica' },
-  { href: '/vs/streaks', label: 'CardHabit vs Streaks' },
-  { href: '/vs/finch', label: 'CardHabit vs Finch' },
-  { href: '/vs/atoms', label: 'CardHabit vs Atoms' },
+  ...competitors.map((c) => ({
+    href: `/vs/${c.slug}`,
+    label: `CardHabit vs ${c.name}`,
+  })),
   { href: '/for/75-hard-quitters', label: 'If you quit 75 Hard' },
   { href: '/for/atomic-habits-readers', label: 'If you read Atomic Habits' },
   { href: '/how-it-works', label: 'How CardHabit works' },

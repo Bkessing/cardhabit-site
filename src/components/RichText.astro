@@ -1,0 +1,46 @@
+---
+// Renders the two inline markers used in src/data/competitors.ts:
+//   {phrase}      gold italic emphasis
+//   [label](url)  link
+// Kept deliberately tiny. If a third marker is ever needed, that is the signal
+// the content belongs in MDX rather than a data module.
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+
+type Part =
+  | { t: 'text'; v: string }
+  | { t: 'em'; v: string }
+  | { t: 'link'; v: string; href: string };
+
+const parts: Part[] = [];
+const pattern = /\{([^}]+)\}|\[([^\]]+)\]\(([^)]+)\)/g;
+let cursor = 0;
+let m: RegExpExecArray | null;
+
+while ((m = pattern.exec(text)) !== null) {
+  if (m.index > cursor) parts.push({ t: 'text', v: text.slice(cursor, m.index) });
+  if (m[1] !== undefined) parts.push({ t: 'em', v: m[1] });
+  else parts.push({ t: 'link', v: m[2], href: m[3] });
+  cursor = m.index + m[0].length;
+}
+if (cursor < text.length) parts.push({ t: 'text', v: text.slice(cursor) });
+
+const emStyle = 'color:#c9a84c;font-style:italic;';
+const linkStyle =
+  'color:#c9a84c;text-decoration:none;border-bottom:0.5px solid rgba(201,168,76,0.4);';
+---
+
+{
+  parts.map((p) =>
+    p.t === 'em' ? (
+      <em style={emStyle}>{p.v}</em>
+    ) : p.t === 'link' ? (
+      <a href={p.href} style={linkStyle}>{p.v}</a>
+    ) : (
+      <Fragment>{p.v}</Fragment>
+    )
+  )
+}

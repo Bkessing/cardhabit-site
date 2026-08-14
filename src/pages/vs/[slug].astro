@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Ornament from '../../components/Ornament.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import GetTheApp from '../../components/GetTheApp.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import RichText from '../../components/RichText.astro';
+import { competitors } from '../../data/competitors';
+
+export function getStaticPaths() {
+  return competitors.map((c) => ({ params: { slug: c.slug }, props: { c } }));
+}
+
+const { c } = Astro.props;
+
+const S = {
+  eyebrow:
+    "font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;",
+  h1: "font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;",
+  em: 'color:#c9a84c;font-style:italic;',
+  // max-width is appended per page: the originals used 620px or 640px.
+  intro:
+    "font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;",
+  stamp:
+    "font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin:1.5rem 0 0;",
+  body:
+    "max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;",
+  // Margin is appended per block from the data, so it is absent here.
+  h2: "font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;",
+  h3: "font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#c9a84c;",
+  th: 'text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;',
+  td: 'padding:0.85rem 0.5rem;',
+  tdLead: 'padding:0.85rem 0.5rem;color:#f0ebe0;',
+};
+
+// Answer engines lift a structured comparison far more readily than prose. The
+// table is the part worth marking up, so it ships as an ItemList of the rows.
+const comparisonTable = c.blocks.find((b) => b.kind === 'table');
+const itemList = comparisonTable && {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `CardHabit vs ${c.name}: feature comparison`,
+  itemListElement: comparisonTable.rows.map((row, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: row[0],
+    description: `CardHabit: ${row[1]}. ${c.name}: ${row[2]}.`,
+  })),
+};
+---
+
+<BaseLayout title={c.title} description={c.description}>
+  <Breadcrumbs section="Comparisons" name={`CardHabit vs ${c.name}`} />
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style={S.eyebrow}>Comparison</p>
+        <h1 style={S.h1}>
+          CardHabit <em style={S.em}>vs {c.name}.</em>
+        </h1>
+        <p style={`${S.intro}max-width:${c.introWidth}px;margin:0 auto;`}><RichText text={c.intro} /></p>
+        <p style={S.stamp}>Updated {c.updated}</p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:3rem 1.5rem;">
+      <div style={S.body}>
+        {c.blocks.map((b) => {
+          // Margins came across from the originals per block rather than being
+          // inferred: they vary (2rem / 1rem / 1.5rem / 0) in ways position does
+          // not predict, and guessing them changed the vertical rhythm.
+          const m = (fallback: string) => `margin:${b.margin ?? fallback};`;
+          if (b.kind === 'h2') return <h2 style={S.h2 + m('0 0 1.5rem')}><RichText text={b.text} /></h2>;
+          if (b.kind === 'h3') return <h3 style={S.h3 + m('0 0 0.5rem')}><RichText text={b.text} /></h3>;
+          if (b.kind === 'table') {
+            return (
+              <div style="overflow-x:auto;margin:0 0 2rem;">
+                <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+                  <thead>
+                    <tr style="border-bottom:0.5px solid rgba(201,168,76,0.35);">
+                      <th style={S.th}>Feature</th>
+                      <th style={S.th}>CardHabit</th>
+                      <th style={S.th}>{c.name}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {b.rows.map((row, r) => (
+                      <tr
+                        style={
+                          r === b.rows.length - 1
+                            ? undefined
+                            : 'border-bottom:0.5px solid rgba(201,168,76,0.18);'
+                        }
+                      >
+                        <td style={S.tdLead}>{row[0]}</td>
+                        <td style={S.td}>{row[1]}</td>
+                        <td style={S.td}>{row[2]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+          return (
+            <p style={m('0 0 1rem')}>
+              <RichText text={b.text} />
+            </p>
+          );
+        })}
+      </div>
+    </section>
+
+    <Ornament />
+
+    <RelatedPages current={`/vs/${c.slug}`} />
+
+    <Ornament />
+
+    <GetTheApp source={`vs-${c.slug}`} />
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+{itemList && <script type="application/ld+json" set:html={JSON.stringify(itemList)} />}

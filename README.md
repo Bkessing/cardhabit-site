@@ -1,43 +1,70 @@
-# Astro Starter Kit: Minimal
+# cardhabit-site
 
-```sh
-npm create astro@latest -- --template minimal
+Marketing site for CardHabit. Astro 6, Tailwind v4 (via `@tailwindcss/vite`), deployed on Vercel at [cardhabitapp.com](https://cardhabitapp.com).
+
+Mechanical reference only. Positioning, locked copy, performance numbers, and channel strategy live in the Obsidian brain under `Projects/CardHabit/`.
+
+## Commands
+
+| Command | Does |
+|---|---|
+| `npm install` | Install dependencies |
+| `npm run dev` | Dev server at `localhost:4321` |
+| `npm run build` | Production build to `./dist/` |
+| `npm run preview` | Serve the built output locally |
+
+## Structure
+
+```
+src/
+  components/    Nav, Hero, Ornament, GetTheApp, RelatedPages, RichText, ...
+  data/          competitors.ts  (comparison-page content)
+  layouts/       BaseLayout.astro (head, canonical, JSON-LD, OG)
+  pages/         routes; see below
+  styles/        global.css
+public/          robots.txt, OG images, static assets
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Comparison pages are data-driven
 
-## 🚀 Project Structure
+`/vs/*` is a single dynamic route, `src/pages/vs/[slug].astro`, generated from
+`src/data/competitors.ts` via `getStaticPaths`. **Adding a competitor means adding
+one entry to that file, not creating a page.**
 
-Inside of your Astro project, you'll see the following folders and files:
+Each entry carries `slug`, `name`, `title`, `description`, `updated`, `intro`,
+`introWidth`, and a `blocks` array. Blocks are `h2` / `h3` / `p` (each with an
+optional verbatim `margin`) or a `table` of `[feature, cardhabit, competitor]`
+rows. Margins and intro widths are stored per block rather than inferred, because
+the original hand-written pages varied them in ways position does not predict.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Two inline markers are supported inside any `text`, rendered by
+`components/RichText.astro`:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- `{phrase}` renders as gold italic emphasis
+- `[label](url)` renders as a link
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Each comparison page emits `ItemList` JSON-LD built from its table, in addition to
+the site-wide `MobileApplication` and `BreadcrumbList` schema in `BaseLayout`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+These pages were hand-written `.astro` files until 2026-08-14. The prose was
+migrated mechanically, and the built HTML was diffed against a pre-refactor
+baseline to confirm it was preserved.
 
-## 🧞 Commands
+## Attribution
 
-All commands are run from the root of the project, from a terminal:
+`GetTheApp` takes a `source` prop that becomes `data-appstore-cta` on the store
+link. **Always pass a distinct value per page.** Before 2026-08-14 only
+`/vs/atoms` did, so four comparison pages logged their clicks into a shared
+`section` bucket and could not be told apart.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Conventions
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- One canonical URL form: no trailing slash (`trailingSlash: 'never'` here,
+  `"trailingSlash": false` in `vercel.json`). Vercel 308s the variant.
+- `public/robots.txt` explicitly allows AI crawlers (GPTBot, ClaudeBot,
+  PerplexityBot, OAI-SearchBot and others) for indexing and citation.
+- `BaseLayout` holds the canonical entity sentence used verbatim across every
+  surface (site, App Store, directories) so answer engines match one identity
+  string. Change it in all places or none.
+- `APP_RATING` in `BaseLayout` is hardcoded so builds stay hermetic. Refresh it
+  manually; the lookup command is in a comment beside it.
