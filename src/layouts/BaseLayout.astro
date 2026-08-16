@@ -4,6 +4,10 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  /** Functional endpoints (share redirects, invite landings) are not search
+   *  results. Keeping them out of the index stops Google spending crawl
+   *  budget on pages nobody will ever search for. */
+  noindex?: boolean;
 }
 
 const APP_DESCRIPTION = 'CardHabit is a card-based habit tracker for iOS. Every morning it deals you five habit cards and you commit to what you can handle, so you do hard things every day instead of extreme things once. Friends who believe you can handle more can raise the stakes on tomorrow\'s draw. Available now on the App Store.';
@@ -26,6 +30,7 @@ const APP_RATING = { value: 5, count: 2 };
 const {
   title = 'CardHabit: A Sustainable Habit Tracker with Friend Accountability',
   description = APP_DESCRIPTION,
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL('https://cardhabitapp.com');
@@ -104,7 +109,7 @@ const structuredData = {
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
     <link rel="canonical" href={canonicalUrl} />
 
     <!--

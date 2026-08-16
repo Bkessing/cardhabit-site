@@ -17,6 +17,17 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.cardhabitapp.com"
+        }
+      ],
+      "destination": "https://cardhabitapp.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/tiktok",
       "destination": "/?src=tiktok",
       "permanent": false
