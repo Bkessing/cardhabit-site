@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Ornament from '../../components/Ornament.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import GetTheApp from '../../components/GetTheApp.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const title = 'A Morning Routine App That Deals You the Day';
+const description = 'Most morning routine apps hand you the same checklist every day until you stop opening them. CardHabit deals five habit cards at dawn: commit to the ones you will back up, finish them, keep the streak. The ritual is the routine.';
+
+// Content last substantively changed: August 2026. Update by hand when the page changes.
+const updated = 'August 2026';
+---
+
+<BaseLayout title={title} description={description}>
+  <Breadcrumbs section="Who it is for" name="For morning routines" />
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          Who it is for
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;">
+          The morning <em style="color:#c9a84c;font-style:italic;">deal.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:640px;margin:0 auto;">
+          A morning routine dies one of two deaths: it gets skipped, or it gets boring. CardHabit is built against the second death. Five habit cards, dealt at dawn, different every day. The ritual stays; the cards change.
+        </p>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin:1.5rem 0 0;">
+          Updated {updated}
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:3rem 1.5rem;">
+      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;">
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Why routines rot</h2>
+        <p style="margin:0 0 1rem;">The standard morning routine app is a checklist with an alarm: meditate, hydrate, journal, stretch, repeat. It works for exactly as long as the novelty lasts. Around week three the list becomes wallpaper. You check boxes without doing the things, or you stop opening the app, and the app has no answer because the list was the whole product.</p>
+        <p style="margin:0 0 2rem;">The fix is not a better list. It is taking the list out of your hands.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">The draw is the ritual</h2>
+        <p style="margin:0 0 1rem;">Every morning CardHabit deals five habit cards across Physical, Mental, Nutrition, Recovery, and Wildcard, drawn from a 172-card deck with rarities from Common to Legendary. You look at the hand, you commit to the cards you will back up, and your day has a shape before your phone shows you anyone else's.</p>
+        <p style="margin:0 0 1rem;">The opening beat is the same every day, which is what a ritual needs. What the cards ask is different every day, which is what your attention needs. A Legendary in the hand changes the whole morning. That small uncertainty, what did the deck deal me, is the reason you open the app on day forty with the same interest as day one.</p>
+        <p style="margin:0 0 2rem;">The streak counts when you finish what you committed to, on the All Done screen, not per card and not before. Some mornings that is one card seen through. The routine survives your worst weeks because the commitment flexes; the standard never does.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Mornings, with witnesses</h2>
+        <p style="margin:0 0 1rem;">Friends make it a table instead of a checklist. They can bless tomorrow's hand with a Gilded Draw, shield your streak through a missed day, or play a Challenge card that raises your bar. Your morning draw becomes something people are watching, which is worth more than any reminder notification.</p>
+        <p style="margin:0;">Begin your ritual. The deck handles the rest.</p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <RelatedPages current="/for/morning-routine" />
+
+    <Ornament />
+
+    <GetTheApp />
+  </main>
+  <SiteFooter />
+</BaseLayout>

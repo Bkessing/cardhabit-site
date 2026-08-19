@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Ornament from '../../components/Ornament.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RelatedPages from '../../components/RelatedPages.astro';
+import GetTheApp from '../../components/GetTheApp.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const title = 'CardHabit vs 75 Soft: Sustainable Without Going Soft';
+const description = 'Considering 75 Soft after burning out on 75 Hard? 75 Soft keeps the fixed checklist and lowers the bar. CardHabit does the opposite: five habit cards dealt fresh each morning, real difficulty scoped to a single day, and a streak that survives real life.';
+
+// Content last substantively changed: August 2026. Update by hand when the page changes.
+const updated = 'August 2026';
+---
+
+<BaseLayout title={title} description={description}>
+  <Breadcrumbs section="Comparisons" name="CardHabit vs 75 Soft" />
+  <Nav />
+  <main>
+    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+      <div style="max-width:780px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+          Comparison
+        </p>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.75rem;">
+          CardHabit <em style="color:#c9a84c;font-style:italic;">vs 75 Soft.</em>
+        </h1>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#a39e92;max-width:640px;margin:0 auto;">
+          75 Soft exists because 75 Hard burns people out. It keeps the fixed checklist and lowers the bar. CardHabit takes the other exit: the bar stays hard, and the shape changes every morning with a fresh five-card deal.
+        </p>
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin:1.5rem 0 0;">
+          Updated {updated}
+        </p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <section style="padding:3rem 1.5rem;">
+      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;">
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">The short version</h2>
+        <p style="margin:0 0 1rem;">75 Soft is the honest admission that 75 Hard's rules are unsustainable: one workout instead of two, drinks allowed on occasion, no restart from Day 1. It is a good program for people who want the challenge-arc feeling without the punishment. But it inherits the deeper problem it never fixes: the same checklist, every single day, for 75 days. Boredom kills more streaks than difficulty does.</p>
+        <p style="margin:0 0 2rem;">CardHabit answers the boredom instead of the difficulty. Each morning it deals five habit cards across Physical, Mental, Nutrition, Recovery, and Wildcard, with trading-card rarities from Common to Legendary. You commit to what you can back up before the day starts. The work stays hard. The shape never repeats.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">At a glance</h2>
+
+        <div style="overflow-x:auto;margin:0 0 2rem;">
+          <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
+            <thead>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.35);">
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Feature</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">CardHabit</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#c9a84c;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">75 Soft</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Duration</td><td style="padding:0.85rem 0.5rem;">Indefinite. The system survives.</td><td style="padding:0.85rem 0.5rem;">75 days, then it ends.</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">The rules</td><td style="padding:0.85rem 0.5rem;">A fresh five-card deal every morning</td><td style="padding:0.85rem 0.5rem;">One fixed list, identical all 75 days</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Difficulty</td><td style="padding:0.85rem 0.5rem;">Hard, scoped to a single day</td><td style="padding:0.85rem 0.5rem;">Deliberately reduced from 75 Hard</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Missed day</td><td style="padding:0.85rem 0.5rem;">Streak resets, or a friend's Streak Shield carries you</td><td style="padding:0.85rem 0.5rem;">Keep going, no formal consequence</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Variety</td><td style="padding:0.85rem 0.5rem;">172-card deck, rarities, daily randomness</td><td style="padding:0.85rem 0.5rem;">None by design</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(201,168,76,0.18);"><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Social mechanic</td><td style="padding:0.85rem 0.5rem;">Friends play Buff and Challenge cards into your day</td><td style="padding:0.85rem 0.5rem;">Solo by design</td></tr>
+              <tr><td style="padding:0.85rem 0.5rem;color:#f0ebe0;">Built for</td><td style="padding:0.85rem 0.5rem;">Sustained daily challenge</td><td style="padding:0.85rem 0.5rem;">A gentler challenge arc</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">Where 75 Soft is right</h2>
+        <p style="margin:0 0 1rem;">75 Soft's core insight is correct: rules that ignore real life produce quitters, not disciplined people. A program you can actually finish beats a program you restart four times. If what you want is the 75-day arc with survivable rules, 75 Soft delivers exactly that, and a paper checklist is all it costs.</p>
+        <p style="margin:0 0 2rem;">The trade it makes is difficulty for completion. Somewhere around week six, the list you have done forty times stops asking anything of you. Finishing feels good. Day 76 still arrives with no plan.</p>
+
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#f0ebe0;margin:0 0 1.5rem;">What CardHabit does differently</h2>
+        <p style="margin:0 0 1rem;">CardHabit refuses the trade. Cards stay hard because each one is scoped to a single day: an hour of sustained effort, a conversation you have been avoiding, a screen-free evening. You can do almost anything for one day. The draw decides which hard things today asks of you, so the fortieth morning feels nothing like the first.</p>
+        <p style="margin:0;">And it does not end. There is no Day 75 finish line, because the point was never to finish. The point is the person who shows up every morning to see what the deck dealt.</p>
+      </div>
+    </section>
+
+    <Ornament />
+
+    <RelatedPages current="/vs/75-soft" />
+
+    <Ornament />
+
+    <GetTheApp />
+  </main>
+  <SiteFooter />
+</BaseLayout>
