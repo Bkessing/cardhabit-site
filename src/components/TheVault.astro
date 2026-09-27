@@ -5,17 +5,17 @@
   <div style="max-width:780px;margin:0 auto;padding:0 1.5rem;">
 
     <!-- Eyebrow -->
-    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;text-align:center;">
+    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#C75B39;margin:0 0 1.25rem;text-align:center;">
       The vault
     </p>
 
     <!-- H2 -->
-    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 2rem;text-align:center;">
-      Every card you finish <em style="color:#c9a84c;font-style:italic;">earns a vault card.</em>
+    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-0.01em;color:#2E2115;margin:0 0 2rem;text-align:center;">
+      Every card you finish <em style="color:#C75B39;font-style:italic;">earns a vault card.</em>
     </h2>
 
     <!-- Body -->
-    <div class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#a39e92;max-width:600px;margin:0 auto 3rem;text-align:center;">
+    <div class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#7D6A4E;max-width:600px;margin:0 auto 3rem;text-align:center;">
       <p style="margin:0 0 1.25em;">
         Finish a habit card and you earn a vault card: currency you can spend to reach into a friend's game. Vault cards run from Common to Legendary, and the harder the habit you complete, the rarer the card you earn.
       </p>
@@ -39,7 +39,7 @@
       <div class="vault-divider" aria-hidden="true">
         <div class="vault-divider-line"></div>
         <svg width="10" height="10" viewBox="0 0 32 32" fill="none">
-          <path d="M16,2 L17.4,13.6 L28,16 L17.4,18.4 L16,30 L14.6,18.4 L4,16 L14.6,13.6 Z" fill="#c9a84c"/>
+          <path d="M16,2 L17.4,13.6 L28,16 L17.4,18.4 L16,30 L14.6,18.4 L4,16 L14.6,13.6 Z" fill="#C75B39"/>
         </svg>
         <div class="vault-divider-line"></div>
       </div>
@@ -56,21 +56,120 @@
     </div>
 
 
-    <!-- The Ledger: the record, written down -->
-    <div class="fade-in" style="margin-top:3rem;display:flex;flex-direction:column;align-items:center;gap:1rem;">
-      <img
-        src="/app/ledger.png"
-        alt="The Ledger in CardHabit: completions by category and rarity, thirty days of XP"
-        width="280"
-        loading="lazy"
-        style="width:min(280px,68vw);border-radius:30px;border:1px solid rgba(201,168,76,0.35);box-shadow:0 24px 70px rgba(0,0,0,0.55);display:block;"
-      />
-      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.1rem;color:#c9a84c;margin:0;text-align:center;">
+    <!-- The Ledger: the record, written down. A live illustration of the
+         parchment stat card, not a stale dark-theme screenshot. -->
+    <div class="fade-in ledger-mock warm-shadow-lg" role="img" aria-label="The Ledger: completions by category, thirty days of streak history">
+      <p class="ledger-title">The Ledger</p>
+      <div class="ledger-stats">
+        <div><span class="ledger-stat-num">87</span><span class="ledger-stat-label">Completed</span></div>
+        <div><span class="ledger-stat-num">22</span><span class="ledger-stat-label">Day streak</span></div>
+        <div><span class="ledger-stat-num">2140</span><span class="ledger-stat-label">Total XP</span></div>
+      </div>
+      <div class="ledger-bars">
+        <div class="ledger-bar-row"><span class="ledger-bar-label" style="color:#B8422E;">Physical</span><span class="ledger-bar-track"><span class="ledger-bar-fill" style="width:88%;background:#B8422E;"></span></span></div>
+        <div class="ledger-bar-row"><span class="ledger-bar-label" style="color:#3D77B5;">Mental</span><span class="ledger-bar-track"><span class="ledger-bar-fill" style="width:75%;background:#3D77B5;"></span></span></div>
+        <div class="ledger-bar-row"><span class="ledger-bar-label" style="color:#3E8B5C;">Nutrition</span><span class="ledger-bar-track"><span class="ledger-bar-fill" style="width:58%;background:#3E8B5C;"></span></span></div>
+        <div class="ledger-bar-row"><span class="ledger-bar-label" style="color:#7A4FA8;">Recovery</span><span class="ledger-bar-track"><span class="ledger-bar-fill" style="width:50%;background:#7A4FA8;"></span></span></div>
+        <div class="ledger-bar-row"><span class="ledger-bar-label" style="color:#C08F2E;">Wildcard</span><span class="ledger-bar-track"><span class="ledger-bar-fill" style="width:43%;background:#C08F2E;"></span></span></div>
+      </div>
+      <p class="ledger-caption">
         The Ledger keeps a permanent record of every card you've completed. Streaks can break; the record stays.
       </p>
     </div>
   </div>
 </section>
+
+<style>
+  .ledger-mock {
+    width: min(360px, 84vw);
+    margin: 3rem auto 0;
+    background: #FDF7EA;
+    border: 1px solid rgba(199, 91, 57, 0.25);
+    border-radius: 20px;
+    padding: 1.75rem 1.5rem;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .ledger-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.35rem;
+    color: #2E2115;
+    text-align: center;
+    margin: 0 0 1.25rem;
+  }
+
+  .ledger-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .ledger-stats > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .ledger-stat-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #C75B39;
+  }
+
+  .ledger-stat-label {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9B8666;
+  }
+
+  .ledger-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .ledger-bar-label {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: 66px;
+    flex-shrink: 0;
+  }
+
+  .ledger-bar-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(46, 33, 21, 0.08);
+    border-radius: 3px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .ledger-bar-fill {
+    display: block;
+    height: 100%;
+    border-radius: 3px;
+  }
+
+  .ledger-caption {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #C75B39;
+    margin: 1.5rem 0 0;
+    text-align: center;
+  }
+</style>
 
 <style>
   .vault-split {
@@ -92,7 +191,7 @@
     font-weight: 500;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: #6b6760;
+    color: #9B8666;
     margin: 0 0 0.75rem;
   }
 
@@ -101,7 +200,7 @@
     font-weight: 500;
     font-size: 1.35rem;
     line-height: 1.2;
-    color: #f0ebe0;
+    color: #2E2115;
     margin: 0 0 0.85rem;
   }
 
@@ -110,7 +209,7 @@
     font-weight: 300;
     font-size: 0.92rem;
     line-height: 1.7;
-    color: #a39e92;
+    color: #7D6A4E;
     margin: 0 0 0.85rem;
   }
 
@@ -118,7 +217,7 @@
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
     font-size: 0.95rem;
-    color: #6b6760;
+    color: #9B8666;
     margin: 0;
   }
 
@@ -134,7 +233,7 @@
   .vault-divider-line {
     width: 0.5px;
     height: 60px;
-    background: rgba(201, 168, 76, 0.25);
+    background: rgba(199, 91, 57, 0.25);
   }
 
   @media (max-width: 560px) {

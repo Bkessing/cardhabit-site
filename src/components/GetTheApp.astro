@@ -10,43 +10,61 @@ const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6
 
 <section
   id="download"
-  style="background:#100f12;border-top:0.5px solid rgba(201,168,76,0.18);border-bottom:0.5px solid rgba(201,168,76,0.18);padding:5rem 1.5rem;text-align:center;"
+  style="padding:5rem 1.5rem;text-align:center;"
 >
-  <div style="max-width:600px;margin:0 auto;">
-    <!-- Eyebrow -->
-    <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
-      Available now
-    </p>
+  <!-- Stitched banner: the sienna-to-ochre "hand-sewn" treatment, sparingly
+       reserved for this closing conversion moment. -->
+  <div class="stitched-banner-outer">
+    <div class="stitched-banner-inner">
+      <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#FDF7EA;opacity:0.85;margin:0 0 1.25rem;">
+        Available now
+      </p>
 
-    <!-- H2 -->
-    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,6.5vw,3.25rem);line-height:1.05;letter-spacing:-0.01em;color:#f0ebe0;margin:0 0 1.5rem;">
-      Your first hand is <em style="color:#c9a84c;font-style:italic;">waiting.</em>
-    </h2>
+      <!-- H2 -->
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,6.5vw,3.25rem);line-height:1.05;letter-spacing:-0.01em;color:#FFFFFF;margin:0 0 1.5rem;">
+        Your first hand is <em style="font-style:italic;">waiting.</em>
+      </h2>
 
-    <!-- Lede -->
-    <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.65;color:#a39e92;max-width:480px;margin:0 auto 2.5rem;">
-      CardHabit is live on the iOS App Store. Free to start. Founder pricing on Pro is live in the app, $4.99 a month or $39.99 a year with a 7-day free trial, locked in at signup.
-    </p>
+      <!-- Lede -->
+      <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.65;color:#FDF7EA;opacity:0.9;max-width:480px;margin:0 auto 2.5rem;">
+        CardHabit is live on the iOS App Store. Free to start. Founder pricing on Pro is live in the app, $4.99 a month or $39.99 a year with a 7-day free trial, locked in at signup.
+      </p>
 
-    <!-- CTA -->
-    <a
-      href={STORE_URL}
-      class="store-cta"
-      data-appstore-cta={source}
-      style="display:inline-block;background:#c9a84c;color:#0c0c0e;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;text-decoration:none;transition:background 0.2s,transform 0.2s;border:1px solid #c9a84c;"
-    >
-      Download on the App Store
-    </a>
+      <!-- CTA -->
+      <a
+        href={STORE_URL}
+        class="store-cta"
+        data-appstore-cta={source}
+        style="display:inline-block;background:#FDF7EA;color:#A8462A;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;text-decoration:none;transition:background 0.2s,transform 0.2s;"
+      >
+        Download on the App Store
+      </a>
 
-    <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin:1.25rem 0 0;">
-      iOS 18 and later &nbsp;·&nbsp; Free to download
-    </p>
+      <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#FDF7EA;opacity:0.7;margin:1.25rem 0 0;">
+        iOS 18 and later &nbsp;·&nbsp; Free to download
+      </p>
+    </div>
   </div>
 </section>
 
 <style>
+  .stitched-banner-outer {
+    max-width: 720px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #A8462A 0%, #C75B39 55%, #C08F2E 100%);
+    border-radius: 26px;
+    padding: 9px;
+    box-shadow: 0 6px 16px rgba(58, 36, 18, 0.18), 0 28px 60px rgba(58, 36, 18, 0.12);
+  }
+
+  .stitched-banner-inner {
+    border: 2px dashed rgba(253, 247, 234, 0.5);
+    border-radius: 19px;
+    padding: 3.25rem 2rem;
+  }
+
   .store-cta:hover {
-    background: #d9b86b;
+    background: #FFFFFF;
     transform: translateY(-1px);
   }
 </style>

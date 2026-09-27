@@ -11,7 +11,10 @@
     body {
       width: 1200px;
       height: 630px;
-      background: #100f12;
+      background-color: #F5E7CC;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 255, 255, 0.5) 0%, transparent 62%),
+        radial-gradient(ellipse 130% 100% at 50% 50%, transparent 55%, rgba(217, 190, 140, 0.45) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -19,21 +22,13 @@
       position: relative;
     }
 
-    /* Diamond crosshatch background */
+    /* Card-back diamond lattice, the paper-ground signature, sienna-tinted */
     body::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon points='12,2 22,12 12,22 2,12' fill='none' stroke='%23c9a84c' stroke-width='0.5'/%3E%3C/svg%3E");
-      opacity: 0.06;
-    }
-
-    /* Subtle radial glow behind text */
-    body::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 70%);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon points='12,2 22,12 12,22 2,12' fill='none' stroke='%23C75B39' stroke-width='0.5'/%3E%3C/svg%3E");
+      opacity: 0.05;
     }
 
     .content {
@@ -56,7 +51,7 @@
       font-weight: 500;
       letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: #c9a84c;
+      color: #C75B39;
       margin-bottom: 24px;
     }
 
@@ -66,13 +61,13 @@
       font-size: 88px;
       line-height: 1.0;
       letter-spacing: -0.02em;
-      color: #f0ebe0;
+      color: #2E2115;
       margin-bottom: 32px;
     }
 
     .headline em {
       font-style: italic;
-      color: #c9a84c;
+      color: #C75B39;
     }
 
     .divider {
@@ -85,7 +80,7 @@
     .divider-line {
       width: 48px;
       height: 0.5px;
-      background: rgba(201,168,76,0.35);
+      background: rgba(199, 91, 57, 0.4);
     }
 
     .subline {
@@ -93,7 +88,7 @@
       font-size: 15px;
       font-weight: 300;
       letter-spacing: 0.08em;
-      color: #6b6760;
+      color: #9B8666;
       text-transform: uppercase;
     }
   </style>
@@ -103,18 +98,18 @@
     <!-- 4-point star -->
     <div class="star">
       <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16,2 L17.4,13.6 L28,16 L17.4,18.4 L16,30 L14.6,18.4 L4,16 L14.6,13.6 Z" fill="#c9a84c"/>
+        <path d="M16,2 L17.4,13.6 L28,16 L17.4,18.4 L16,30 L14.6,18.4 L4,16 L14.6,13.6 Z" fill="#C75B39"/>
       </svg>
     </div>
 
-    <p class="eyebrow">CardHabit &nbsp;·&nbsp; iOS &nbsp;·&nbsp; August 2026</p>
+    <p class="eyebrow">CardHabit &nbsp;·&nbsp; iOS &nbsp;·&nbsp; September 2026</p>
 
     <h1 class="headline">Show up. <em>Every day.</em></h1>
 
     <div class="divider">
       <div class="divider-line"></div>
       <svg width="12" height="12" viewBox="0 0 32 32" fill="none">
-        <path d="M16,2 L17.4,13.6 L28,16 L17.4,18.4 L16,30 L14.6,18.4 L4,16 L14.6,13.6 Z" fill="#c9a84c"/>
+        <path d="M16,2 L17.4,13.6 L28,16 L17.4,18.4 L16,30 L14.6,18.4 L4,16 L14.6,13.6 Z" fill="#C75B39"/>
       </svg>
       <div class="divider-line"></div>
     </div>

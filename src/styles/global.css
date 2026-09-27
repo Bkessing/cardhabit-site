@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
+/* Guild Hall palette (mirrors the iOS app's 2026-09-27 retheme).
+   Ground stays LIGHT; depth lives in shadows and the sienna accent, never
+   in black/gray shading. Gold/ochre is decoration only, never text. */
 @theme {
-  --color-bg: #0c0c0e;
-  --color-bg-elev: #16161a;
-  --color-bg-elev-2: #1d1d22;
-  --color-bg-warm: #100f12;
-  --color-border: rgba(201, 168, 76, 0.18);
-  --color-border-strong: rgba(201, 168, 76, 0.35);
-  --color-text: #f0ebe0;
-  --color-text-dim: #a39e92;
-  --color-text-fade: #6b6760;
-  --color-gold: #c9a84c;
-  --color-gold-bright: #d9b86b;
-  --color-gold-soft: rgba(201, 168, 76, 0.1);
-  --color-gold-deep: #8a7530;
-  --color-ember: #c47148;
+  --color-bg: #F5E7CC;
+  --color-bg-elev: #FDF7EA;
+  --color-bg-elev-2: #FFFFFF;
+  --color-bg-warm: #FFFFFF;
+  --color-border: rgba(199, 91, 57, 0.18);
+  --color-border-strong: rgba(199, 91, 57, 0.35);
+  --color-text: #2E2115;
+  --color-text-dim: #7D6A4E;
+  --color-text-fade: #9B8666;
+  --color-gold: #C75B39;
+  --color-gold-bright: #A8462A;
+  --color-gold-soft: rgba(199, 91, 57, 0.1);
+  --color-gold-deep: #A8462A;
+  --color-ember: #C08F2E;
 
   --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-hand: "Caveat", cursive;
   --font-sans: "Jost", system-ui, sans-serif;
 }
 
@@ -36,34 +40,30 @@ html {
 }
 
 body {
-  background-color: #0c0c0e;
-  color: #f0ebe0;
+  /* Sunlit toasted-cream ground: a soft lightening top-center and a faint
+     warm tan vignette at the edges, both warm-family only (never gray/black). */
+  background-color: #F5E7CC;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 62%),
+    radial-gradient(ellipse 140% 100% at 50% 50%, transparent 58%, rgba(217, 190, 140, 0.4) 100%);
+  background-attachment: fixed;
+  color: #2E2115;
   font-family: "Jost", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
 
-/* Grain texture overlay */
+/* Card-back diamond lattice: the paper-ground signature from the app's
+   materials doctrine, recolored into the sienna family at low opacity. */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.03;
-}
-
-/* Diamond crosshatch (card-back pattern) */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon points='12,2 22,12 12,22 2,12' fill='none' stroke='%23c9a84c' stroke-width='0.5'/%3E%3C/svg%3E");
-  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon points='12,2 22,12 12,22 2,12' fill='none' stroke='%23C75B39' stroke-width='0.5'/%3E%3C/svg%3E");
+  opacity: 0.045;
 }
 
 /* Fade-in animation */
@@ -78,7 +78,7 @@ body::after {
   transform: translateY(0);
 }
 
-/* Archetype card top-edge gradient */
+/* Archetype card top-edge accent line */
 .archetype-card {
   position: relative;
   overflow: hidden;
@@ -91,7 +91,17 @@ body::after {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(201, 168, 76, 0.4), transparent);
+  background: linear-gradient(to right, transparent, rgba(199, 91, 57, 0.4), transparent);
+}
+
+/* Matte two-layer warm shadow doctrine: tight + wide, warm-ink tinted.
+   No glossy gradients, no glow rings, ever. */
+.warm-shadow {
+  box-shadow: 0 2px 6px rgba(58, 36, 18, 0.16), 0 10px 26px rgba(58, 36, 18, 0.1);
+}
+
+.warm-shadow-lg {
+  box-shadow: 0 6px 16px rgba(58, 36, 18, 0.16), 0 28px 60px rgba(58, 36, 18, 0.1);
 }
 
 /* Waitlist form submitted state */
@@ -110,4 +120,3 @@ body::after {
 .waitlist-form.is-submitted .form-success {
   display: block;
 }
-

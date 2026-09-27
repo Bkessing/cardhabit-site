@@ -17,29 +17,29 @@ const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6
   <main>
     <section style="padding:5rem 1.5rem 3rem;text-align:center;min-height:60vh;">
       <div style="max-width:640px;margin:0 auto;">
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#c9a84c;margin:0 0 1.25rem;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#C75B39;margin:0 0 1.25rem;">
           You're invited
         </p>
-        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,7vw,3.5rem);line-height:1.05;letter-spacing:-0.015em;color:#f0ebe0;margin:0 0 1.25rem;">
-          A friend wants you <em style="color:#c9a84c;font-style:italic;">across the table.</em>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,7vw,3.5rem);line-height:1.05;letter-spacing:-0.015em;color:#2E2115;margin:0 0 1.25rem;">
+          A friend wants you <em style="color:#C75B39;font-style:italic;">across the table.</em>
         </h1>
-        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.65;color:#a39e92;max-width:520px;margin:0 auto 2.5rem;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.65;color:#7D6A4E;max-width:520px;margin:0 auto 2.5rem;">
           CardHabit deals five habit cards every morning. Friends can buff your hand or raise the bar on tomorrow's draw. Yours sent you a seat.
         </p>
 
         <!-- Invite code (filled from the URL by the script below) -->
         <div id="code-block" style="display:none;margin:0 0 2.5rem;">
-          <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#6b6760;margin:0 0 0.75rem;">
+          <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#9B8666;margin:0 0 0.75rem;">
             Your invite code
           </p>
-          <p id="invite-code" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,8vw,3rem);letter-spacing:0.35em;color:#c9a84c;margin:0;"></p>
+          <p id="invite-code" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,8vw,3rem);letter-spacing:0.35em;color:#C75B39;margin:0;"></p>
         </div>
 
         <!-- Steps -->
-        <div style="max-width:440px;margin:0 auto;text-align:left;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.7;color:#a39e92;">
-          <p style="margin:0 0 0.9em;"><span style="color:#c9a84c;font-weight:500;">1.</span> Get the app below.</p>
-          <p style="margin:0 0 0.9em;"><span style="color:#c9a84c;font-weight:500;">2.</span> Open CardHabit and head to The Arena.</p>
-          <p style="margin:0;"><span style="color:#c9a84c;font-weight:500;">3.</span> Enter your invite code. Your friend appears across the table.</p>
+        <div style="max-width:440px;margin:0 auto;text-align:left;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.7;color:#7D6A4E;">
+          <p style="margin:0 0 0.9em;"><span style="color:#C75B39;font-weight:500;">1.</span> Get the app below.</p>
+          <p style="margin:0 0 0.9em;"><span style="color:#C75B39;font-weight:500;">2.</span> Open CardHabit and head to The Arena.</p>
+          <p style="margin:0;"><span style="color:#C75B39;font-weight:500;">3.</span> Enter your invite code. Your friend appears across the table.</p>
         </div>
 
         <!-- CTA: copies the invite link (the app detects it after install),
@@ -47,14 +47,14 @@ const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6
         <div style="margin-top:2.5rem;" data-store-url={STORE_URL} id="cta-wrap">
           <button
             id="copy-go"
-            style="display:inline-block;background:#c9a84c;color:#0c0c0e;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;border:1px solid #c9a84c;cursor:pointer;"
+            style="display:inline-block;background:#C75B39;color:#FFFFFF;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;border:1px solid #C75B39;cursor:pointer;"
           >
             Copy code &amp; get CardHabit
           </button>
-          <p id="copy-note" style="display:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:#c9a84c;margin:1rem 0 0;">
+          <p id="copy-note" style="display:none;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:#C75B39;margin:1rem 0 0;">
             Copied. CardHabit will find it when you open the app.
           </p>
-          <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6b6760;margin-top:1.25rem;">
+          <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#9B8666;margin-top:1.25rem;">
             Already have CardHabit? Tap your invite link again and it opens in the app.
           </p>
         </div>
