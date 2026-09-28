@@ -32,15 +32,43 @@
       </p>
     </div>
 
-    <!-- Pull-quote -->
+    <!-- 2.13: a stated rule, not a quotation — a small parchment plaque
+         instead of an italic blockquote with quote marks. -->
     <div style="display:flex;justify-content:center;">
-      <blockquote
-        class="fade-in"
-        style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.4rem,3.5vw,1.8rem);line-height:1.4;color:#A84D30;border-left:2px solid #C75B39;padding-left:1.5rem;margin:0;max-width:500px;"
-      >
-        "Completed cards are immune. That's the deal."
-      </blockquote>
+      <div class="fade-in rule-plaque warm-shadow">
+        <span class="rule-plaque-mark" aria-hidden="true"></span>
+        <p class="rule-plaque-text">Completed cards are immune. That's the deal.</p>
+      </div>
     </div>
 
   </div>
 </section>
+
+<style>
+  .rule-plaque {
+    max-width: 460px;
+    background: #FDF7EA;
+    border: 1px solid rgba(199, 91, 57, 0.3);
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+
+  .rule-plaque-mark {
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: #C75B39;
+    margin-bottom: 0.85rem;
+  }
+
+  .rule-plaque-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: clamp(1.15rem, 2.8vw, 1.4rem);
+    line-height: 1.4;
+    color: #2E2115;
+    margin: 0;
+  }
+</style>
