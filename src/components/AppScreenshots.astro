@@ -1,0 +1,97 @@
+---
+// 2.1: Real Guild Hall screenshots, straight from the 6.9" iPhone capture
+// set (raw-v6). Device-framed, no fake OS chrome beyond a plain bezel.
+//
+// Deviation from the work order: the source set's screen_0 ("home pre-draw")
+// captured as a solid black frame and screen_24 ("dealt hand") captured as
+// a duplicate of the pre-draw stack screen, both unusable. Substituted
+// screen_1 (home, post-draw, two real dealt cards visible) and screen_18
+// (welcome screen, the fanned card-back + wordmark) in their place. All
+// three images below are real, unedited app captures.
+import { Image } from 'astro:assets';
+import homeDealt from '../assets/screenshots/home-dealt.png';
+import legendaryReveal from '../assets/screenshots/legendary-reveal.png';
+import welcome from '../assets/screenshots/welcome.png';
+
+const shots = [
+  { src: homeDealt, alt: "CardHabit home screen: today's ritual, a 14-day streak, and two dealt habit cards", rot: -4, z: 1 },
+  { src: legendaryReveal, alt: 'A Legendary Wildcard reveal: "No Exceptions," 100 XP', rot: 0, z: 2 },
+  { src: welcome, alt: 'CardHabit welcome screen with the fanned card-back mark', rot: 4, z: 1 },
+];
+---
+
+<section style="padding:0 1.5rem;">
+  <div style="max-width:900px;margin:0 auto;text-align:center;">
+    <div class="device-row fade-in">
+      {shots.map((shot) => (
+        <div class="device-frame" style={`--rot:${shot.rot}deg;--z:${shot.z};`}>
+          <div class="device-bezel warm-shadow-lg">
+            <Image src={shot.src} alt={shot.alt} width={600} format="webp" quality={78} loading="lazy" />
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="device-caption">
+      Straight from the app &mdash; no mockups.
+    </p>
+  </div>
+</section>
+
+<style>
+  .device-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: -18px;
+    margin: 0 auto;
+  }
+
+  .device-frame {
+    position: relative;
+    flex: 0 0 auto;
+    width: 30%;
+    max-width: 210px;
+    transform: rotate(var(--rot));
+    z-index: var(--z);
+    margin: 0 -18px;
+    transition: transform 0.25s ease;
+  }
+
+  .device-frame:hover {
+    transform: rotate(var(--rot)) translateY(-6px);
+  }
+
+  .device-bezel {
+    background: #2E2115;
+    border-radius: 22px;
+    padding: 6px;
+    line-height: 0;
+  }
+
+  .device-bezel :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .device-caption {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #75654D;
+    margin: 2rem 0 0;
+  }
+
+  @media (max-width: 640px) {
+    .device-row {
+      gap: 0;
+    }
+    .device-frame {
+      width: 34%;
+      margin: 0 -14px;
+    }
+  }
+</style>
