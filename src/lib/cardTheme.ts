@@ -12,7 +12,9 @@ export const CATEGORY_COLORS: Record<string, string> = {
   Wildcard: '#C08F2E',
 };
 
-// PROVISIONAL RARITY RAMP — decision-gated. The owner is choosing the final
+// RARITY RAMP — FINAL (decided 2026-09-27, "app-true"): the site shows the
+// product's live ramp. Standing rule: bronze/silver/gold metals belong to
+// the app's MASTERY system and are never used for rarity.
 // rarity ramp from an options page; this mirrors the live app's current
 // ramp as of 2026-09-27 so the site isn't visually orphaned from the app in
 // the meantime. Do not treat as final. When the owner decides, swap these
@@ -29,7 +31,6 @@ export const RARITY_RAMP: Record<
   legendary: '#C08F2E', // base tone; legendary always renders as the gradient below
 };
 
-// PROVISIONAL — see note above.
 export const LEGENDARY_GRADIENT = 'linear-gradient(135deg, #C08F2E 0%, #E0A83C 100%)';
 
 export type Rarity = keyof typeof RARITY_RAMP;

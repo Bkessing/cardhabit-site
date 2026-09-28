@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/Fraunces.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 /* Guild Hall palette (mirrors the iOS app's 2026-09-27 retheme).
@@ -29,6 +36,10 @@
   --color-gold-text: #A84D30;
 
   --font-serif: "Cormorant Garamond", Georgia, serif;
+  /* Site display face (decided 2026-09-27): Fraunces, self-hosted variable
+     (SOFT/WONK axes need the VF file; Google's CSS API subsets them away).
+     The APP keeps Cormorant for card titles - site headlines only. */
+  --font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --font-hand: "Caveat", cursive;
   --font-sans: "Jost", system-ui, sans-serif;
 }
@@ -156,3 +167,13 @@ body::before {
 .waitlist-form.is-submitted .form-success {
   display: block;
 }
+
+/* Fraunces display application (2026-09-27): headlines wear the tavern
+   signage face with soft, wonky old-style settings. */
+h1, h2, .display {
+  font-family: var(--font-display);
+  font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 72;
+  font-weight: 620;
+  letter-spacing: -0.01em;
+}
+h1 em, h2 em, .display em { font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 72; }
