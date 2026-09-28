@@ -1,0 +1,167 @@
+---
+// 1.1 + 1.2: the site's card artifact, rebuilt to match the app's real
+// Guild Hall card design: parchment face, full-width painted category band,
+// 2px category-color border, a rarity glow for rare and above, legendary
+// overriding the band with the gold gradient. Rarity colors are the
+// PROVISIONAL ramp (see src/lib/cardTheme.ts) — decision-gated, not final.
+import { CATEGORY_COLORS, RARITY_RAMP, RARITY_GLOW, LEGENDARY_GRADIENT, type Rarity } from '../lib/cardTheme';
+
+interface Props {
+  category: keyof typeof CATEGORY_COLORS;
+  rarity: Rarity;
+  title: string;
+  completed?: boolean;
+  xp?: number;
+  size?: 'sm' | 'md';
+  style?: string;
+}
+
+const { category, rarity, title, completed = false, xp, size = 'sm', style = '' } = Astro.props;
+
+const categoryColor = CATEGORY_COLORS[category];
+const isLegendary = rarity === 'legendary';
+const band = isLegendary ? LEGENDARY_GRADIENT : categoryColor;
+const hexToRgba = (hex: string, alpha: number) => {
+  const n = parseInt(hex.replace('#', ''), 16);
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+const hasGlow = RARITY_GLOW[rarity];
+const glowSoft = hasGlow ? hexToRgba(RARITY_RAMP[rarity], isLegendary ? 0.45 : 0.3) : 'transparent';
+---
+
+<div
+  class:list={['gh-card', `gh-card--${size}`, { 'gh-card--legendary': isLegendary }]}
+  style={`--band:${band};--border:${categoryColor};--glow-soft:${glowSoft};${style}`}
+>
+  <div class="gh-card-band">
+    <span>{category}</span>
+    <span>{rarity}</span>
+  </div>
+  <div class="gh-card-body">
+    <p class="gh-card-title">{title}</p>
+    {xp !== undefined && <p class="gh-card-xp">{xp} <span>XP</span></p>}
+  </div>
+  {completed && (
+    <div class="gh-card-check" aria-hidden="true">&#10003;</div>
+  )}
+</div>
+
+<style>
+  .gh-card {
+    position: relative;
+    background: #FDF7EA;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    box-sizing: border-box;
+    text-align: left;
+    overflow: hidden;
+    /* Warm two-layer shadow (1.5) plus a rarity-tinted soft glow for rare+. */
+    box-shadow:
+      0 2px 6px rgba(58, 36, 18, 0.16),
+      0 10px 26px rgba(58, 36, 18, 0.1),
+      0 0 16px 2px var(--glow-soft);
+  }
+
+  .gh-card--legendary {
+    box-shadow:
+      0 2px 6px rgba(58, 36, 18, 0.16),
+      0 10px 26px rgba(58, 36, 18, 0.1),
+      0 0 22px 4px var(--glow-soft);
+  }
+
+  .gh-card--sm {
+    width: 128px;
+    height: 176px;
+    padding: 10px;
+  }
+
+  .gh-card--md {
+    width: 156px;
+    height: 216px;
+    padding: 14px;
+  }
+
+  .gh-card-band {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--band);
+    color: #FFFFFF;
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .gh-card--sm .gh-card-band {
+    font-size: 7px;
+    letter-spacing: 0.1em;
+    padding: 5px 8px;
+  }
+
+  .gh-card--md .gh-card-band {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    padding: 7px 11px;
+  }
+
+  .gh-card-body {
+    margin-top: 26px;
+  }
+
+  .gh-card--md .gh-card-body {
+    margin-top: 32px;
+  }
+
+  .gh-card-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    color: #2E2115;
+    margin: 0;
+  }
+
+  .gh-card--sm .gh-card-title {
+    font-size: 1rem;
+    line-height: 1.15;
+  }
+
+  .gh-card--md .gh-card-title {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .gh-card-xp {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 600;
+    color: #A84D30;
+    margin: 0.6rem 0 0;
+  }
+
+  .gh-card-xp span {
+    font-weight: 400;
+    font-size: 0.65em;
+    color: #75654D;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .gh-card-check {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #A84D30;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    line-height: 1;
+  }
+</style>

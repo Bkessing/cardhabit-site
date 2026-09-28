@@ -1,4 +1,5 @@
 ---
+import Card from './Card.astro';
 ---
 
 <section style="padding:5rem 0;">
@@ -15,14 +16,22 @@
     </h2>
 
     <!-- Body -->
-    <div class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#766449;max-width:600px;margin:0 auto 3rem;text-align:center;">
-      <p style="margin:0 0 1.25em;">
-        Finish a habit card and you earn a vault card: currency you can spend to reach into a friend's game. Vault cards run from Common to Legendary, and the harder the habit you complete, the rarer the card you earn.
-      </p>
+    <div class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#766449;max-width:600px;margin:0 auto 2.5rem;text-align:center;">
       <p style="margin:0;">
-        Save them up, or spend them on a friend's tomorrow.
+        Finish a habit card and you earn a vault card, currency you can spend to reach into a friend's game. Save them up, or spend them on a friend's tomorrow.
       </p>
     </div>
+
+    <!-- 1.1 + 1.2: the rarity progression, shown as real cards instead of
+         prose. The harder the habit, the rarer the card you earn for it. -->
+    <div class="fade-in rarity-row" role="img" aria-label="Rarity progression: Common, Rare, and Legendary vault cards">
+      <Card category="Nutrition" rarity="common" title="Home-Cooked Meal" xp={20} size="md" style="transform:rotate(-3deg);" />
+      <Card category="Physical" rarity="rare" title="Iron Discipline" xp={38} size="md" style="transform:translateY(-10px);" />
+      <Card category="Wildcard" rarity="legendary" title="No Exceptions" xp={100} size="md" style="transform:rotate(3deg);" />
+    </div>
+    <p class="rarity-caption">
+      Common &rarr; Uncommon &rarr; Rare &rarr; Epic &rarr; Legendary.
+    </p>
 
     <!-- Sabotage / Buff split -->
     <div class="fade-in vault-split">
@@ -80,6 +89,26 @@
 </section>
 
 <style>
+  .rarity-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin: 0 auto 1rem;
+  }
+
+  .rarity-caption {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #75654D;
+    text-align: center;
+    margin: 0 0 3rem;
+  }
+
   .ledger-mock {
     width: min(360px, 84vw);
     margin: 3rem auto 0;
@@ -117,7 +146,7 @@
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 600;
     font-size: 1.6rem;
-    color: #C75B39;
+    color: #A84D30;
   }
 
   .ledger-stat-label {
@@ -165,7 +194,7 @@
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
     font-size: 0.95rem;
-    color: #C75B39;
+    color: #A84D30;
     margin: 1.5rem 0 0;
     text-align: center;
   }

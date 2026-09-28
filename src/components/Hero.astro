@@ -1,4 +1,5 @@
 ---
+import Card from './Card.astro';
 ---
 
 <section
@@ -61,26 +62,14 @@
       Free to start &nbsp;·&nbsp; Founder pricing, live in the app now
     </p>
 
-    <!-- The product itself: today's hand, rendered as the app renders it
-         (parchment faces, painted category bands, 2px category border).
-         Replaces a stale dark-theme screenshot with a live illustration of
-         the current Guild Hall card system, not a claimed device capture. -->
+    <!-- The product itself: today's hand, rendered with the real Card
+         component (1.1 + 1.2) — the same two cards from the app screenshot
+         below (Iron Discipline: Physical/Rare, The Hard Conversation:
+         Mental/Epic), plus one uncompleted Recovery card. -->
     <div class="fade-in hand-mock" role="img" aria-label="Today's hand: three habit cards on parchment, two completed and sealed">
-      <div class="hand-card warm-shadow" style="--rot:-9deg;--tx:-58px;--band:#B8422E;">
-        <div class="hand-card-band">Physical</div>
-        <p class="hand-card-title">Iron Discipline</p>
-        <div class="hand-card-check is-done" aria-hidden="true">&#10003;</div>
-      </div>
-      <div class="hand-card warm-shadow" style="--rot:0deg;--tx:0px;--band:#3D77B5;z-index:2;">
-        <div class="hand-card-band">Mental</div>
-        <p class="hand-card-title">The Hard Conversation</p>
-        <div class="hand-card-check is-done" aria-hidden="true">&#10003;</div>
-      </div>
-      <div class="hand-card warm-shadow" style="--rot:9deg;--tx:58px;--band:#7A4FA8;">
-        <div class="hand-card-band">Recovery</div>
-        <p class="hand-card-title">Dead Hours</p>
-        <div class="hand-card-check" aria-hidden="true"></div>
-      </div>
+      <Card category="Physical" rarity="rare" title="Iron Discipline" completed style="position:absolute;top:0;left:50%;margin-left:-64px;transform:rotate(-9deg) translateX(-58px);" />
+      <Card category="Mental" rarity="epic" title="The Hard Conversation" completed style="position:absolute;top:0;left:50%;margin-left:-64px;transform:rotate(0deg) translateX(0px);z-index:2;" />
+      <Card category="Recovery" rarity="common" title="Dead Hours" style="position:absolute;top:0;left:50%;margin-left:-64px;transform:rotate(9deg) translateX(58px);" />
     </div>
   </div>
 </section>
@@ -96,65 +85,5 @@
     width: min(320px, 78vw);
     height: 210px;
     margin: 3.5rem auto 0;
-  }
-
-  .hand-card {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 128px;
-    height: 176px;
-    margin-left: -64px;
-    background: #FDF7EA;
-    border: 2px solid var(--band);
-    border-radius: 14px;
-    transform: rotate(var(--rot)) translateX(var(--tx));
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: left;
-  }
-
-  .hand-card-band {
-    display: inline-block;
-    background: var(--band);
-    color: #FFFFFF;
-    font-family: 'Jost', system-ui, sans-serif;
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 2px 6px;
-    border-radius: 3px;
-    margin-bottom: 10px;
-  }
-
-  .hand-card-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.15;
-    color: #2E2115;
-    margin: 0;
-  }
-
-  .hand-card-check {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(46, 33, 21, 0.25);
-  }
-
-  .hand-card-check.is-done {
-    border-color: #C75B39;
-    background: #C75B39;
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    line-height: 1;
   }
 </style>
