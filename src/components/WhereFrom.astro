@@ -1,37 +1,92 @@
 ---
 // Homepage internal-link mesh: contextual links to all 7 money pages
 // with descriptive anchors, so none of them is footer-only.
+// 2.7: rebuilt from an inline italic link-list into a real card grid, each
+// card carrying a tight one-line hook instead of just a page title.
 const links = [
-  { href: '/vs/75-hard', label: 'CardHabit vs 75 Hard' },
-  { href: '/vs/habitica', label: 'CardHabit vs Habitica' },
-  { href: '/vs/streaks', label: 'CardHabit vs Streaks' },
-  { href: '/vs/finch', label: 'CardHabit vs Finch' },
-  { href: '/vs/atoms', label: 'CardHabit vs Atoms' },
-  { href: '/for/75-hard-quitters', label: 'If you quit 75 Hard' },
-  { href: '/for/atomic-habits-readers', label: 'If you read Atomic Habits' },
+  { href: '/vs/75-hard', label: 'CardHabit vs 75 Hard', hook: 'All or nothing vs. hard and sustainable.' },
+  { href: '/vs/habitica', label: 'CardHabit vs Habitica', hook: 'A whole RPG to manage vs. five cards and done.' },
+  { href: '/vs/streaks', label: 'CardHabit vs Streaks', hook: 'A number that resets vs. a hand that adapts.' },
+  { href: '/vs/finch', label: 'CardHabit vs Finch', hook: 'A pet you comfort vs. a game that pushes you.' },
+  { href: '/vs/atoms', label: 'CardHabit vs Atoms', hook: 'Tracks the habit vs. deals the challenge.' },
+  { href: '/for/75-hard-quitters', label: 'If you quit 75 Hard', hook: 'Same bar, a system built to survive missed days.' },
+  { href: '/for/atomic-habits-readers', label: 'If you read Atomic Habits', hook: 'The four laws, dealt as a daily hand.' },
 ];
-
-const linkStyle = 'color:#A84D30;text-decoration:none;border-bottom:0.5px solid rgba(199, 91, 57, 0.4);';
 ---
 
 <section id="compare" class="section-pad">
-  <div style="max-width:780px;margin:0 auto;padding:0 1.5rem;text-align:center;">
+  <div style="max-width:960px;margin:0 auto;padding:0 1.5rem;text-align:center;">
     <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;margin:0 0 1.25rem;">
       Where you're coming from
     </p>
     <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-0.01em;color:#2E2115;margin:0 0 1.5rem;">
       You've tried <em style="color:#A84D30;font-style:italic;">something.</em>
     </h2>
-    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.7;color:#766449;max-width:560px;margin:0 auto 2rem;">
+    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.7;color:#766449;max-width:560px;margin:0 auto 2.5rem;">
       You're probably not starting from zero. Whether you burned out on a 75-day program, kept a checkbox app alive without changing anything, or read the book and stalled at the last page, there's a page here for the road you took.
     </p>
-    <p class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.9;color:#766449;margin:0;">
-      {links.map((l, i) => (
-        <>
-          {i > 0 && <span> &nbsp;·&nbsp; </span>}
-          <a href={l.href} style={linkStyle}>{l.label}</a>
-        </>
+
+    <div class="compare-grid">
+      {links.map((l) => (
+        <a href={l.href} class="fade-in compare-card warm-shadow">
+          <p class="compare-card-title">{l.label}</p>
+          <p class="compare-card-hook">{l.hook}</p>
+        </a>
       ))}
-    </p>
+    </div>
   </div>
 </section>
+
+<style>
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .compare-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .compare-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .compare-card {
+    display: block;
+    background: #FDF7EA;
+    border: 0.5px solid rgba(199, 91, 57, 0.18);
+    border-radius: 8px;
+    padding: 1.1rem 1.1rem 1.25rem;
+    text-align: left;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .compare-card:hover {
+    border-color: rgba(199, 91, 57, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .compare-card-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: #A84D30;
+    margin: 0 0 0.4rem;
+    line-height: 1.25;
+  }
+
+  .compare-card-hook {
+    font-family: 'Jost', system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #766449;
+    margin: 0;
+  }
+</style>
