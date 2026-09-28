@@ -1,0 +1,52 @@
+---
+// 2.8: honest social proof only.
+//
+// Card/category/rarity counts pulled live from the prod Supabase `cards`
+// table on 2026-09-27 via ~/scripts/pull-cardhabit-cards.sh (source of
+// truth per the CardHabit brain notes — local snapshots are stale):
+//   172 cards, 5 categories (physical/mental/nutrition/recovery/wildcard),
+//   5 rarities (common/uncommon/rare/epic/legendary).
+//
+// App Store rating checked the same day via the iTunes lookup API:
+//   curl -s "https://itunes.apple.com/lookup?id=6768107296"
+//     -> averageUserRating: 5, userRatingCount: 2 (2026-09-27)
+// Per the work order, the rating is not shown because userRatingCount (2)
+// is under the 10-review floor — showing "5.0 (2 ratings)" would read as
+// thin/gamed rather than credible. Re-check the lookup before re-adding.
+const stats = ['172 hand-crafted cards', '5 categories', '5 rarities'];
+---
+
+<section style="padding:1.5rem 1.5rem 0;">
+  <div class="stats-strip fade-in">
+    {stats.map((s, i) => (
+      <>
+        {i > 0 && <span class="stats-dot" aria-hidden="true">&middot;</span>}
+        <span>{s}</span>
+      </>
+    ))}
+  </div>
+  <!-- SOCIAL-PROOF-QUOTE: needs real user quote, owner to supply -->
+</section>
+
+<style>
+  .stats-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Jost', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #75654D;
+  }
+
+  .stats-dot {
+    color: #C75B39;
+  }
+</style>
