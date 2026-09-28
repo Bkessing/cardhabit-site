@@ -11,13 +11,22 @@
   --color-border: rgba(199, 91, 57, 0.18);
   --color-border-strong: rgba(199, 91, 57, 0.35);
   --color-text: #2E2115;
-  --color-text-dim: #7D6A4E;
-  --color-text-fade: #9B8666;
+  /* 2026-09 contrast pass: darkened from #7D6A4E/#9B8666 so body/label text
+     clears 4.5:1 on the page ground (#F5E7CC). At this background lightness,
+     body and muted converge to nearly the same darkness once both are AA
+     compliant; muted stays visually distinct via size/letter-spacing, not
+     luminance. See Decisions.md for the measured before/after table. */
+  --color-text-dim: #766449;
+  --color-text-fade: #75654D;
   --color-gold: #C75B39;
   --color-gold-bright: #A8462A;
   --color-gold-soft: rgba(199, 91, 57, 0.1);
   --color-gold-deep: #A8462A;
   --color-ember: #C08F2E;
+  /* Text-only sienna variant: #C75B39 fails 4.5:1 as small text on the page
+     ground (3.45:1). Buttons/borders/decorative fills keep --color-gold;
+     anything rendering the accent color AS TEXT on a light ground uses this. */
+  --color-gold-text: #A84D30;
 
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-hand: "Caveat", cursive;
