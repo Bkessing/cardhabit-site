@@ -113,6 +113,33 @@ body::before {
   box-shadow: 0 6px 16px rgba(58, 36, 18, 0.16), 0 28px 60px rgba(58, 36, 18, 0.1);
 }
 
+/* 2.6: shared vertical rhythm scale. Sections previously used a flat
+   "padding:5rem 0" plus a 4rem-margin Ornament between them, stacking to
+   ~300px of dead space at every divider (80 + 64 + ~16 + 64 + 80). Capped
+   here so the worst case (section bottom pad + ornament + section top pad)
+   is <=160px desktop / <=96px mobile. */
+.section-pad {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 640px) {
+  .section-pad {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.ornament-gap {
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 640px) {
+  .ornament-gap {
+    margin: 0.5rem 0;
+  }
+}
+
 /* Waitlist form submitted state */
 .waitlist-form.is-submitted .form-fields {
   display: none;
