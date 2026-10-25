@@ -1,22 +1,18 @@
 ---
-// 2.1: Real Guild Hall screenshots, straight from the 6.9" iPhone capture
-// set (raw-v6). Device-framed, no fake OS chrome beyond a plain bezel.
-//
-// Deviation from the work order: the source set's screen_0 ("home pre-draw")
-// captured as a solid black frame and screen_24 ("dealt hand") captured as
-// a duplicate of the pre-draw stack screen, both unusable. Substituted
-// screen_1 (home, post-draw, two real dealt cards visible) and screen_18
-// (welcome screen, the fanned card-back + wordmark) in their place. All
-// three images below are real, unedited app captures.
+// Live App Store screens (en-US 6.7", version 1.2.2), pulled from App Store
+// Connect on 2026-10-25 so the site matches the app people download. They
+// are the store's own composites (headline + device frame), so no extra
+// bezel is drawn around them. Swap back to in-app captures when the rebrand
+// ships (see Bkessing/hq#36).
 import { Image } from 'astro:assets';
-import homeDealt from '../assets/screenshots/home-dealt.png';
-import legendaryReveal from '../assets/screenshots/legendary-reveal.png';
-import welcome from '../assets/screenshots/welcome.png';
+import draw from '../assets/screenshots/store-01-draw.png';
+import legendary from '../assets/screenshots/store-02-legendary.png';
+import codex from '../assets/screenshots/store-03-codex.png';
 
 const shots = [
-  { src: homeDealt, alt: "CardHabit home screen: today's ritual, a 14-day streak, and two dealt habit cards", rot: -4, z: 1 },
-  { src: legendaryReveal, alt: 'A Legendary Wildcard reveal: "No Exceptions," 100 XP', rot: 0, z: 2 },
-  { src: welcome, alt: 'CardHabit welcome screen with the fanned card-back mark', rot: 4, z: 1 },
+  { src: draw, alt: "Today's Draw: five daily challenge cards, from Common to Legendary", rot: -4, z: 1 },
+  { src: legendary, alt: 'A Legendary Wildcard, "No Exceptions," reaching Gold mastery', rot: 0, z: 2 },
+  { src: codex, alt: 'The Codex: completed cards collected by category, 15 of 25 done', rot: 4, z: 1 },
 ];
 ---
 
@@ -32,7 +28,7 @@ const shots = [
       ))}
     </div>
     <p class="device-caption">
-      Straight from the app &mdash; no mockups.
+      Straight from the app. No mockups.
     </p>
   </div>
 </section>
@@ -62,9 +58,8 @@ const shots = [
   }
 
   .device-bezel {
-    background: #2E2115;
-    border-radius: 22px;
-    padding: 6px;
+    border-radius: 18px;
+    overflow: hidden;
     line-height: 0;
   }
 
@@ -72,7 +67,6 @@ const shots = [
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 16px;
   }
 
   .device-caption {
