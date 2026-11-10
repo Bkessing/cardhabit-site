@@ -12,15 +12,15 @@ const { variant = 'full' } = Astro.props;
 const faqs = [
   {
     q: 'What is CardHabit?',
-    a: 'CardHabit is a daily challenge app for people who read Atomic Habits, tried 75 Hard, and want a system they can sustain instead of one that burns them out. Every morning it deals you five habit cards drawn at random from Physical, Mental, Nutrition, Recovery, and Wildcard, and you commit to the ones you can handle. Friends who believe you can handle more can spend cards they have earned to raise the bar on your next morning\'s draw.',
+    a: 'CardHabit is a daily card draw for your life, made for people who read Atomic Habits, tried 75 Hard, and want a system they can sustain instead of one that burns them out. Every morning it deals you five habit cards, and you commit to the ones you can handle. Every card you finish goes into your binder, a growing collection of the days you showed up.',
   },
   {
     q: 'What kind of app is CardHabit?',
-    a: 'CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. Friends can raise the stakes by playing Challenge cards, like Raise the Bar or The Tempter, into your next draw. You show up for the daily challenge, and the habits are what it leaves behind.',
+    a: 'CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. The cards come first. Rank and XP sit quietly underneath as a progression layer, and the habits are what the daily deal leaves behind.',
   },
   {
     q: 'Who is CardHabit for?',
-    a: 'CardHabit is for people who read Atomic Habits and want a system instead of willpower, and for people who did 75 Hard, burned out, and want something sustainable that still feels hard. If you want a daily challenge you can keep up for years, with friends involved instead of grinding alone, it was built for you.',
+    a: 'CardHabit is for people who read Atomic Habits and want a system instead of willpower, and for people who did 75 Hard, burned out, and want something sustainable that still feels real. If you want a daily practice you can keep up for years, with friends dealt in instead of grinding alone, it was built for you.',
   },
   {
     q: 'Is this another 75 Hard?',
@@ -28,23 +28,23 @@ const faqs = [
   },
   {
     q: 'What if I miss a day?',
-    a: 'Your streak ends, and a new one starts the next morning. There is no purity test and no restart-from-zero penance. A friend can also send you a Streak Shield, a card that carries your streak through a missed day. The whole system is built to survive missed days rather than punish you for being human.',
+    a: 'Your streak counts on days you finish what you committed to. If you miss a day, that streak ends and a new one starts the next morning. There is no purity test and no restart-from-zero penance, and the cards already in your binder stay there. The whole system is built to survive missed days rather than punish you for being human.',
   },
   {
-    q: 'How does the daily ritual work?',
-    a: 'Every morning you draw five cards, a random mix from Physical, Mental, Nutrition, Recovery, and Wildcard. You hold a card to lock in your commitment: two cards a day on the free tier, all five on Pro. Each card you complete earns a vault card, a piece of currency you can spend on your own future draws or on a friend\'s.',
+    q: 'How does the daily draw work?',
+    a: 'Every morning you are dealt five cards. You hold a card to commit to it: two cards a day on the free tier, all five on Pro. Each card you finish fills a slot in your binder, the collection the app calls the Codex. Rarer cards carry a richer printed finish, from plain to a foil edge to full gold foil.',
+  },
+  {
+    q: 'What are the suits?',
+    a: 'With CardHabit 2.0, the deck has five suits: Physical, Mind, Nutrition, Recovery, and Connection, plus the Joker, a wild card that can ask for anything (the base deck holds two). Connection is new in 2.0 and covers the people in your life. The current app deals from the earlier set of categories until 2.0 arrives.',
   },
   {
     q: 'What can your friends actually do?',
-    a: 'Friends can only touch tomorrow\'s draw, never today\'s commitments. They can raise the bar by swapping in a harder card, locking in a commitment before you\'ve seen the hand, or hiding the draw so you pick blind. They can also send Buffs, helpful cards like extra XP or a shield for your streak. Every Challenge is a friend saying they believe you can handle more, and once you complete a card it is immune to all of it.',
+    a: 'Coming in CardHabit 2.0, you can deal a friend in. From any card in your hand, you deal the same card into a friend\'s hand for today, by share link if they do not have the app yet. If you both finish it, you each get a paired foil card with both names on it in your binders. If one of you does not finish, nothing bad happens.',
   },
   {
-    q: 'What if my friends push too hard?',
-    a: 'You set the terms. Challenges are on from the moment you add a friend, and one switch in your Profile turns them off entirely, invisible to your friends and reversible any time. Buffs are always available either way. A Challenge only reads as a vote of confidence because declining the game is always one tap away.',
-  },
-  {
-    q: 'What is an archetype?',
-    a: 'An archetype is the play style you earn from the work you actually do. The first ten cards you complete determine which of four you get: Ironclad (Physical), Sage (Mental), Alchemist (Nutrition), or Phantom (Recovery). Each one unlocks abilities that bend your future draws toward what makes you stronger.',
+    q: 'What if a friend deals me a card I cannot do today?',
+    a: 'Then you leave it. A dealt card is an invitation, not an obligation: it does not replace your own hand, it does not count against your streak, and the friend who dealt it loses nothing. You only commit to what you can handle that day.',
   },
   {
     q: 'Is CardHabit available now?',
@@ -55,7 +55,7 @@ const faqs = [
     a: 'The free tier covers the daily draw and lets you commit to two cards a day. CardHabit Pro unlocks all five daily commits and the full record of everything you have played, with a 7-day free trial. Founder pricing is live in the app now: $4.99 a month or $39.99 a year, locked in at signup for as long as your subscription stays active.',
   },
   // 2.11: moved below the substantive questions (what it is, the 75 Hard
-  // difference, pricing) — disambiguation trivia shouldn't be the first
+  // difference, pricing). Disambiguation trivia shouldn't be the first
   // thing a reader hits. Content unchanged.
   {
     q: 'Is CardHabit the same as Habit Card or cardhabit.com?',
@@ -91,12 +91,12 @@ const faqSchema = {
   <div style="max-width:780px;margin:0 auto;padding:0 1.5rem;">
 
     <!-- Eyebrow -->
-    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;margin:0 0 1.25rem;text-align:center;">
+    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#6E1E22;margin:0 0 1.25rem;text-align:center;">
       The details
     </p>
 
     <!-- H2 -->
-    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-0.01em;color:#2E2115;margin:0 0 3rem;text-align:center;">
+    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-0.01em;color:#2B211B;margin:0 0 3rem;text-align:center;">
       Questions, answered.
     </h2>
 
@@ -105,12 +105,12 @@ const faqSchema = {
       {visibleFaqs.map((item, i) => (
         <div
           class="fade-in"
-          style={`padding:2rem 0;${i > 0 ? 'border-top:0.5px solid rgba(199, 91, 57, 0.18);' : ''}`}
+          style={`padding:2rem 0;${i > 0 ? 'border-top:0.5px solid rgba(156, 122, 46, 0.18);' : ''}`}
         >
-          <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;line-height:1.3;color:#2E2115;margin:0 0 0.75rem;">
+          <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;line-height:1.3;color:#2B211B;margin:0 0 0.75rem;">
             {item.q}
           </h3>
-          <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:0.98rem;line-height:1.7;color:#766449;margin:0;">
+          <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:0.98rem;line-height:1.7;color:#574B40;margin:0;">
             {item.a}
           </p>
         </div>
@@ -118,8 +118,8 @@ const faqSchema = {
     </div>
 
     {variant === 'subset' && (
-      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#766449;margin:2.5rem 0 0;text-align:center;">
-        <a href="/faq" style="color:#A84D30;text-decoration:none;border-bottom:0.5px solid rgba(199, 91, 57, 0.4);">More questions, answered on the FAQ page</a>
+      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#574B40;margin:2.5rem 0 0;text-align:center;">
+        <a href="/faq" style="color:#6E1E22;text-decoration:none;border-bottom:0.5px solid rgba(156, 122, 46, 0.4);">More questions, answered on the FAQ page</a>
       </p>
     )}
 

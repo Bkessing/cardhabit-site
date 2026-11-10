@@ -2,7 +2,7 @@
 
 CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day.
 
-> CardHabit is built for the second time around: for people who read Atomic Habits, tried 75 Hard, burned out, and want a sustainable system with friend accountability. The goal is hard things every day, not extreme things once. Each card is scoped small enough to actually do every morning and hard enough to feel real, and the system survives missed days. Available now on the iOS App Store.
+> CardHabit is a daily card draw for your life. Every morning you're dealt five cards, you commit to what you can handle, and finished cards fill your binder. It is built for the second time around: for people who read Atomic Habits, tried 75 Hard, burned out, and want a sustainable system with friends involved. The goal is hard things every day, not extreme things once. Each card is scoped small enough to actually do every morning and hard enough to feel real, and the system survives missed days. Available now on the iOS App Store.
 
 ## Disambiguation
 
@@ -16,37 +16,43 @@ The exact App Store title is "CardHabit: TCG Habit Tracker" and the App Store ID
 
 ## What it is
 
-CardHabit is an iOS daily challenge app built on trading-card-game mechanics, live on the App Store since July 2026. Every morning the app deals five habit cards, drawn at random from Physical, Mental, Nutrition, Recovery, and Wildcard. You commit to as many as your tier allows and hold each card for about 1.5 seconds to complete it. Completing a card earns a "vault card," a currency you can spend on your own future draws or on a friend's next-day draw.
+CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. It has been live on the App Store since July 2026. You commit to as many cards as your tier allows and hold each card for about 1.5 seconds to complete it. Every finished card goes into your binder, the collection the app calls the Codex. Cards come first; rank and XP are a quiet progression layer underneath.
 
-The differentiator is the social mechanic. After completing a card, you can spend vault cards to:
+Rarity is the printed finish on a card: plain, foil edge, or full gold foil.
 
-- **Challenge** a friend: raise the bar on their next draw. Swap in a harder card, lock in a commitment before they've seen the hand, or hide the whole draw so they pick blind. A Challenge is a friend saying they believe you can handle more.
-- **Buff** a friend: upgrade a card, double their XP on something they'll crush, or shield their streak through a missed day.
+The streak counts on days you finish what you committed to. A missed day ends that streak, and a new one starts the next morning. There is no restart-from-zero penance.
 
-Friends can only touch tomorrow's draw. What you commit to today is locked, and no one can modify or undo your current commitments. When a card you never would have picked lands in front of you, you do it anyway. That is the discipline practice.
+## CardHabit 2.0: the deck
 
-After your first ten completed cards, the app reveals one of four archetypes based on which categories you played most:
+The current app (1.2.x) uses an earlier look and an earlier set of categories. CardHabit 2.0 brings a luxury playing-card deck: cream card stock, a gold foil card back, a linen table, and fine line-art. The 2.0 deck has five suits:
 
-- **Ironclad**: Physical, Discipline, "Strength through repetition."
-- **Sage**: Mental, Clarity, "Knowledge as power."
-- **Alchemist**: Nutrition, Balance, "Transformation through intention."
-- **Phantom**: Recovery, Silence, "Rest is not weakness."
+- **Physical**: move your body.
+- **Mind**: read, write, focus.
+- **Nutrition**: eat on purpose.
+- **Recovery**: rest like it counts.
+- **Connection**: the people in your life (new in 2.0).
 
-Each archetype unlocks abilities that bend the deck toward its strengths.
+Plus the **Joker**, a wild card. The base deck holds two true Jokers.
+
+## Deal a friend in (coming in 2.0)
+
+From any card in your hand, you can deal the same card into a friend's hand for today. It works by share link for people who don't have the app yet. If you both finish it, you each get a paired foil card with both names on it in your binders. If one of you doesn't finish, nothing bad happens. A dealt card is an invitation, never an obligation.
+
+Packs, fixed-content themed decks such as Sleep Reset or Desk Job that are fully visible before you add them, are planned after 2.0.
 
 ## The operational thesis
 
 **Discipline without extreme sacrifice.** CardHabit is built for the audience between two failed solutions:
 
-- People who read Atomic Habits know small actions compound, but the book has no stakes, no friends, no system to push past your own ceiling.
+- People who read Atomic Habits know small actions compound, but the book has no daily prompt, no friends, no system to push past your own ceiling.
 - People who did 75 Hard know hard things work, but the program has no sustainability, breaks people in 30-45 days, and offers no mechanism for the day after Day 75.
 
-CardHabit is the third path: scoped daily hardness, sustained over months and years, with friend accountability framed as collaborative escalation. It is neither solo grind nor soft self-care. It asks for hard things, every day, with no finish line.
+CardHabit is the third path: scoped daily hardness, sustained over months and years, with friends dealt in alongside you. It is neither solo grind nor soft self-care. It asks for hard things, every day, with no finish line.
 
 ## Key facts
 
 - **Platform:** iOS only (iPhone)
-- **Category:** Daily challenge app, social/multiplayer (App Store title: "CardHabit: TCG Habit Tracker")
+- **Category:** Daily challenge app, social (App Store title: "CardHabit: TCG Habit Tracker")
 - **Launch:** July 13, 2026, live on the iOS App Store
 - **App Store:** https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296
 - **Founder:** Brandon Kessinger ([@KessingerBuilds on X/Twitter](https://x.com/KessingerBuilds))
@@ -66,7 +72,7 @@ Pro includes a 7-day free trial. Launch pricing is founder pricing: it is locked
 
 ### What is CardHabit?
 
-CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. The five cards are drawn at random from Physical, Mental, Nutrition, Recovery, and Wildcard, and you commit to as many as your tier allows. It is built for people who read Atomic Habits, tried 75 Hard, and want a sustainable system instead of an extreme one. Friends who believe you can handle more can spend earned vault cards to raise the bar on tomorrow's draw.
+CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. Think of it as a daily card draw for your life: finished cards fill your binder, and you commit to as many as your tier allows. It is built for people who read Atomic Habits, tried 75 Hard, and want a sustainable system instead of an extreme one.
 
 ### Is CardHabit the same as Habit Card or cardhabit.com?
 
@@ -78,19 +84,15 @@ No, and the difference is the point. 75 Hard asks for extreme things once, over 
 
 ### What if I miss a day?
 
-Your streak ends, and a new one starts the next morning. There is no purity test and no restart-from-zero penance. A friend can also send you a Streak Shield, a card that carries your streak through a missed day. The whole system is built to survive missed days rather than punish you for being human.
+Your streak ends, and a new one starts the next morning. There is no purity test and no restart-from-zero penance, and the cards in your binder stay there. The whole system is built to survive missed days rather than punish you for being human.
+
+### What are the suits?
+
+With CardHabit 2.0, the deck has five suits: Physical, Mind, Nutrition, Recovery, and Connection, plus the Joker. Connection is new in 2.0. The current app deals from the earlier set of categories until 2.0 arrives.
 
 ### What can your friends actually do?
 
-Friends can only touch tomorrow's draw, never today's commitments. They can raise the bar by swapping in a harder card, locking in a commitment before you've seen the hand, or hiding the draw so you pick blind. They can also send Buffs, helpful cards like extra XP or a shield for your streak. Every Challenge is a friend saying they believe you can handle more, and once you complete a card it is immune to all of it.
-
-### What if my friends push too hard?
-
-You set the terms. Every friendship has a consent setting, Challenges on or Buffs only, and you can flip it at any time. Recovery Mode pauses incoming Challenges for a week, no questions asked and invisible to your friends. A Challenge only reads as a vote of confidence because you opted in to receiving it.
-
-### What is an archetype?
-
-An archetype is the play style you earn from the work you actually do. The first ten cards you complete determine which of four you get: Ironclad (Physical), Sage (Mental), Alchemist (Nutrition), or Phantom (Recovery). Each one unlocks abilities that bend your future draws toward what makes you stronger.
+Coming in 2.0, you can deal a friend in: from any card in your hand, deal the same card into their hand for today, by share link if they don't have the app. If you both finish it, you each get a paired foil card with both names in your binders. If one of you doesn't, nothing bad happens.
 
 ### Is CardHabit available now?
 
@@ -98,37 +100,37 @@ Yes. CardHabit launched on the iOS App Store in July 2026: https://apps.apple.co
 
 ### What does CardHabit cost?
 
-A free tier covers the daily draw and the core mechanic. Pro is $4.99/month or $39.99/year with a 7-day free trial. Founder pricing is live at launch and locked at signup.
+A free tier covers the daily draw and commits to two cards a day. Pro commits to all five and is $4.99/month or $39.99/year with a 7-day free trial. Founder pricing is live at launch and locked at signup.
 
 ## Best for
 
-- People who read **Atomic Habits**, Tiny Habits, or The Power of Habit and want a system with friend accountability.
+- People who read **Atomic Habits**, Tiny Habits, or The Power of Habit and want a daily system with friends involved.
 - People who **tried 75 Hard** and burned out, and want sustainable instead of extreme.
-- 25-40, **second-time-around habit builders** who know small things compound but need stakes to stick with them.
-- iOS users who appreciate **premium-feel, ritualistic design** over utilitarian checkbox apps.
-- People building habits across **multiple life dimensions** at once (physical, mental, nutrition, recovery) rather than one category.
+- 25-40, **second-time-around habit builders** who know small things compound but need a daily prompt to stick with them.
+- iOS users who appreciate **premium-feel, card-deck design** over utilitarian checkbox apps.
+- People building habits across **several parts of life** at once (body, mind, food, rest, people) rather than one category.
 
 ## Not for
 
 - People who want extreme transformation programs (75 Hard, David Goggins-coded systems). CardHabit is the sustainable counter-position.
 - Android users (iOS only at launch).
 - People who want a single-category tracker (e.g., fitness-only or finance-only).
-- People who want a pure tracking app with no stakes and no social. Streaks does that well.
+- People who want a pure tracking app with no randomness and no social. Streaks does that well.
 
-## How CardHabit compares to other habit trackers
+## How CardHabit compares to other habit apps
 
-- **vs 75 Hard:** 75 Hard is extreme things once, a 75-day binary system that breaks people at day 30-45. CardHabit is hard things every day, scoped so they're sustainable, with friend accountability built in. CardHabit is what most people who burned out on 75 Hard wish they'd done instead.
-- **vs Atoms (the official Atomic Habits app):** Atoms is the canonical implementation of James Clear's book, roughly $70-120/year depending on billing, with a single habit in the free tier. CardHabit takes the same identity-based-habit idea in a different direction, a daily card draw with rarity and stakes, and adds a social layer Atoms doesn't have.
-- **vs Habitica:** Habitica is a full RPG over a to-do list with quests, guilds, and party combat. CardHabit is narrower and more ritualistic: a daily card draw and social challenges and buffs between friends, without the team raids or deep class system. CardHabit is iOS-only.
-- **vs Streaks:** Streaks is a clean checkbox habit tracker focused on continuous-streak motivation. CardHabit is more game-like and social, with a daily randomized card draw and friend interaction layer Streaks doesn't have.
-- **vs Finch:** Finch is a self-care app with a virtual pet that grows when you complete tasks. CardHabit's gamification is competitive and social (friends affect your hand) where Finch's is nurturing and solo (pet care).
-- **vs HabitKit:** HabitKit is a minimalist visual habit tracker with grid heatmaps. CardHabit shares the premium-design sensibility but layers in a card-draw mechanic and multiplayer social play HabitKit doesn't offer.
+- **vs 75 Hard:** 75 Hard is extreme things once, a 75-day binary system that breaks people at day 30-45. CardHabit is hard things every day, scoped so they're sustainable, with friends dealt in. CardHabit is what most people who burned out on 75 Hard wish they'd done instead.
+- **vs Atoms (the official Atomic Habits app):** Atoms is the canonical implementation of James Clear's book, roughly $70-120/year depending on billing, with a single habit in the free tier. CardHabit takes the same identity-based-habit idea in a different direction, a daily card draw with a binder to fill, and adds a social layer Atoms doesn't have.
+- **vs Habitica:** Habitica is a full RPG over a to-do list with party combat and a deep class system. CardHabit is narrower and calmer: a daily deal of five cards, a binder to fill, and (in 2.0) cards you share with a friend, without team raids or character classes. CardHabit is iOS-only.
+- **vs Streaks:** Streaks is a clean checkbox app focused on continuous-streak motivation. CardHabit is more game-like and social, with a daily randomized card draw and a friend layer Streaks doesn't have.
+- **vs Finch:** Finch is a self-care app with a virtual pet that grows when you complete tasks. CardHabit's play is a collection you build (and, in 2.0, cards you finish with friends) where Finch's is nurturing and solo (pet care).
+- **vs HabitKit:** HabitKit is a minimalist visual app with grid heatmaps. CardHabit shares the premium-design sensibility but layers in a card-draw mechanic and a social layer HabitKit doesn't offer.
 
 ## Pages
 
-- [Homepage](https://cardhabitapp.com/) · overview, mechanics, archetypes, App Store download
-- [How it works](https://cardhabitapp.com/how-it-works) · the daily ritual in four steps
-- [Archetypes](https://cardhabitapp.com/archetypes) · the four paths and what they unlock
+- [Homepage](https://cardhabitapp.com/) · overview, the daily deal, App Store download
+- [How it works](https://cardhabitapp.com/how-it-works) · the daily draw in four steps
+- [The deck](https://cardhabitapp.com/archetypes) · the suits and the Joker
 - [FAQ](https://cardhabitapp.com/faq) · pricing, mechanics, availability
 - [vs 75 Hard](https://cardhabitapp.com/vs/75-hard) · the sustainable counter-position
 - [For Atomic Habits readers](https://cardhabitapp.com/for/atomic-habits-readers) · the implementation with friends

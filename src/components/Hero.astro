@@ -1,89 +1,137 @@
 ---
-import Card from './Card.astro';
+// Hero: today's hand of five look Z cards fanned on the linen table, with the
+// identity line (decided 2026-11-10) and the canonical entity sentence,
+// verbatim (brain Locked.md). Real card titles from the live deck.
+import ZCard from './ZCard.astro';
+
+const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
+
+const hand = [
+  { suit: 'physical', title: 'Open Air', finish: 'plain', done: true },
+  { suit: 'physical', title: 'Iron Discipline', finish: 'foil', plate: '/z/plate-kettlebell.webp' },
+  { suit: 'mind', title: 'The Deep Read', finish: 'gold' },
+  { suit: 'nutrition', title: 'Green Plate', finish: 'plain' },
+  { suit: 'recovery', title: 'Still Water', finish: 'plain' },
+] as const;
 ---
 
-<section
-  style="position:relative;overflow:hidden;text-align:center;padding:4.5rem 1.5rem 5rem;min-height:calc(100vh - 56px);display:flex;align-items:center;justify-content:center;"
->
-  <!-- Hero content -->
-  <div style="position:relative;z-index:2;max-width:700px;width:100%;">
-    <!-- Eyebrow -->
-    <div class="fade-in" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:2.5rem;">
-      <span style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;">CardHabit</span>
-      <div style="width:6px;height:6px;border-radius:50%;background:#C75B39;"></div>
-      <span style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;">Available now</span>
-      <div style="width:6px;height:6px;border-radius:50%;background:#C75B39;"></div>
-      <span style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;">iOS</span>
+<section class="z-linen hero">
+  <div class="hero-inner">
+    <p class="fade-in z-eyebrow">CardHabit &nbsp;·&nbsp; for iPhone</p>
+
+    <h1 class="fade-in hero-h1">A daily card draw <em>for your life.</em></h1>
+
+    <p class="fade-in hero-sub">
+      CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day.
+    </p>
+
+    <div class="fade-in hero-ctas">
+      <a href={STORE_URL} class="z-btn" data-appstore-cta="hero">Download on the App Store</a>
+      <a href="#printed-deck" class="z-btn z-btn--ghost">Get the printed deck</a>
     </div>
 
-    <!-- Kicker: the product's own voice, handwritten per the hand rule -->
-    <p
-      class="fade-in"
-      style="font-family:'Caveat',cursive;font-weight:600;font-size:clamp(1.6rem,4.5vw,2.15rem);line-height:1;color:#A84D30;margin:0 0 0.5rem;"
-    >
-      Show up. Every day.
-    </p>
+    <p class="fade-in hero-note">Free to start &nbsp;·&nbsp; The new deck arrives in the app with CardHabit 2.0</p>
+  </div>
 
-    <!-- H1: the positioning idea (2.2) -->
-    <h1
-      class="fade-in"
-      style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.2rem,7.5vw,4rem);line-height:1.04;letter-spacing:-0.015em;color:#2E2115;margin:0 0 1.75rem;"
-    >
-      Hard things every day, <em style="color:#A84D30;font-style:italic;">not extreme things once.</em>
-    </h1>
-
-    <!-- Subhead: the hand-of-cards mechanic in one sentence, plus the friend
-         hook in a second. Everything else is re-explained further down the
-         page, so this stays short (2.3). -->
-    <p
-      class="fade-in"
-      style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.65;color:#766449;max-width:580px;margin:0 auto 2.5rem;"
-    >
-      Every morning, CardHabit deals you five habit cards drawn from five categories, and you commit to the hand you can handle. Friends who believe you can handle more can raise the stakes on tomorrow's draw.
-    </p>
-
-    <!-- CTA -->
-    <div class="fade-in">
-      <a
-        href="https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296"
-        class="hero-cta"
-        data-appstore-cta="hero"
-        style="display:inline-block;background:#C75B39;color:#FFFFFF;font-family:'Jost',system-ui,sans-serif;font-weight:500;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;padding:1rem 2.25rem;border-radius:3px;text-decoration:none;transition:background 0.2s,transform 0.2s;border:1px solid #C75B39;"
-      >
-        Download on the App Store
-      </a>
-    </div>
-
-    <!-- Below CTA note -->
-    <p
-      class="fade-in"
-      style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#75654D;margin-top:1.25rem;"
-    >
-      Free to start &nbsp;·&nbsp; Founder pricing, live in the app now
-    </p>
-
-    <!-- The product itself: today's hand, rendered with the real Card
-         component (1.1 + 1.2) — the same two cards from the app screenshot
-         below (Iron Discipline: Physical/Rare, The Hard Conversation:
-         Mental/Epic), plus one uncompleted Recovery card. -->
-    <div class="fade-in hand-mock" role="img" aria-label="Today's hand: three habit cards on parchment, two completed and sealed">
-      <Card category="Physical" rarity="rare" title="Iron Discipline" completed style="position:absolute;top:0;left:50%;margin-left:-64px;transform:rotate(-9deg) translateX(-58px);" />
-      <Card category="Mental" rarity="epic" title="The Hard Conversation" completed style="position:absolute;top:0;left:50%;margin-left:-64px;transform:rotate(0deg) translateX(0px);z-index:2;" />
-      <Card category="Recovery" rarity="common" title="Dead Hours" style="position:absolute;top:0;left:50%;margin-left:-64px;transform:rotate(9deg) translateX(58px);" />
+  <div class="fade-in hand" role="img" aria-label="Today's hand: five cards fanned on a linen table. Open Air, finished. Iron Discipline, The Deep Read, Green Plate and Still Water.">
+    {hand.map((c, i) => (
+      <div class="hand-slot" style={`--i:${i - 2};`}>
+        <ZCard suit={c.suit} title={c.title} finish={c.finish} done={'done' in c && c.done} plate={'plate' in c ? c.plate : undefined} width="var(--cw)" />
+      </div>
+    ))}
+    <div class="deck-stack" aria-hidden="true">
+      <ZCard back width="var(--cw)" style="position:absolute;top:6px;left:4px;" />
+      <ZCard back width="var(--cw)" style="position:absolute;top:3px;left:2px;" />
+      <ZCard back width="var(--cw)" style="position:relative;" />
     </div>
   </div>
 </section>
 
 <style>
-  .hero-cta:hover {
-    background: #A8462A;
-    transform: translateY(-1px);
+  .hero {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 4rem 1.5rem 4.5rem;
+    border-bottom: 1px solid rgba(176, 138, 62, 0.3);
   }
 
-  .hand-mock {
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
     position: relative;
-    width: min(320px, 78vw);
-    height: 210px;
-    margin: 3.5rem auto 0;
+    z-index: 2;
+  }
+
+  .hero-h1 {
+    font-size: clamp(2.1rem, 6.4vw, 4rem);
+    line-height: 1.08;
+    color: #2B211B;
+    margin: 0 0 1.4rem;
+  }
+  .hero-h1 em {
+    display: block;
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.15rem, 2.6vw, 1.4rem);
+    line-height: 1.5;
+    color: #3E342B;
+    max-width: 620px;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-note {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #645749;
+    margin: 1.25rem 0 0;
+  }
+
+  /* The hand: five cards fanned from a pivot below the row, with the deck's
+     card back stacked to the right like a dealt table. */
+  .hand {
+    --cw: 168px;
+    position: relative;
+    height: calc(var(--cw) * 1.62);
+    max-width: 1000px;
+    margin: 3rem auto 0;
+  }
+  .hand-slot {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: calc(var(--cw) / -2 - var(--cw) * 0.45);
+    transform-origin: 50% 160%;
+    transform: translateX(calc(var(--i) * var(--cw) * 0.78)) rotate(calc(var(--i) * 6deg)) translateY(calc(var(--i) * var(--i) * 4px));
+  }
+  .deck-stack {
+    position: absolute;
+    left: 50%;
+    top: calc(var(--cw) * 0.12);
+    margin-left: calc(var(--cw) * 2.05);
+    transform: rotate(8deg);
+  }
+
+  @media (max-width: 900px) {
+    .hand { --cw: 132px; }
+    .hand-slot { margin-left: calc(var(--cw) / -2); }
+    .deck-stack { display: none; }
+  }
+  @media (max-width: 560px) {
+    .hero { padding: 2.75rem 1.25rem 3rem; }
+    .hand { --cw: 86px; height: calc(var(--cw) * 1.85); margin-top: 2rem; }
+    .hand-slot {
+      transform: translateX(calc(var(--i) * var(--cw) * 0.6)) rotate(calc(var(--i) * 6deg)) translateY(calc(var(--i) * var(--i) * 3px));
+    }
   }
 </style>

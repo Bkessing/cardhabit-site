@@ -1,46 +1,46 @@
 @font-face {
-  font-family: "Fraunces";
-  src: url("/fonts/Fraunces.ttf") format("truetype");
-  font-weight: 100 900;
+  font-family: "Cinzel";
+  src: url("/fonts/Cinzel-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cinzel";
+  src: url("/fonts/Cinzel-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-display: swap;
 }
 
 @import "tailwindcss";
 
-/* Guild Hall palette (mirrors the iOS app's 2026-09-27 retheme).
-   Ground stays LIGHT; depth lives in shadows and the sienna accent, never
-   in black/gray shading. Gold/ochre is decoration only, never text. */
+/* Look Z: the luxury playing-card deck (decided 2026-11-10, brain
+   Projects/CardHabit/Decisions.md; style bible in Bkessing/cardhabit
+   docs/art/STYLE_BIBLE_Z.md). Cream card stock, warm ink, oxblood card back
+   with gold foil, a linen table. Light only, matte, calm. The values below
+   mirror the app's z* tokens so the site and the app read as one deck. */
 @theme {
-  --color-bg: #F5E7CC;
-  --color-bg-elev: #FDF7EA;
-  --color-bg-elev-2: #FFFFFF;
-  --color-bg-warm: #FFFFFF;
-  --color-border: rgba(199, 91, 57, 0.18);
-  --color-border-strong: rgba(199, 91, 57, 0.35);
-  --color-text: #2E2115;
-  /* 2026-09 contrast pass: darkened from #7D6A4E/#9B8666 so body/label text
-     clears 4.5:1 on the page ground (#F5E7CC). At this background lightness,
-     body and muted converge to nearly the same darkness once both are AA
-     compliant; muted stays visually distinct via size/letter-spacing, not
-     luminance. See Decisions.md for the measured before/after table. */
-  --color-text-dim: #766449;
-  --color-text-fade: #75654D;
-  --color-gold: #C75B39;
-  --color-gold-bright: #A8462A;
-  --color-gold-soft: rgba(199, 91, 57, 0.1);
-  --color-gold-deep: #A8462A;
-  --color-ember: #C08F2E;
-  /* Text-only sienna variant: #C75B39 fails 4.5:1 as small text on the page
-     ground (3.45:1). Buttons/borders/decorative fills keep --color-gold;
-     anything rendering the accent color AS TEXT on a light ground uses this. */
-  --color-gold-text: #A84D30;
+  --color-bg: #F2EBDD;           /* linen table */
+  --color-bg-elev: #F8F3E8;      /* card stock, lifted */
+  --color-cream: #F4EDE0;        /* zCream, the card face */
+  --color-text: #2B211B;         /* zInk */
+  --color-text-dim: #574B40;
+  --color-text-fade: #645749;
+  --color-oxblood: #6E1E22;      /* card back; accent text and buttons */
+  --color-oxblood-deep: #561418;
+  --color-gold: #B08A3E;         /* zGold foil, decoration only */
+  --color-gold-light: #D9BC74;
+  --color-gold-ink: #7E6224;     /* gold that is legible as small text */
 
+  /* Suit inks (one per suit, from the style bible). */
+  --color-physical: #9A2E2A;
+  --color-mind: #2C4A7A;
+  --color-nutrition: #2F6B3E;
+  --color-recovery: #5E3C7A;
+  --color-connection: #2A6670;
+  --color-joker: #9C7A2E;
+
+  --font-engraved: "Cinzel", "Cormorant Garamond", Georgia, serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
-  /* Site display face (decided 2026-09-27): Fraunces, self-hosted variable
-     (SOFT/WONK axes need the VF file; Google's CSS API subsets them away).
-     The APP keeps Cormorant for card titles - site headlines only. */
-  --font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
-  --font-hand: "Caveat", cursive;
   --font-sans: "Jost", system-ui, sans-serif;
 }
 
@@ -60,36 +60,44 @@ html {
 }
 
 body {
-  /* Sunlit toasted-cream ground: a soft lightening top-center and a faint
-     warm tan vignette at the edges, both warm-family only (never gray/black). */
-  background-color: #F5E7CC;
-  background-image:
-    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(255, 255, 255, 0.45) 0%, transparent 62%),
-    radial-gradient(ellipse 140% 100% at 50% 50%, transparent 58%, rgba(217, 190, 140, 0.4) 100%);
-  background-attachment: fixed;
-  color: #2E2115;
+  background-color: #F2EBDD;
+  color: #2B211B;
   font-family: "Jost", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
 
-/* Card-back diamond lattice: the paper-ground signature from the app's
-   materials doctrine, recolored into the sienna family at low opacity. */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpolygon points='12,2 22,12 12,22 2,12' fill='none' stroke='%23C75B39' stroke-width='0.5'/%3E%3C/svg%3E");
-  opacity: 0.045;
+/* The linen table: the real Z linen texture, washed toward cream so text on
+   it stays calm. Used by the hero and the feature bands. */
+.z-linen {
+  background-color: #EFE6D5;
+  background-image:
+    linear-gradient(rgba(242, 235, 221, 0.55), rgba(242, 235, 221, 0.55)),
+    url("/z/linen.webp");
+  background-size: auto, cover;
+  background-position: center;
+}
+
+/* Engraved headings: Cinzel capitals, the same face as the app's card titles
+   and wordmark. Pages set sizes inline; the face and weight live here so the
+   whole site changes in one place. Cinzel has no italic, so emphasis is
+   carried by colour, not slant. */
+h1, h2, h3, .engraved {
+  line-height: 1.2;
+  font-family: var(--font-engraved) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.02em;
+}
+h1 em, h2 em, h3 em, .engraved em {
+  font-style: normal !important;
+  color: #6E1E22 !important;
 }
 
 /* Fade-in animation */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(16px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -98,46 +106,74 @@ body::before {
   transform: translateY(0);
 }
 
-/* Archetype card top-edge accent line */
-.archetype-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.archetype-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(199, 91, 57, 0.4), transparent);
-}
-
-/* Matte two-layer warm shadow doctrine: tight + wide, warm-ink tinted.
-   No glossy gradients, no glow rings, ever. */
+/* Matte two-layer warm shadow: a card resting on cloth. Never glossy. */
 .warm-shadow {
-  box-shadow: 0 2px 6px rgba(58, 36, 18, 0.16), 0 10px 26px rgba(58, 36, 18, 0.1);
+  box-shadow: 0 1px 2px rgba(43, 33, 27, 0.14), 0 8px 22px rgba(43, 33, 27, 0.1);
 }
 
 .warm-shadow-lg {
-  box-shadow: 0 6px 16px rgba(58, 36, 18, 0.16), 0 28px 60px rgba(58, 36, 18, 0.1);
+  box-shadow: 0 2px 6px rgba(43, 33, 27, 0.16), 0 24px 54px rgba(43, 33, 27, 0.12);
 }
 
-/* 2.6: shared vertical rhythm scale. Sections previously used a flat
-   "padding:5rem 0" plus a 4rem-margin Ornament between them, stacking to
-   ~300px of dead space at every divider (80 + 64 + ~16 + 64 + 80). Capped
-   here so the worst case (section bottom pad + ornament + section top pad)
-   is <=160px desktop / <=96px mobile. */
+/* Card stock panel: what a printed insert or rules card looks like. */
+.z-stock {
+  background: #F8F3E8;
+  border: 1px solid rgba(176, 138, 62, 0.45);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 4px #F8F3E8, inset 0 0 0 5px rgba(176, 138, 62, 0.35),
+    0 1px 2px rgba(43, 33, 27, 0.12), 0 10px 26px rgba(43, 33, 27, 0.08);
+}
+
+/* Primary button: oxblood with a gold foil hairline, like the tuck box. */
+.z-btn {
+  display: inline-block;
+  background: #6E1E22;
+  color: #F4EDE0;
+  font-family: "Jost", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2.1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px rgba(217, 188, 116, 0.6), 0 2px 8px rgba(43, 33, 27, 0.18);
+  transition: background 0.2s, transform 0.2s;
+}
+.z-btn:hover {
+  background: #561418;
+  transform: translateY(-1px);
+}
+.z-btn--ghost {
+  background: transparent;
+  color: #6E1E22;
+  box-shadow: inset 0 0 0 1px rgba(110, 30, 34, 0.45);
+}
+.z-btn--ghost:hover {
+  background: rgba(110, 30, 34, 0.06);
+}
+
+/* Eyebrow label above a section heading. */
+.z-eyebrow {
+  font-family: "Jost", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #6E1E22;
+  margin: 0 0 1.1rem;
+}
+
+/* Shared vertical rhythm. */
 .section-pad {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 @media (max-width: 640px) {
   .section-pad {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
   }
 }
 
@@ -150,30 +186,3 @@ body::before {
     margin: 0.5rem 0;
   }
 }
-
-/* Waitlist form submitted state */
-.waitlist-form.is-submitted .form-fields {
-  display: none;
-}
-
-.waitlist-form.is-submitted .form-note {
-  display: none;
-}
-
-.waitlist-form .form-success {
-  display: none;
-}
-
-.waitlist-form.is-submitted .form-success {
-  display: block;
-}
-
-/* Fraunces display application (2026-09-27): headlines wear the tavern
-   signage face with soft, wonky old-style settings. */
-h1, h2, .display {
-  font-family: var(--font-display);
-  font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 72;
-  font-weight: 620;
-  letter-spacing: -0.01em;
-}
-h1 em, h2 em, .display em { font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 72; }

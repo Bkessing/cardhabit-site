@@ -8,10 +8,10 @@ import GetTheApp from '../../components/GetTheApp.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'CardHabit vs BeHard: Checklist Challenges or a Daily Card Game';
-const description = 'BeHard tracks a challenge you define once and repeat daily. CardHabit deals the challenge fresh every morning: five habit cards with trading-card rarities, friends who play cards into your day, and no 75-day finish line.';
+const description = 'BeHard tracks a challenge you define once and repeat daily. CardHabit deals the challenge fresh every morning: five habit cards with rare foil finishes, a binder of finished cards to fill, and no 75-day finish line.';
 
-// Content last substantively changed: August 2026. Update by hand when the page changes.
-const updated = 'August 2026';
+// Content last substantively changed: November 2026. Update by hand when the page changes.
+const updated = 'November 2026';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -20,16 +20,16 @@ const updated = 'August 2026';
   <main>
     <section style="padding:5rem 1.5rem 3rem;text-align:center;">
       <div style="max-width:780px;margin:0 auto;">
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;margin:0 0 1.25rem;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#6E1E22;margin:0 0 1.25rem;">
           Comparison
         </p>
-        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#2E2115;margin:0 0 1.75rem;">
-          CardHabit <em style="color:#A84D30;font-style:italic;">vs BeHard.</em>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#2B211B;margin:0 0 1.75rem;">
+          CardHabit <em style="color:#6E1E22;font-style:italic;">vs BeHard.</em>
         </h1>
-        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#766449;max-width:640px;margin:0 auto;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#574B40;max-width:640px;margin:0 auto;">
           BeHard is the biggest of the 75-Hard-style trackers: define your challenge once, check the boxes daily, keep the streak with a group. CardHabit starts from a different question. What if the challenge changed every morning?
         </p>
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#75654D;margin:1.5rem 0 0;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#645749;margin:1.5rem 0 0;">
           Updated {updated}
         </p>
       </div>
@@ -38,40 +38,40 @@ const updated = 'August 2026';
     <Ornament />
 
     <section style="padding:3rem 1.5rem;">
-      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#766449;">
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2E2115;margin:0 0 1.5rem;">The short version</h2>
+      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#574B40;">
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2B211B;margin:0 0 1.5rem;">The short version</h2>
         <p style="margin:0 0 1rem;">BeHard is a strong tracker for a challenge you design yourself. You set the daily rules, the app holds you to them, and group challenges with leaderboards supply the accountability. If you are mid-75-Hard and want a purpose-built companion, it does that job well and a large community runs on it.</p>
-        <p style="margin:0 0 2rem;">The structural difference is who writes the daily list. In BeHard, you do, once, and then repeat it. In CardHabit, the deck does, every morning: five habit cards drawn across Physical, Mental, Nutrition, Recovery, and Wildcard, with rarities from Common to Legendary. You commit to the ones you will back up. Repetition is the thing the draw exists to kill.</p>
+        <p style="margin:0 0 2rem;">The structural difference is who writes the daily list. In BeHard, you do, once, and then repeat it. In CardHabit, the deck does, every morning: five habit cards dealt at random, with the rarer ones printed in a richer finish, from plain to full gold foil. You commit to the ones you will back up. Repetition is the thing the draw exists to kill.</p>
 
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2E2115;margin:0 0 1.5rem;">At a glance</h2>
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2B211B;margin:0 0 1.5rem;">At a glance</h2>
 
         <div style="overflow-x:auto;margin:0 0 2rem;">
           <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
             <thead>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.35);">
-                <th style="text-align:left;padding:0.85rem 0.5rem;color:#A84D30;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Feature</th>
-                <th style="text-align:left;padding:0.85rem 0.5rem;color:#A84D30;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">CardHabit</th>
-                <th style="text-align:left;padding:0.85rem 0.5rem;color:#A84D30;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">BeHard</th>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.35);">
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#6E1E22;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Feature</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#6E1E22;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">CardHabit</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#6E1E22;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">BeHard</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Who writes the daily list</td><td style="padding:0.85rem 0.5rem;">The deck, fresh each morning</td><td style="padding:0.85rem 0.5rem;">You, once, at challenge setup</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Structure</td><td style="padding:0.85rem 0.5rem;">Indefinite daily ritual</td><td style="padding:0.85rem 0.5rem;">Challenge arcs (75 Hard and custom variants)</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Variety</td><td style="padding:0.85rem 0.5rem;">172-card deck, rarities, randomness</td><td style="padding:0.85rem 0.5rem;">Fixed by design; the rules are the point</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Social</td><td style="padding:0.85rem 0.5rem;">Friends play Buff and Challenge cards into your next draw</td><td style="padding:0.85rem 0.5rem;">Group challenges and leaderboards</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Missed day</td><td style="padding:0.85rem 0.5rem;">Streak resets, or a friend's Streak Shield carries you</td><td style="padding:0.85rem 0.5rem;">Depends on the challenge rules you chose</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Collection layer</td><td style="padding:0.85rem 0.5rem;">The Codex: every completed card earns Bronze to Gold mastery</td><td style="padding:0.85rem 0.5rem;">None</td></tr>
-              <tr><td style="padding:0.85rem 0.5rem;color:#2E2115;">Built for</td><td style="padding:0.85rem 0.5rem;">People who want the challenge to surprise them</td><td style="padding:0.85rem 0.5rem;">People who want their exact rules enforced</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Who writes the daily list</td><td style="padding:0.85rem 0.5rem;">The deck, fresh each morning</td><td style="padding:0.85rem 0.5rem;">You, once, at challenge setup</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Structure</td><td style="padding:0.85rem 0.5rem;">Indefinite daily deal</td><td style="padding:0.85rem 0.5rem;">Challenge arcs (75 Hard and custom variants)</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Variety</td><td style="padding:0.85rem 0.5rem;">172-card deck, rare foil finishes, randomness</td><td style="padding:0.85rem 0.5rem;">Fixed by design; the rules are the point</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Social</td><td style="padding:0.85rem 0.5rem;">Deal a friend in: share a card, finish it together (2.0)</td><td style="padding:0.85rem 0.5rem;">Group challenges and leaderboards</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Missed day</td><td style="padding:0.85rem 0.5rem;">That streak ends; a new one starts the next morning</td><td style="padding:0.85rem 0.5rem;">Depends on the challenge rules you chose</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Collection layer</td><td style="padding:0.85rem 0.5rem;">Your binder (the Codex in the app): every finished card is collected</td><td style="padding:0.85rem 0.5rem;">None</td></tr>
+              <tr><td style="padding:0.85rem 0.5rem;color:#2B211B;">Built for</td><td style="padding:0.85rem 0.5rem;">People who want the challenge to surprise them</td><td style="padding:0.85rem 0.5rem;">People who want their exact rules enforced</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2E2115;margin:0 0 1.5rem;">Where BeHard is right</h2>
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2B211B;margin:0 0 1.5rem;">Where BeHard is right</h2>
         <p style="margin:0 0 2rem;">Self-defined rules are the correct tool while you are inside a program like 75 Hard. The program's power is its rigidity; an app that enforces the exact list you signed up for keeps you honest, and doing it alongside a group multiplies the cost of quitting. If that is the season you are in, use the tool built for it.</p>
 
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2E2115;margin:0 0 1.5rem;">What CardHabit does differently</h2>
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2B211B;margin:0 0 1.5rem;">What CardHabit does differently</h2>
         <p style="margin:0 0 1rem;">CardHabit is built for the years around the challenge, not the 75 days inside it. A fixed list you wrote yourself has a known failure mode: the day it stops surprising you is the day it stops working, and you are both the player and the referee. The draw removes that conflict of interest. The deck decides what today asks; you decide what you will back up.</p>
-        <p style="margin:0;">The game layer is the other difference. Completions drop action cards. Friends spend theirs on you: a Gilded Draw to upgrade tomorrow's hand, a Challenge card to raise your bar. Every finished card builds a collection you can look back through. Discipline, with the texture of a card game instead of a checklist.</p>
+        <p style="margin:0;">The collection is the other difference. Every card you finish goes into your binder, a record you can look back through, and rank and XP build quietly underneath. With CardHabit 2.0 you can also deal a friend in: send a card from your hand into theirs for today, and if you both finish it, you each get a paired foil card with both names on it. Discipline, with the texture of a card game instead of a checklist.</p>
       </div>
     </section>
 
