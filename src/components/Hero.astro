@@ -30,7 +30,7 @@ const hand = [
       <a href="#printed-deck" class="z-btn z-btn--ghost">Get the printed deck</a>
     </div>
 
-    <p class="fade-in hero-note">Free to start &nbsp;·&nbsp; The new deck arrives in the app with CardHabit 2.0</p>
+    <p class="fade-in hero-note">Free to start &nbsp;·&nbsp; The new deck arrives with CardHabit 2.0</p>
   </div>
 
   <div class="fade-in hand" role="img" aria-label="Today's hand: five cards fanned on a linen table. Open Air, finished. Iron Discipline, The Deep Read, Green Plate and Still Water.">
@@ -129,9 +129,15 @@ const hand = [
   }
   @media (max-width: 560px) {
     .hero { padding: 2.75rem 1.25rem 3rem; }
-    .hand { --cw: 86px; height: calc(var(--cw) * 1.85); margin-top: 2rem; }
+    /* Phone: each card shows 80% of its face before the next one overlaps,
+       and long titles wrap inside the visible part so none is hidden. */
+    .hand { --cw: 80px; height: calc(var(--cw) * 1.85); margin-top: 2rem; }
     .hand-slot {
-      transform: translateX(calc(var(--i) * var(--cw) * 0.6)) rotate(calc(var(--i) * 6deg)) translateY(calc(var(--i) * var(--i) * 3px));
+      transform: translateX(calc(var(--i) * var(--cw) * 0.8)) rotate(calc(var(--i) * 4deg)) translateY(calc(var(--i) * var(--i) * 3px));
+    }
+    .hand :global(.zc-title) {
+      box-sizing: border-box;
+      padding: 0 12%;
     }
   }
 </style>
