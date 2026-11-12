@@ -1,0 +1,217 @@
+---
+// A look Z playing card: cream stock, a double rule in the suit's ink, the
+// suit pip, an engraved Cinzel title and the suit's line-art plate. The finish
+// is the rarity (plain, foil edge, gold foil), exactly as the printed deck.
+// `back` renders the gold-foil card back instead. Everything inside scales
+// with --w, so one component serves the hero fan and the small suit cards.
+import SuitPip from './SuitPip.astro';
+import { SUITS, type Suit, type Finish } from '../lib/suits';
+
+interface Props {
+  suit?: Suit;
+  title?: string;
+  finish?: Finish;
+  back?: boolean;
+  done?: boolean;
+  width?: string;
+  style?: string;
+  class?: string;
+  plate?: string;
+}
+
+const {
+  suit = 'joker',
+  title = '',
+  finish = 'plain',
+  back = false,
+  done = false,
+  width = '180px',
+  style = '',
+  class: cls = '',
+  plate,
+} = Astro.props;
+const s = SUITS[suit];
+---
+
+{back ? (
+  <div class:list={['zc', 'zc--back', cls]} style={`--w:${width};${style}`}>
+    <img src="/z/card-back.webp" alt="" loading="lazy" decoding="async" />
+  </div>
+) : (
+  <div class:list={['zc', `zc--${finish}`, cls]} style={`--w:${width};--ink:${s.ink};${style}`}>
+    <div class="zc-frame">
+      <div class="zc-top"><SuitPip suit={suit} size={14} /></div>
+      <p class="zc-title">{title}</p>
+      <div class="zc-plate"><img src={plate ?? s.plate} alt="" loading="lazy" decoding="async" /></div>
+      <div class="zc-foot">
+        <span class="zc-rule"></span>
+        <span class="zc-suit">{s.name}</span>
+        <span class="zc-rule"></span>
+      </div>
+    </div>
+    {done && <span class="zc-done">Done</span>}
+  </div>
+)}
+
+<style>
+  .zc {
+    --w: 180px;
+    width: var(--w);
+    aspect-ratio: 5 / 7;
+    font-size: calc(var(--w) / 18);
+    position: relative;
+    box-sizing: border-box;
+    border-radius: calc(var(--w) * 0.06);
+    background: #F4EDE0;
+    background-image: radial-gradient(ellipse 120% 90% at 20% 0%, rgba(255, 255, 255, 0.55), transparent 60%);
+    box-shadow:
+      0 0 0 1px rgba(43, 33, 27, 0.1),
+      0 1px 2px rgba(43, 33, 27, 0.16),
+      0 0.6em 1.6em rgba(43, 33, 27, 0.16);
+    padding: 0.55em;
+    flex: none;
+  }
+
+  .zc--back {
+    padding: 0;
+    overflow: hidden;
+    background: #6E1E22;
+  }
+  .zc--back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+  }
+
+  .zc-frame {
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--ink);
+    outline: 1px solid var(--ink);
+    outline-offset: 0.18em;
+    margin: 0.18em;
+    height: calc(100% - 0.36em);
+    border-radius: 0.35em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.6em 0.5em 0.5em;
+  }
+
+  /* Foil edge (rare, epic): gold around the card edge. */
+  .zc--foil {
+    background-color: #F4EDE0;
+    box-shadow:
+      0 0 0 1px rgba(43, 33, 27, 0.1),
+      inset 0 0 0 0.28em #C9A85A,
+      inset 0 0 0 0.36em #E6CF8E,
+      0 1px 2px rgba(43, 33, 27, 0.16),
+      0 0.6em 1.6em rgba(43, 33, 27, 0.16);
+  }
+
+  /* Gold foil (legendary): thick gold edge, gold frame, gilded wash. */
+  .zc--gold {
+    background-image:
+      radial-gradient(ellipse 120% 90% at 20% 0%, rgba(255, 245, 210, 0.75), transparent 60%),
+      linear-gradient(160deg, rgba(217, 188, 116, 0.22), rgba(176, 138, 62, 0.08));
+    box-shadow:
+      0 0 0 1px rgba(43, 33, 27, 0.12),
+      inset 0 0 0 0.42em #B08A3E,
+      inset 0 0 0 0.52em #D9BC74,
+      0 1px 2px rgba(43, 33, 27, 0.16),
+      0 0.6em 1.6em rgba(43, 33, 27, 0.18);
+  }
+  .zc--gold .zc-frame {
+    border-color: #B08A3E;
+    outline-color: #B08A3E;
+  }
+
+  .zc-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.35em;
+  }
+  .zc-top :global(svg) {
+    width: 1.25em;
+    height: 1.25em;
+  }
+
+  .zc-title {
+    font-family: "Cinzel", Georgia, serif;
+    font-weight: 400;
+    font-size: 1.32em;
+    line-height: 1.12;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2B211B;
+    text-align: center;
+    margin: 0;
+    min-height: 2.24em;
+    /* Full width so long titles (Iron Discipline) wrap inside the frame
+       instead of running past it on the small phone hand. */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-wrap: break-word;
+  }
+
+  .zc-plate {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 0;
+  }
+  .zc-plate img {
+    width: 108%;
+    max-width: none;
+    mix-blend-mode: multiply;
+    display: block;
+    /* The plate is printed on cream; fade its square edge into the stock. */
+    -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 62%, transparent 100%);
+    mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 62%, transparent 100%);
+  }
+
+  .zc-foot {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    width: 100%;
+    margin-top: 0.15em;
+  }
+  .zc-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.55;
+  }
+  .zc-suit {
+    font-family: "Jost", system-ui, sans-serif;
+    font-size: 0.62em;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .zc-done {
+    position: absolute;
+    left: 50%;
+    bottom: 1.9em;
+    transform: translateX(-50%) rotate(-4deg);
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 0.8em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #F4EDE0;
+    background: #6E1E22;
+    padding: 0.3em 0.9em;
+    border-radius: 0.3em;
+    box-shadow: inset 0 0 0 1px rgba(217, 188, 116, 0.7);
+  }
+</style>

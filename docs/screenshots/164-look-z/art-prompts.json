@@ -1,0 +1,27 @@
+{
+ "plate-kettlebell": {
+  "size": "1024x1024",
+  "prompt": "A single fine line-art engraving illustration for a premium collector playing card, in the style of a classic banknote or antique book engraving: thin even ink lines, delicate cross-hatching for shading, no fill colour, no gradients, no text, no letters, no border, no frame, no card outline. Drawn in ONE ink colour only, brick red (#9A2E2A), on a perfectly flat plain warm cream paper background (#F4EDE0) that fills the whole image. The subject is centred with generous empty cream margin all around and fades softly at its edges, like a vignette printed on card stock. Quiet, adult, refined. Subject: a single heavy cast-iron kettlebell resting on a worn wooden floorboard, with a folded towel beside it.",
+  "model": "gpt-image-2.6-sunburst",
+  "quality": "medium"
+ },
+ "plate-connection": {
+  "size": "1024x1024",
+  "prompt": "A single fine line-art engraving illustration for a premium collector playing card, in the style of a classic banknote or antique book engraving: thin even ink lines, delicate cross-hatching for shading, no fill colour, no gradients, no text, no letters, no border, no frame, no card outline. Drawn in ONE ink colour only, deep teal (#2A6670), on a perfectly flat plain warm cream paper background (#F4EDE0) that fills the whole image. The subject is centred with generous empty cream margin all around and fades softly at its edges, like a vignette printed on card stock. Quiet, adult, refined. Subject: two interlinked plain rings, gently overlapping, resting above a small sprig of olive leaves, with two simple paper lanterns hanging in the soft distance.",
+  "model": "gpt-image-2.6-sunburst",
+  "quality": "medium"
+ },
+ "tuck-box": {
+  "size": "1536x1024",
+  "prompt": "A calm, premium product photograph of a luxury playing-card deck on a cream linen tablecloth in soft morning window light. A closed deep oxblood red (#6E1E22) card tuck box with fine gold foil acanthus filigree, a thin double gold border and a small gold laurel wreath medallion in the centre, with NO text or letters anywhere on the box. Beside it, a neat face-down stack of matching cards with the same oxblood and gold symmetrical back, and three cream cards fanned face up showing only fine single-colour line-art engravings (a mountain peak in brick red, an open book in navy, a bowl of greens in forest green) with no text. Matte, quiet, warm, light. No hands, no chips, no dice, no casino, no text, no logos.",
+  "model": "gpt-image-2.6-sunburst",
+  "quality": "medium"
+ },
+ "binder": {
+  "size": "1536x1024",
+  "prompt": "A calm, premium overhead photograph of an open collector's card binder lying on a cream linen tablecloth in soft daylight. Warm brown leather cover, cream pages with clear sleeves in a neat 3 by 3 grid on each page. Most sleeves hold cream playing cards, each with one fine single-colour line-art engraving (mountains in brick red, books in navy, leaves and bowls in forest green, moons over water in plum, linked rings in deep teal) and a thin rule border; a few sleeves are still empty. One card has a gold foil edge. No text, no letters, no numbers, no logos, no hands. Matte, quiet, light, refined.",
+  "model": "gpt-image-2.6-sunburst",
+  "quality": "medium"
+ },
+ "_note": "New look Z art for cardhabitapp.com (hq #164). Card back, linen and the five original suit plates are reused from Bkessing/cardhabit docs/art/z (hq #159 slice 1). The site uses webp copies in public/z."
+}

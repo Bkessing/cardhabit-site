@@ -1,0 +1,88 @@
+---
+// The five suits plus the Joker (decided 2026-11-10). Suits replace the old
+// archetype system on every surface. Real card titles from the live deck.
+import ZCard from './ZCard.astro';
+import SuitPip from './SuitPip.astro';
+import { SUITS, SUIT_ORDER } from '../lib/suits';
+
+interface Props {
+  headingLevel?: 'h1' | 'h2';
+  /** Drop the eyebrow, heading and intro when the page already has them. */
+  bare?: boolean;
+}
+const { headingLevel = 'h2', bare = false } = Astro.props;
+const Heading = headingLevel;
+
+const sample: Record<string, string> = {
+  physical: 'Hill Work',
+  mind: 'The Reading Chair',
+  nutrition: 'Cook for Yourself',
+  recovery: 'The Long Quiet',
+  connection: 'One Call',
+  joker: 'The Inversion',
+};
+---
+
+<section id="suits" class="section-pad z-linen" style="border-top:1px solid rgba(176,138,62,0.3);border-bottom:1px solid rgba(176,138,62,0.3);">
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;text-align:center;">
+    {!bare && <p class="fade-in z-eyebrow">The deck</p>}
+    {!bare && <Heading class="fade-in" style="font-size:clamp(1.8rem,5vw,2.75rem);line-height:1.12;color:#2B211B;margin:0 0 1rem;">
+      Five suits <em>and the Joker.</em>
+    </Heading>}
+    {!bare && <p class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;line-height:1.55;color:#3E342B;max-width:600px;margin:0 auto 2.75rem;">
+      Every card belongs to one suit, marked with its symbol and printed in its own ink. Over time the binder shows you your strongest suit, the part of your life you actually show up for.
+    </p>}
+
+    <div class="suit-grid">
+      {SUIT_ORDER.map((k) => (
+        <div class="fade-in suit">
+          <ZCard suit={k} title={sample[k]} finish={k === 'joker' ? 'gold' : 'plain'} width="150px" />
+          <p class="suit-name"><SuitPip suit={k} size={16} /> <span>{SUITS[k].name}</span></p>
+          <p class="suit-line">{SUITS[k].line}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="fade-in" style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#645749;margin:2.5rem 0 0;">
+      The five suits and the deck look arrive in the app with CardHabit 2.0
+    </p>
+  </div>
+</section>
+
+<style>
+  .suit-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 1040px) {
+    .suit-grid { grid-template-columns: repeat(3, 1fr); row-gap: 2.25rem; }
+  }
+  @media (max-width: 560px) {
+    .suit-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; row-gap: 2rem; }
+    .suit :global(.zc) { --w: 132px !important; }
+  }
+  .suit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .suit-name {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
+    color: #2B211B;
+    margin: 1rem 0 0.35rem;
+  }
+  .suit-line {
+    font-weight: 300;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #574B40;
+    margin: 0;
+    max-width: 200px;
+  }
+</style>

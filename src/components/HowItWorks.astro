@@ -1,172 +1,100 @@
 ---
-import { CATEGORY_COLORS } from '../lib/cardTheme';
-
-const slots = ['Physical', 'Mental', 'Nutrition', 'Recovery', 'Wildcard'] as const;
+// How it works: the deal, the commitment, the binder. Three printed rules
+// cards on the table, the way a premium deck explains itself in the box.
+import ZCard from './ZCard.astro';
 
 const steps = [
   {
     numeral: 'I',
-    title: 'Draw',
-    body: 'Five cards at dawn, drawn at random from Physical, Mental, Nutrition, Recovery, Wildcard. The deal is calibrated to you: the stronger you get, the harder the cards run.',
+    title: 'The deal',
+    body: 'Every morning the deck deals you five cards. Each one is a small, real thing to do today: five minutes outside, fifty pages of a book, a plate that is half greens.',
   },
   {
     numeral: 'II',
     title: 'Commit',
-    body: 'Pick your hand. The ones you choose are yours alone: locked in, untouchable by anyone, including your friends.',
+    body: 'Pick the cards you can handle and leave the rest. Two a day on the free tier, all five on Pro. A light day still counts, as long as you finish what you picked.',
   },
   {
     numeral: 'III',
-    title: 'Complete',
-    body: 'Hold the card for a second and a half and it\'s done. Finishing it earns you a vault card, currency you can spend on a friend\'s draw. The harder the challenge, the rarer the vault card.',
-  },
-  {
-    numeral: 'IV',
-    title: 'Tomorrow',
-    body: 'Overnight, a friend may have spent a vault card on your next draw to make it harder, or better. Whatever lands in front of you, you do it anyway. That\'s the practice.',
+    title: 'Keep the card',
+    body: 'Finish a card and it goes into your binder. Most are plain card stock, some carry a foil edge, and a few come in full gold. The binder fills one morning at a time.',
   },
 ];
 ---
 
-<section class="section-pad">
-  <div style="max-width:780px;margin:0 auto;padding:0 1.5rem;">
-
-    <!-- Eyebrow -->
-    <p class="fade-in" style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;margin:0 0 1.25rem;text-align:center;">
-      The ritual
+<section id="how-it-works" class="section-pad">
+  <div style="max-width:1040px;margin:0 auto;padding:0 1.5rem;text-align:center;">
+    <p class="fade-in z-eyebrow">How it works</p>
+    <h2 class="fade-in" style="font-size:clamp(1.8rem,5vw,2.75rem);line-height:1.12;color:#2B211B;margin:0 0 1rem;">
+      Draw five. <em>Keep what you finish.</em>
+    </h2>
+    <p class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;line-height:1.55;color:#3E342B;max-width:560px;margin:0 auto 2.75rem;">
+      You could play it with a real deck on your kitchen table. The app just shuffles, deals and keeps score.
     </p>
 
-    <!-- H2 -->
-    <h2 class="fade-in" style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.08;letter-spacing:-0.01em;color:#2E2115;margin:0 0 3rem;text-align:center;">
-      The daily ritual.
-    </h2>
-
-    <!-- 1.3: the quest board. Five cards at dawn, pinned to a wood-framed
-         parchment board — the place this all happens, not just a list of
-         steps. -->
-    <div class="fade-in quest-board-outer warm-shadow-lg" role="img" aria-label="The quest board: five pinned card slots, one for each category">
-      <div class="quest-board-inner">
-        <div class="quest-board-slots">
-          {slots.map((name) => (
-            <div class="quest-slot" style={`--slot-color:${CATEGORY_COLORS[name]};`}>
-              <span class="quest-slot-pin" aria-hidden="true"></span>
-              <span class="quest-slot-label">{name}</span>
-            </div>
-          ))}
-        </div>
-        <p class="quest-board-caption">You commit to the hand you can handle.</p>
-      </div>
-    </div>
-
-    <!-- Steps -->
-    <div style="max-width:620px;margin:0 auto;">
-      {steps.map((step, i) => (
-        <div
-          class="fade-in"
-          style={`display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;${i > 0 ? 'border-top:0.5px solid rgba(199, 91, 57, 0.18);' : ''}`}
-        >
-          <!-- Roman numeral -->
-          <div style="min-width:50px;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:2.25rem;line-height:1;color:#A84D30;padding-top:2px;">
-            {step.numeral}
+    <div class="steps">
+      {steps.map((s, i) => (
+        <div class="fade-in z-stock step">
+          <div class="step-art" aria-hidden="true">
+            {i === 0 && (
+              <div class="mini-deal">
+                <ZCard back width="58px" style="transform:rotate(-10deg) translateX(18px);" />
+                <ZCard back width="58px" style="transform:rotate(-2deg);" />
+                <ZCard back width="58px" style="transform:rotate(7deg) translateX(-18px);" />
+              </div>
+            )}
+            {i === 1 && <ZCard suit="mind" title="Long Read" width="78px" />}
+            {i === 2 && <ZCard suit="physical" title="Open Air" finish="foil" width="78px" />}
           </div>
-
-          <!-- Content -->
-          <div>
-            <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.5rem;color:#2E2115;margin:0 0 0.5rem;">
-              {step.title}
-            </h3>
-            <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:0.98rem;line-height:1.7;color:#766449;margin:0;">
-              {step.body}
-            </p>
-          </div>
+          <p class="step-num">{s.numeral}</p>
+          <h3 class="step-title">{s.title}</h3>
+          <p class="step-body">{s.body}</p>
         </div>
       ))}
     </div>
-
   </div>
 </section>
 
 <style>
-  /* Wood-frame border: base gradient plus a repeating faint-line overlay
-     for grain, per 1.3. */
-  .quest-board-outer {
-    max-width: 620px;
-    margin: 0 auto 3.5rem;
-    padding: 14px;
-    border-radius: 18px;
-    background:
-      repeating-linear-gradient(
-        100deg,
-        rgba(58, 36, 18, 0.1) 0px,
-        rgba(58, 36, 18, 0.1) 1px,
-        transparent 1px,
-        transparent 7px
-      ),
-      linear-gradient(135deg, #C89A62 0%, #A87B48 55%, #7E5A32 100%);
-  }
-
-  .quest-board-inner {
-    background: #FDF7EA;
-    border: 1px solid rgba(126, 90, 50, 0.35);
-    border-radius: 10px;
-    padding: 2.25rem 1.5rem 1.75rem;
-  }
-
-  .quest-board-slots {
-    display: flex;
-    justify-content: center;
-    gap: 0.85rem;
-    flex-wrap: wrap;
-  }
-
-  .quest-slot {
-    position: relative;
-    width: 84px;
-    height: 118px;
-    border: 1.5px dashed var(--slot-color);
-    border-radius: 8px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 8px;
-    opacity: 0.9;
-  }
-
-  .quest-slot-pin {
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #C75B39;
-    box-shadow: 0 1px 2px rgba(58, 36, 18, 0.4);
-  }
-
-  .quest-slot-label {
-    font-family: 'Jost', system-ui, sans-serif;
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--slot-color);
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     text-align: center;
-    padding: 0 4px;
   }
-
-  .quest-board-caption {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic;
-    font-size: 1.05rem;
-    color: #A84D30;
-    text-align: center;
-    margin: 1.5rem 0 0;
+  @media (max-width: 800px) {
+    .steps { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
   }
-
-  @media (max-width: 560px) {
-    .quest-slot {
-      width: 30%;
-      height: 96px;
-    }
+  .step {
+    padding: 1.75rem 1.5rem 1.9rem;
+  }
+  .step-art {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+  .mini-deal {
+    display: flex;
+  }
+  .step-num {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    color: #7E6224;
+    margin: 0 0 0.3rem;
+  }
+  .step-title {
+    font-size: 1.35rem;
+    color: #2B211B;
+    margin: 0 0 0.6rem;
+  }
+  .step-body {
+    font-weight: 300;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #574B40;
+    margin: 0;
   }
 </style>

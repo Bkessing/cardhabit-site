@@ -1,0 +1,68 @@
+---
+// Printed-deck interest list (hq #164). The site's existing waitlist function
+// stores every signup as source 'website' and replies with the app-launch
+// confirmation email, so it cannot carry a printed_deck tag without a backend
+// change. Until Brandon approves that change, the button opens a pre-addressed
+// email tagged printed_deck, and the click is counted in PostHog.
+const MAILTO =
+  'mailto:hello@cardhabitapp.com?subject=' +
+  encodeURIComponent('Printed deck list [printed_deck]') +
+  '&body=' +
+  encodeURIComponent('Please add me to the CardHabit printed deck list.');
+---
+
+<section id="printed-deck" class="section-pad z-linen" style="border-top:1px solid rgba(176,138,62,0.3);border-bottom:1px solid rgba(176,138,62,0.3);">
+  <div class="pd-wrap">
+    <div class="fade-in pd-art">
+      <img src="/z/tuck-box.webp" alt="The CardHabit deck on a linen table: an oxblood tuck box with gold foil, a stack of cards and three illustrated cards face up." width="1400" height="933" loading="lazy" decoding="async" class="warm-shadow-lg" />
+    </div>
+    <div class="pd-copy">
+      <p class="fade-in z-eyebrow">The printed deck</p>
+      <h2 class="fade-in" style="font-size:clamp(1.8rem,5vw,2.75rem);line-height:1.12;color:#2B211B;margin:0 0 1.25rem;">
+        Get the printed deck. <em>Join the list.</em>
+      </h2>
+      <p class="fade-in pd-p">
+        The same deck, in your hands: cream card stock, the gold-foil back and a tuck box for the kitchen table. We are planning a printed edition and want to know who would keep one. Join the list and you hear first, once.
+      </p>
+      <div class="fade-in">
+        <a href={MAILTO} class="z-btn" data-track="printed_deck_join" data-track-source="printed_deck">Join the list</a>
+      </div>
+      <p class="fade-in pd-note">Opens an email to hello@cardhabitapp.com &nbsp;·&nbsp; No spam, ever</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pd-wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .pd-art img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+  }
+  .pd-p {
+    font-weight: 300;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #574B40;
+    margin: 0 0 1.75rem;
+  }
+  .pd-note {
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #645749;
+    margin: 1rem 0 0;
+  }
+  @media (max-width: 800px) {
+    .pd-wrap { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  }
+</style>

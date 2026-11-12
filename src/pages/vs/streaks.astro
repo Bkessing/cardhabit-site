@@ -8,10 +8,10 @@ import GetTheApp from '../../components/GetTheApp.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 
 const title = 'CardHabit vs Streaks: Solo Checkbox vs Friend-Accountable Habit System';
-const description = 'Streaks is a quiet checkbox habit tracker. CardHabit is a daily card ritual for second-time-around habit builders who want friend accountability without solo grinding. Different bets on what makes habits stick.';
+const description = 'Streaks is a quiet checkbox habit app. CardHabit is a daily card draw for second-time-around habit builders who want friends involved instead of solo grinding. Different bets on what makes habits stick.';
 
-// Content last substantively changed: July 2026. Update by hand when the page changes.
-const updated = 'July 2026';
+// Content last substantively changed: November 2026. Update by hand when the page changes.
+const updated = 'November 2026';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -20,16 +20,16 @@ const updated = 'July 2026';
   <main>
     <section style="padding:5rem 1.5rem 3rem;text-align:center;">
       <div style="max-width:780px;margin:0 auto;">
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;margin:0 0 1.25rem;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#6E1E22;margin:0 0 1.25rem;">
           Comparison
         </p>
-        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#2E2115;margin:0 0 1.75rem;">
-          CardHabit <em style="color:#A84D30;font-style:italic;">vs Streaks.</em>
+        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#2B211B;margin:0 0 1.75rem;">
+          CardHabit <em style="color:#6E1E22;font-style:italic;">vs Streaks.</em>
         </h1>
-        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#766449;max-width:620px;margin:0 auto;">
-          Streaks is one of the best-designed checkbox habit apps on iOS. CardHabit answers a different question. Both are premium iOS-first apps with strong design; the difference is whether you want a solitary focus tool or a daily ritual that friends can play with.
+        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#574B40;max-width:620px;margin:0 auto;">
+          Streaks is one of the best-designed checkbox habit apps on iOS. CardHabit answers a different question. Both are premium iOS-first apps with strong design; the difference is whether you want a solitary focus tool or a daily card draw you collect and share with friends.
         </p>
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#75654D;margin:1.5rem 0 0;">
+        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#645749;margin:1.5rem 0 0;">
           Updated {updated}
         </p>
       </div>
@@ -38,50 +38,50 @@ const updated = 'July 2026';
     <Ornament />
 
     <section style="padding:3rem 1.5rem;">
-      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#766449;">
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2E2115;margin:0 0 1.5rem;">The short version</h2>
-        <p style="margin:0 0 2rem;">Choose Streaks if you want a quiet, minimal, well-engineered habit tracker that respects your focus and rewards consistency. Choose CardHabit if you've tried solo trackers, kept the streak alive, and still didn't change, and want friends in the loop. CardHabit is built for people who read Atomic Habits, want a sustainable system, and know they need accountability to stick with it.</p>
+      <div style="max-width:780px;margin:0 auto;font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#574B40;">
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2B211B;margin:0 0 1.5rem;">The short version</h2>
+        <p style="margin:0 0 2rem;">Choose Streaks if you want a quiet, minimal, well-engineered habit app that respects your focus and rewards consistency. Choose CardHabit if you've tried solo trackers, kept the streak alive, and still didn't change, and want something that surprises you each morning, with friends in the loop. CardHabit is built for people who read Atomic Habits, want a sustainable system, and know they need more than a counter to stick with it.</p>
 
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2E2115;margin:0 0 1.5rem;">At a glance</h2>
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2B211B;margin:0 0 1.5rem;">At a glance</h2>
 
         <div style="overflow-x:auto;margin:0 0 2rem;">
           <table style="width:100%;border-collapse:collapse;font-size:0.95rem;">
             <thead>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.35);">
-                <th style="text-align:left;padding:0.85rem 0.5rem;color:#A84D30;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Feature</th>
-                <th style="text-align:left;padding:0.85rem 0.5rem;color:#A84D30;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">CardHabit</th>
-                <th style="text-align:left;padding:0.85rem 0.5rem;color:#A84D30;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Streaks</th>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.35);">
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#6E1E22;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Feature</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#6E1E22;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">CardHabit</th>
+                <th style="text-align:left;padding:0.85rem 0.5rem;color:#6E1E22;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;">Streaks</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Platform</td><td style="padding:0.85rem 0.5rem;">iOS</td><td style="padding:0.85rem 0.5rem;">iOS, watchOS, macOS</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Core mechanic</td><td style="padding:0.85rem 0.5rem;">Daily 5-card draw + hold-to-complete</td><td style="padding:0.85rem 0.5rem;">Daily checkbox + streak counter</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Social</td><td style="padding:0.85rem 0.5rem;">Yes: friends affect next-day draws</td><td style="padding:0.85rem 0.5rem;">No (solo by design)</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Gamification</td><td style="padding:0.85rem 0.5rem;">Archetypes, vault, rarity tiers, XP</td><td style="padding:0.85rem 0.5rem;">Streak counts only</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Habit limit</td><td style="padding:0.85rem 0.5rem;">5-card daily draw</td><td style="padding:0.85rem 0.5rem;">Up to 24 tasks</td></tr>
-              <tr style="border-bottom:0.5px solid rgba(199, 91, 57, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2E2115;">Price</td><td style="padding:0.85rem 0.5rem;">Free, Pro $4.99/mo or $39.99/yr</td><td style="padding:0.85rem 0.5rem;">$4.99 one-time</td></tr>
-              <tr><td style="padding:0.85rem 0.5rem;color:#2E2115;">Watch app</td><td style="padding:0.85rem 0.5rem;">Not at launch</td><td style="padding:0.85rem 0.5rem;">Yes</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Platform</td><td style="padding:0.85rem 0.5rem;">iOS</td><td style="padding:0.85rem 0.5rem;">iOS, watchOS, macOS</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Core mechanic</td><td style="padding:0.85rem 0.5rem;">Daily 5-card draw + hold-to-complete</td><td style="padding:0.85rem 0.5rem;">Daily checkbox + streak counter</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Social</td><td style="padding:0.85rem 0.5rem;">Deal a friend in: share a card, finish it together (2.0)</td><td style="padding:0.85rem 0.5rem;">No (solo by design)</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Gamification</td><td style="padding:0.85rem 0.5rem;">A binder to fill, foil rarity finishes, quiet rank and XP</td><td style="padding:0.85rem 0.5rem;">Streak counts only</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Habit limit</td><td style="padding:0.85rem 0.5rem;">5-card daily draw</td><td style="padding:0.85rem 0.5rem;">Up to 24 tasks</td></tr>
+              <tr style="border-bottom:0.5px solid rgba(156, 122, 46, 0.18);"><td style="padding:0.85rem 0.5rem;color:#2B211B;">Price</td><td style="padding:0.85rem 0.5rem;">Free, Pro $4.99/mo or $39.99/yr</td><td style="padding:0.85rem 0.5rem;">$4.99 one-time</td></tr>
+              <tr><td style="padding:0.85rem 0.5rem;color:#2B211B;">Watch app</td><td style="padding:0.85rem 0.5rem;">Not at launch</td><td style="padding:0.85rem 0.5rem;">Yes</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2E2115;margin:0 0 1.5rem;">Where Streaks wins</h2>
-        <p style="margin:0 0 1rem;">Streaks is one purchase, no subscription, and the price has held since 2016. The Apple Watch app is best-in-class for a habit tracker: tap-to-complete from the wrist. Health-app integration is deep. The design is famously restrained and the app respects your time.</p>
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2B211B;margin:0 0 1.5rem;">Where Streaks wins</h2>
+        <p style="margin:0 0 1rem;">Streaks is one purchase, no subscription, and the price has held since 2016. The Apple Watch app is best-in-class for a habit app: tap-to-complete from the wrist. Health-app integration is deep. The design is famously restrained and the app respects your time.</p>
         <p style="margin:0 0 2rem;">If you want a tool that gets out of your way and just keeps score, Streaks is the answer.</p>
 
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2E2115;margin:0 0 1.5rem;">Where CardHabit is different</h2>
-        <p style="margin:0 0 2rem;">CardHabit isn't trying to be quiet. The morning hand is dealt to you and it surprises you, you hold a card down to complete it rather than tapping a box, and every card you finish earns you another card to bank or spend. Friends are the whole point, and the three differences below all flow from that.</p>
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:2rem;color:#2B211B;margin:0 0 1.5rem;">Where CardHabit is different</h2>
+        <p style="margin:0 0 2rem;">CardHabit isn't trying to be quiet. The morning hand is dealt to you and it surprises you, you hold a card down to complete it rather than tapping a box, and every card you finish goes into your binder, the collection the app calls the Codex. The three differences below all flow from that.</p>
 
-        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#A84D30;margin:0 0 0.5rem;">Fixed tasks vs a dealt hand</h3>
-        <p style="margin:0 0 1.5rem;">Streaks asks you to define up to 24 tasks and repeat them. CardHabit deals a fresh hand of five habit cards each morning across Physical, Mental, Nutrition, Recovery, and Wildcard, so hard days and easy days get different hands. You commit to what you can handle before the day starts, and completed cards are immune to anything a friend plays later.</p>
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#6E1E22;margin:0 0 0.5rem;">Fixed tasks vs a dealt hand</h3>
+        <p style="margin:0 0 1.5rem;">Streaks asks you to define up to 24 tasks and repeat them. CardHabit deals a fresh hand of five habit cards each morning (in 2.0, from five suits: Physical, Mind, Nutrition, Recovery, and Connection, plus the Joker), so no two mornings look alike. You commit to what you can handle before the day starts: two cards on the free tier, all five on Pro.</p>
 
-        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#A84D30;margin:0 0 0.5rem;">Other players at the table</h3>
-        <p style="margin:0 0 1.5rem;">Streaks is solo by design. In CardHabit, your friend Alex can spend cards he earned to play a Challenge card into your next draw: Raise the Bar swaps in a harder card, Fog of War hides the hand so you pick blind, The Tempter dares you to hold the line. He can also send Buffs like Double XP, Streak Shield, Second Wind, or Gilded Draw. Every Challenge is a friend saying they believe you can handle more, and you set the consent terms per friendship.</p>
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#6E1E22;margin:0 0 0.5rem;">Other players at the table</h3>
+        <p style="margin:0 0 1.5rem;">Streaks is solo by design. In CardHabit 2.0, you can deal a friend in: say your friend Alex is holding a card for a twenty-minute walk. He deals the same card into your hand for today, by share link if you don't have the app yet. If you both finish it, you each get a paired foil card with both names on it in your binders. If one of you doesn't finish, nothing bad happens.</p>
 
-        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#A84D30;margin:0 0 0.5rem;">A streak that isn't the whole game</h3>
-        <p style="margin:0 0 1.5rem;">In Streaks, the streak count is the scoreboard. In CardHabit it's one system among several: XP builds toward an archetype (Ironclad, Sage, Alchemist, or Phantom, earned from your first ten completed cards), the vault holds what you've banked, and a Streak Shield from a friend can carry you through a missed day without pretending the miss didn't happen.</p>
+        <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.4rem;color:#6E1E22;margin:0 0 0.5rem;">A streak that isn't the whole game</h3>
+        <p style="margin:0 0 1.5rem;">In Streaks, the streak count is the scoreboard. In CardHabit the cards come first. Your streak counts the days you finish what you committed to, and a missed day ends it without pretending the miss didn't happen; a new one starts the next morning. Meanwhile every finished card stays in your binder, rarer cards carry a foil edge or full gold foil, and rank and XP build quietly underneath.</p>
 
-        <p style="margin:0;">CardHabit treats habits as a game with stakes and other players. Streaks treats them as a personal contract. Different bets on what motivates you.</p>
+        <p style="margin:0;">CardHabit treats habits as a deck you collect, with friends you can deal in. Streaks treats them as a personal contract. Different bets on what motivates you.</p>
       </div>
     </section>
 

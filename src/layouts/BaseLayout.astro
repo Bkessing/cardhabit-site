@@ -10,7 +10,7 @@ interface Props {
   noindex?: boolean;
 }
 
-const APP_DESCRIPTION = 'CardHabit is a card-based habit tracker for iOS. Every morning it deals you five habit cards and you commit to what you can handle, so you do hard things every day instead of extreme things once. Friends who believe you can handle more can raise the stakes on tomorrow\'s draw. Available now on the App Store.';
+const APP_DESCRIPTION = 'CardHabit is a daily card draw for your life. Every morning it deals you five habit cards on iPhone; you commit to what you can handle, and every card you finish goes into your binder. Five suits, a Joker, and soon a deck you can deal friends into. Free on the App Store.';
 
 const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
 
@@ -28,14 +28,14 @@ const APP_STORE_TITLE = 'CardHabit: TCG Habit Tracker';
 const APP_RATING = { value: 5, count: 2 };
 
 const {
-  title = 'CardHabit: A Sustainable Habit Tracker with Friend Accountability',
+  title = 'CardHabit: A Daily Card Draw for Your Life | TCG Habit Tracker for iPhone',
   description = APP_DESCRIPTION,
   noindex = false,
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL('https://cardhabitapp.com');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
-const ogImage = new URL('/og-image-v2.png', siteUrl).href;
+const ogImage = new URL('/og-image-z.jpg', siteUrl).href;
 
 const sameAs = [
   'https://twitter.com/KessingerBuilds',
@@ -93,7 +93,7 @@ const structuredData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#F5E7CC" />
+    <meta name="theme-color" content="#F2EBDD" />
 
     <!--
       Apple Smart App Banner. Safari on iOS renders a native install strip at
@@ -126,7 +126,7 @@ const structuredData = {
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="CardHabit. Show up. Every day." />
+    <meta property="og:image:alt" content="CardHabit. A daily card draw for your life." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="CardHabit" />
@@ -137,11 +137,11 @@ const structuredData = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content="CardHabit. Show up. Every day." />
+    <meta name="twitter:image:alt" content="CardHabit. A daily card draw for your life." />
     <meta name="twitter:site" content="@KessingerBuilds" />
     <meta name="twitter:creator" content="@KessingerBuilds" />
 
-    <!-- Favicon: 4-point gold star -->
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
@@ -149,24 +149,24 @@ const structuredData = {
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <!-- Fonts (non-blocking) -->
-    <link rel="preload" href="/fonts/Fraunces.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/Cinzel-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
       />
     </noscript>
   </head>
@@ -184,6 +184,11 @@ const structuredData = {
         var el = e.target && e.target.closest ? e.target.closest('a[data-appstore-cta]') : null;
         if (el && window.posthog) {
           window.posthog.capture('appstore_click', { source: el.getAttribute('data-appstore-cta') || 'site' });
+        }
+        // Other tracked CTAs (e.g. the printed-deck list) name their own event.
+        var t = e.target && e.target.closest ? e.target.closest('a[data-track]') : null;
+        if (t && window.posthog) {
+          window.posthog.capture(t.getAttribute('data-track'), { source: t.getAttribute('data-track-source') || 'site' });
         }
       });
     </script>

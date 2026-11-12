@@ -1,53 +1,45 @@
 ---
 ---
 
-<footer style="padding:3rem 1.5rem;text-align:center;">
-  <!-- 4-point gold star (large). Pre-existing bug found during this pass:
-       Tailwind's preflight resets svg to display:block, which breaks the
-       text-align:center centering trick every other icon-wrapper here uses
-       flex for — this one relied on inline default and rendered flush left.
-       Triple-chevron mark (= app icon; decided 2026-09-27). -->
+<footer style="padding:3rem 1.5rem;text-align:center;border-top:1px solid rgba(176,138,62,0.3);">
+  <!-- The deck's card back (look Z) -->
   <div style="display:flex;justify-content:center;margin-bottom:1rem;">
-    <svg width="26" height="29" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M6 14 L20 4 L34 14 L34 19 L20 9 L6 19 Z" fill="#C75B39"/>
-      <path d="M6 26 L20 16 L34 26 L34 31 L20 21 L6 31 Z" fill="#C75B39" opacity="0.75"/>
-      <path d="M6 38 L20 28 L34 38 L34 43 L20 33 L6 43 Z" fill="#C75B39" opacity="0.5"/>
-    </svg>
+    <img src="/z/card-back.webp" alt="" width="30" height="45" style="width:30px;height:45px;border-radius:3px;box-shadow:0 1px 3px rgba(43,33,27,0.25);" loading="lazy" />
   </div>
 
   <!-- Tagline -->
-  <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#75654D;margin:0 0 1.75rem;">
-    The ritual. Every day.
+  <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#645749;margin:0 0 1.75rem;">
+    A daily card draw for your life.
   </p>
 
   <!-- Primary nav links -->
   <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.25rem;margin-bottom:1rem;">
-    <a href="/how-it-works" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#766449;text-decoration:none;transition:color 0.2s;">How it works</a>
-    <a href="/archetypes" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#766449;text-decoration:none;transition:color 0.2s;">Archetypes</a>
-    <a href="/faq" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#766449;text-decoration:none;transition:color 0.2s;">FAQ</a>
+    <a href="/how-it-works" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#574B40;text-decoration:none;transition:color 0.2s;">How it works</a>
+    <a href="/archetypes" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#574B40;text-decoration:none;transition:color 0.2s;">The suits</a>
+    <a href="/faq" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#574B40;text-decoration:none;transition:color 0.2s;">FAQ</a>
   </div>
 
   <!-- Comparison links -->
   <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.25rem;margin-bottom:0.75rem;">
-    <a href="/vs/75-hard" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">vs 75 Hard</a>
-    <a href="/vs/habitica" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">vs Habitica</a>
-    <a href="/vs/streaks" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">vs Streaks</a>
-    <a href="/vs/finch" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">vs Finch</a>
-    <a href="/vs/atoms" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">vs Atoms</a>
+    <a href="/vs/75-hard" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">vs 75 Hard</a>
+    <a href="/vs/habitica" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">vs Habitica</a>
+    <a href="/vs/streaks" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">vs Streaks</a>
+    <a href="/vs/finch" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">vs Finch</a>
+    <a href="/vs/atoms" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">vs Atoms</a>
   </div>
 
   <!-- For-audience links -->
   <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.25rem;margin-bottom:1.25rem;">
-    <a href="/for/atomic-habits-readers" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">For Atomic Habits readers</a>
-    <a href="/for/75-hard-quitters" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">For 75 Hard quitters</a>
+    <a href="/for/atomic-habits-readers" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">For Atomic Habits readers</a>
+    <a href="/for/75-hard-quitters" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">For 75 Hard quitters</a>
   </div>
 
   <!-- Secondary links -->
   <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.5rem;margin-bottom:1.5rem;">
-    <a href="mailto:hello@cardhabitapp.com" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">Contact</a>
-    <a href="/press" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">Press</a>
-    <a href="/privacy" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">Privacy</a>
-    <a href="/terms" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#75654D;text-decoration:none;transition:color 0.2s;">Terms</a>
+    <a href="mailto:hello@cardhabitapp.com" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">Contact</a>
+    <a href="/press" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">Press</a>
+    <a href="/privacy" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">Privacy</a>
+    <a href="/terms" class="footer-link" style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:400;color:#645749;text-decoration:none;transition:color 0.2s;">Terms</a>
   </div>
 
   <!-- Nick Launches badge (their verifier checks for this anchor + img; keep markup intact) -->
@@ -56,16 +48,16 @@
   </div>
 
   <!-- Copyright -->
-  <p style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;letter-spacing:0.1em;color:#75654D;margin:0;">
+  <p style="font-family:'Jost',system-ui,sans-serif;font-size:11px;font-weight:400;letter-spacing:0.1em;color:#645749;margin:0;">
     © 2026 CardHabit &nbsp;·&nbsp; Built one card at a time
   </p>
 </footer>
 
 <style>
   .footer-link:hover {
-    color: #A84D30;
+    color: #6E1E22;
   }
-  /* Badge sits quietly in the dark footer until hovered */
+  /* Badge sits quietly in the footer until hovered */
   .nl-badge {
     display: inline-block;
     opacity: 0.55;

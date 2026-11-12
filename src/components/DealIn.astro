@@ -1,0 +1,90 @@
+---
+// Deal a friend in (decided 2026-11-10): the 2.0 social mechanic. Shown as
+// cards on the table, not as an app screen (the live app does not have it yet).
+import ZCard from './ZCard.astro';
+---
+
+<section id="deal-a-friend-in" class="section-pad">
+  <div class="deal-wrap">
+    <div class="fade-in deal-art" role="img" aria-label="The same card, Open Air, dealt into two hands, and the paired foil card you both keep when you both finish it.">
+      <div class="deal-pair">
+        <div class="deal-col">
+          <ZCard suit="physical" title="Open Air" width="var(--dw)" style="transform:rotate(-5deg);" />
+          <p class="deal-tag">Your hand</p>
+        </div>
+        <div class="deal-col">
+          <ZCard suit="physical" title="Open Air" width="var(--dw)" style="transform:rotate(5deg);" />
+          <p class="deal-tag">Sam's hand</p>
+        </div>
+      </div>
+      <div class="deal-result">
+        <ZCard suit="physical" title="Open Air" finish="foil" width="var(--dw)" />
+        <p class="deal-tag">Paired foil &nbsp;·&nbsp; You and Sam</p>
+      </div>
+    </div>
+
+    <div class="deal-copy">
+      <p class="fade-in z-eyebrow">Coming in 2.0</p>
+      <h2 class="fade-in" style="font-size:clamp(1.8rem,5vw,2.75rem);line-height:1.12;color:#2B211B;margin:0 0 1.25rem;">
+        Deal a friend in.
+      </h2>
+      <p class="fade-in deal-p">
+        Any card in your hand can go to a friend. Tap Deal in and the same card lands in their hand for today. If they don't have the app yet, the link brings them in and the card is waiting for them.
+      </p>
+      <p class="fade-in deal-p">
+        Finish it together and you both keep a paired foil, with both names on it, in both binders. If only one of you finishes, nothing bad happens. It is an invitation, never a test.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .deal-wrap {
+    --dw: 120px;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .deal-art {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .deal-pair {
+    display: flex;
+    gap: 2.25rem;
+  }
+  .deal-col, .deal-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .deal-result {
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(176, 138, 62, 0.45);
+    width: min(360px, 100%);
+  }
+  .deal-tag {
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #645749;
+    margin: 0.9rem 0 0;
+  }
+  .deal-p {
+    font-weight: 300;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #574B40;
+    margin: 0 0 1rem;
+  }
+  @media (max-width: 800px) {
+    .deal-wrap { grid-template-columns: 1fr; gap: 2rem; text-align: center; --dw: 104px; }
+    .deal-copy { order: -1; }
+  }
+</style>

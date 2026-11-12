@@ -1,79 +1,78 @@
 ---
+// URL kept on purpose (/archetypes is indexed and linked). The page now
+// explains the five suits plus the Joker, which replaced the old play-style
+// system on 2026-11-10 (brain CardHabit Decisions).
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Ornament from '../components/Ornament.astro';
-import Archetypes from '../components/Archetypes.astro';
+import Suits from '../components/Suits.astro';
+import SuitPip from '../components/SuitPip.astro';
 import GetTheApp from '../components/GetTheApp.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { SUITS, SUIT_ORDER } from '../lib/suits';
 
-const title = 'The Four Archetypes: CardHabit Paths (Ironclad, Sage, Alchemist, Phantom)';
-const description = 'CardHabit\'s four archetypes shape your deck based on the categories you play most. Ironclad rewards Physical discipline, Sage rewards Mental clarity, Alchemist rewards Nutrition balance, Phantom rewards Recovery. You earn an archetype after your first ten completed cards.';
+const title = 'The Five Suits: Physical, Mind, Nutrition, Recovery, Connection and the Joker | CardHabit';
+const description = 'Every CardHabit card belongs to one of five suits, Physical, Mind, Nutrition, Recovery and Connection, plus the Joker. Each suit has its own symbol and ink, and your binder shows your strongest suit.';
+
+const detail: Record<string, string> = {
+  physical: 'Cards that ask your body for something: a set of push-ups, a walk with no destination, twenty flights of stairs. Scoped small enough to do on a busy day, real enough to feel.',
+  mind: 'Reading, writing and focus. Fifty pages of a real book, a paragraph by hand, an hour without switching tabs. The suit for attention.',
+  nutrition: 'Eating on purpose rather than by default. Cook one meal yourself, eat a real breakfast, drink water before the first coffee.',
+  recovery: 'Rest that counts as work. Phone down an hour before bed, five minutes of silence, a cold shower. The suit most people skip and most need.',
+  connection: 'Cards that point at other people: call someone you have been meaning to call, give something away, say the honest sentence out loud. Warm, never performative.',
+  joker: 'The wild cards. The base deck holds two true Jokers, and every pack carries one more. A Joker asks for something you would not have picked, like doing the opposite of one default today.',
+};
 ---
 
 <BaseLayout title={title} description={description}>
   <Nav />
   <main>
-    <!-- Page hero -->
-    <section style="padding:5rem 1.5rem 3rem;text-align:center;">
+    <section style="padding:4.5rem 1.5rem 2.5rem;text-align:center;">
       <div style="max-width:780px;margin:0 auto;">
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;margin:0 0 1.25rem;">
-          The paths
-        </p>
-        <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.4rem,7vw,3.75rem);line-height:1.04;letter-spacing:-0.015em;color:#2E2115;margin:0 0 1.75rem;">
-          The four <em style="color:#A84D30;font-style:italic;">archetypes.</em>
+        <p class="z-eyebrow">The deck</p>
+        <h1 style="font-size:clamp(2.2rem,6.5vw,3.5rem);line-height:1.08;color:#2B211B;margin:0 0 1.5rem;">
+          The five <em>suits.</em>
         </h1>
-        <p style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1.05rem;line-height:1.7;color:#766449;max-width:620px;margin:0 auto;">
-          An archetype in CardHabit is a play style you earn, not a personality quiz you take. The app watches which categories you actually complete habit cards in, and after your first ten completions it reveals which of four paths your behavior points toward. Your archetype then unlocks abilities that bend your daily draws toward your strengths, so you can press the categories you already favor.
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;line-height:1.55;color:#3E342B;max-width:640px;margin:0 auto;">
+          A playing-card deck has suits, and so does CardHabit. Every card belongs to one of five, Physical, Mind, Nutrition, Recovery and Connection, plus the Joker. The suit tells you what kind of day the card asks for. It never changes, and it never locks you out of anything.
         </p>
       </div>
     </section>
 
-    <Ornament />
+    <Suits bare />
 
-    <Archetypes />
-
-    <Ornament />
-
-    <!-- Deeper detail per archetype -->
-    <section style="padding:4rem 1.5rem;">
+    <section class="section-pad" style="padding-left:1.5rem;padding-right:1.5rem;">
       <div style="max-width:780px;margin:0 auto;">
-        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,5vw,2.5rem);line-height:1.1;color:#2E2115;margin:0 0 2.5rem;text-align:center;">
-          What each path <em style="color:#A84D30;font-style:italic;">rewards.</em>
+        <h2 style="font-size:clamp(1.6rem,4.5vw,2.25rem);line-height:1.12;color:#2B211B;margin:0 0 2rem;text-align:center;">
+          What each suit <em>asks of you.</em>
         </h2>
-
-        <div style="font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:1rem;line-height:1.75;color:#766449;max-width:620px;margin:0 auto;">
-          <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.5rem;color:#A84D30;margin:0 0 0.5rem;">Ironclad: Physical · Discipline</h3>
-          <p style="margin:0 0 2rem;">Ironclad rewards consistent physical commitments: workouts, mobility, daily movement that adds up. The path's abilities favor stacking harder Physical cards and converting their completions into resilient streak protection. <em>Strength through repetition.</em></p>
-
-          <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.5rem;color:#A84D30;margin:0 0 0.5rem;">Sage: Mental · Clarity</h3>
-          <p style="margin:0 0 2rem;">Sage rewards practices that train attention and judgment: reading, journaling, deep work, meditation. The path's abilities surface higher-rarity Mental cards in your daily draw and improve the cards you earn on completion. <em>Knowledge as power.</em></p>
-
-          <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.5rem;color:#A84D30;margin:0 0 0.5rem;">Alchemist: Nutrition · Balance</h3>
-          <p style="margin:0 0 2rem;">Alchemist rewards what you put in and what you skip: nutrition, hydration, fasting windows, ingredient discipline. The path's abilities give more flexibility on the daily draw and reward category mixing. <em>Transformation through intention.</em></p>
-
-          <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.5rem;color:#A84D30;margin:0 0 0.5rem;">Phantom: Recovery · Silence</h3>
-          <p style="margin:0;">Phantom rewards rest, sleep, and recovery practices that most habit apps ignore. The path's abilities improve the protective cards you earn by completing habits: shields that carry your streak through a missed day, double XP, defensive plays against Challenges your friends send. <em>Rest is not weakness.</em></p>
-        </div>
+        {SUIT_ORDER.map((k, i) => (
+          <div style={`display:flex;gap:1.25rem;align-items:flex-start;padding:1.5rem 0;${i > 0 ? 'border-top:1px solid rgba(176,138,62,0.35);' : ''}`}>
+            <div style="padding-top:4px;"><SuitPip suit={k} size={26} /></div>
+            <div>
+              <h3 style={`font-size:1.3rem;color:${SUITS[k].ink};margin:0 0 0.4rem;`}>{SUITS[k].name}</h3>
+              <p style="font-weight:300;font-size:1rem;line-height:1.75;color:#574B40;margin:0;">{detail[k]}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
 
     <Ornament />
 
-    <!-- Cross-links -->
-    <section style="padding:4rem 1.5rem;text-align:center;">
-      <div style="max-width:680px;margin:0 auto;">
-        <p style="font-family:'Jost',system-ui,sans-serif;font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:#A84D30;margin:0 0 1.5rem;">
-          Keep reading
-        </p>
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.6;color:#766449;margin:0;">
-          <a href="/how-it-works" style="color:#A84D30;text-decoration:none;border-bottom:0.5px solid rgba(199, 91, 57, 0.4);">How CardHabit works</a> &nbsp;·&nbsp; <a href="/faq" style="color:#A84D30;text-decoration:none;border-bottom:0.5px solid rgba(199, 91, 57, 0.4);">Frequently asked questions</a>
-        </p>
+    <section class="section-pad" style="padding-left:1.5rem;padding-right:1.5rem;">
+      <div style="max-width:780px;margin:0 auto;font-weight:300;font-size:1rem;line-height:1.75;color:#574B40;">
+        <h2 style="font-size:clamp(1.6rem,4.5vw,2.25rem);line-height:1.12;color:#2B211B;margin:0 0 1.25rem;text-align:center;">
+          Your strongest <em>suit.</em>
+        </h2>
+        <p style="margin:0 0 1rem;">Every card you finish goes into your binder, and the binder counts by suit. Your strongest suit is simply the one you have finished most, for example "Mind, 42 cards". It comes with no perks and no penalties. It is a mirror: the part of your life you actually show up for, measured in cards rather than intentions.</p>
+        <p style="margin:0;">Each card also carries a finish. Most are plain card stock, rarer cards carry a foil edge, and the rarest come in full gold foil. The suit says what kind of card it is; the finish says how rare.</p>
       </div>
     </section>
 
     <Ornament />
 
-    <GetTheApp />
+    <GetTheApp source="suits" />
   </main>
   <SiteFooter />
 </BaseLayout>
