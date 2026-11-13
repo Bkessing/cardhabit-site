@@ -1,4 +1,5 @@
 ---
+import { storeLink } from '../lib/storeLink';
 ---
 
 <nav style="position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(242, 235, 221, 0.9);border-bottom:1px solid rgba(176, 138, 62, 0.35);">
@@ -10,7 +11,7 @@
     </a>
 
     <a
-      href="https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296"
+      href={storeLink('cardhabit-site')}
       class="nav-store-btn"
       data-appstore-cta="nav"
       style="font-family:'Jost',system-ui,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#6E1E22;border:1px solid rgba(110, 30, 34, 0.45);border-radius:4px;padding:7px 14px;text-decoration:none;transition:background 0.2s,color 0.2s;"
