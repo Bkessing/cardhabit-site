@@ -1,4 +1,5 @@
 ---
+import { storeLink } from '../lib/storeLink';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Ornament from '../components/Ornament.astro';
@@ -132,7 +133,7 @@ const h2Style = "font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;
           Brandon Kessinger answers press email directly, usually same day.
         </p>
         <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.5rem;">
-          <a href="https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296" data-appstore-cta="press" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">Download on the App Store</a>
+          <a href={storeLink('cardhabit-site')} data-appstore-cta="press" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">Download on the App Store</a>
           <a href="mailto:hello@cardhabitapp.com" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">hello@cardhabitapp.com</a>
           <a href="https://x.com/KessingerBuilds" target="_blank" rel="noopener" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">@KessingerBuilds</a>
           <a href="https://cardhabitapp.com" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">cardhabitapp.com</a>

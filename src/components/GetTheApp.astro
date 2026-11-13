@@ -1,11 +1,13 @@
 ---
+import { storeLink } from '../lib/storeLink';
+
 interface Props {
   source?: string;
 }
 
 const { source = 'section' } = Astro.props;
 
-const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
+const STORE_URL = storeLink('cardhabit-site');
 ---
 
 <section

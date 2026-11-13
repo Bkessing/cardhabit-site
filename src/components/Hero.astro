@@ -4,7 +4,9 @@
 // verbatim (brain Locked.md). Real card titles from the live deck.
 import ZCard from './ZCard.astro';
 
-const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
+import { storeLink } from '../lib/storeLink';
+
+const STORE_URL = storeLink('cardhabit-site');
 
 const hand = [
   { suit: 'physical', title: 'Open Air', finish: 'plain', done: true },

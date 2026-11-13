@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { STORE_URL_CANONICAL } from '../lib/storeLink';
 
 interface Props {
   title?: string;
@@ -12,7 +13,7 @@ interface Props {
 
 const APP_DESCRIPTION = 'CardHabit is a daily card draw for your life. Every morning it deals you five habit cards on iPhone; you commit to what you can handle, and every card you finish goes into your binder. Five suits, a Joker, and soon a deck you can deal friends into. Free on the App Store.';
 
-const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
+const STORE_URL = STORE_URL_CANONICAL;
 
 // The canonical entity sentence. Used verbatim on every surface (site, App
 // Store, directories) so answer engines can pattern-match one identity string.
@@ -28,7 +29,7 @@ const APP_STORE_TITLE = 'CardHabit: TCG Habit Tracker';
 const APP_RATING = { value: 5, count: 2 };
 
 const {
-  title = 'CardHabit: A Daily Card Draw for Your Life | TCG Habit Tracker for iPhone',
+  title = 'Habit Cards: Five Small Habits, Dealt Daily / CardHabit',
   description = APP_DESCRIPTION,
   noindex = false,
 } = Astro.props;
