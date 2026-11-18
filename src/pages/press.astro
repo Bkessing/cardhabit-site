@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Ornament from '../components/Ornament.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import Screenshots from '../components/Screenshots.astro';
 
 const title = 'CardHabit Press Kit';
 const description = 'Press kit for CardHabit, a card-based daily challenge for iOS. Positioning, founder story, key facts, screenshots, and contact. Available now on the App Store.';
@@ -10,11 +11,11 @@ const description = 'Press kit for CardHabit, a card-based daily challenge for i
 const facts = [
   ['Name', 'CardHabit'],
   ['Category', 'Lifestyle / habits'],
-  ['Platform', 'iOS (iPhone), iOS 18 and later'],
+  ['Platform', 'iOS (iPhone)'],
   ['Launch', 'July 13, 2026. Live on the App Store now.'],
-  ['App Store', 'apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296'],
-  ['App Store ID', '6768107296. Exact listing title: CardHabit: TCG Habit Tracker.'],
-  ['Price', 'Free to start. Pro at founder pricing: $4.99/month or $39.99/year, with a 7-day free trial.'],
+  ['App Store', 'apps.apple.com/app/id6768107296'],
+  ['App Store ID', '6768107296. Exact listing title: CardHabit: Daily Habit Cards. Subtitle: Four small cards, dealt daily.'],
+  ['Price', 'Free to start. Pro is an auto-renewing subscription, monthly or yearly, with a free trial for new subscribers. The Stoics pack is $2.99, bought once.'],
   ['Developer', 'Brandon Kessinger (solo)'],
   ['Location', 'Phoenix, Arizona'],
   ['At launch', 'App Intents for Siri and Shortcuts, Sign in with Apple, Family Sharing on subscriptions, no third-party tracking.'],
@@ -47,10 +48,10 @@ const h2Style = "font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;
         <h2 style={h2Style}>About CardHabit</h2>
         <div style="border-left:2px solid rgba(156, 122, 46, 0.4);padding-left:1.25rem;">
           <p style={bodyStyle + 'margin:0 0 1.25rem;'}>
-            CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. Every card you finish goes into your binder, a collection that grows with each day you show up, and rarer cards carry a richer printed finish, from plain to full gold foil. CardHabit 2.0 brings a luxury playing-card deck with five suits (Physical, Mind, Nutrition, Recovery, and Connection) plus the Joker, and Deal a friend in: you send a card from your hand into a friend's hand for today, and if you both finish it, you each get a paired foil card with both names on it. CardHabit is free on iOS with a premium tier. It launched in July 2026 and is built by solo developer Brandon Kessinger.
+            CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you four small habit cards, and you keep what you can handle that day. Every card you finish is kept in your binder, suit by suit, and finishing a card again raises it from bronze to silver to gold. The deck has five suits (Physical, Mind, Nutrition, Recovery and Connection) plus the Jokers, a Stoic line sits under every hand, and packs in the Packs tab add fixed, listed cards. CardHabit is free on iOS with a premium tier. It launched in July 2026 and is built by solo developer Brandon Kessinger.
           </p>
           <p style={bodyStyle + 'margin:0;'}>
-            CardHabit lives at cardhabitapp.com. It is not affiliated with cardhabit.com, and it is not the Habit Card app, a tile-grid tracker for Android. The App Store listing is CardHabit: TCG Habit Tracker (id 6768107296).
+            CardHabit lives at cardhabitapp.com. It is not affiliated with cardhabit.com, and it is not the Habit Card app, a tile-grid tracker for Android. The App Store listing is CardHabit: Daily Habit Cards (id 6768107296).
           </p>
         </div>
       </div>
@@ -61,7 +62,7 @@ const h2Style = "font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;
       <div style="max-width:680px;margin:0 auto;">
         <h2 style={h2Style}>The short version</h2>
         <p style={bodyStyle + 'margin:0 0 1.25rem;'}>
-          CardHabit is a daily card draw for your life. Every morning it deals you five habit cards, and you commit to what you can handle before your day starts. Finished cards fill your binder; rank and XP sit quietly underneath. With 2.0, you can deal a friend in on any card in your hand, and finishing it together earns you both a paired foil card. Nothing bad happens if one of you doesn't finish. The social side is designed for small groups of friends, not viral networks.
+          CardHabit is a daily card draw for your life. Every morning it deals you four small habit cards, and you keep what you can handle before your day starts. A day counts when you finish one card. Finished cards fill your binder; rank and XP sit quietly underneath. Friends follow each other's days in one feed.
         </p>
         <p style={bodyStyle + 'margin:0;'}>
           The audience is people who read Atomic Habits, burned out on 75 Hard, and now want something hard every day instead of extreme once. You don't pick what to track, only whether you show up. The look of a luxury playing-card deck (cream card stock, a gold foil card back, a linen table, fine line-art) positions it as the quiet-intensity counter to all-or-nothing fitness culture.
@@ -94,22 +95,16 @@ const h2Style = "font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;
       </div>
     </section>
 
-    <!--
-      Screenshots: hidden pending recapture. The 2026-09-27 retheme
-      (light parchment/sienna, replacing the old dark-and-gold app UI) landed
-      in the app after these device screenshots were taken, so the grid below
-      would show stale dark-theme frames next to the new light copy above.
-      Recapture from the redesigned app and restore the `shots` grid before
-      shipping this section again.
-    -->
-    <section style="padding:2.5rem 1.5rem;text-align:center;">
+    <!-- Screenshots: the six CardHabit 2.0 App Store screenshots. -->
+    <section style="padding:2.5rem 1.5rem 0;text-align:center;">
       <div style="max-width:680px;margin:0 auto;">
         <h2 style={h2Style + 'text-align:center;'}>Screenshots</h2>
-        <p style={bodyStyle}>
-          Fresh device screenshots of the current build are on the way. For a set today, email us and we'll send the latest.
+        <p style={bodyStyle + 'margin:0;'}>
+          The six App Store screenshots for CardHabit 2.0.
         </p>
       </div>
     </section>
+    <Screenshots bare />
 
     <!-- Brand -->
     <section style="padding:2.5rem 1.5rem;">
@@ -132,7 +127,7 @@ const h2Style = "font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;
           Brandon Kessinger answers press email directly, usually same day.
         </p>
         <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1.5rem;">
-          <a href="https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296" data-appstore-cta="press" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">Download on the App Store</a>
+          <a href="https://apps.apple.com/app/id6768107296" data-appstore-cta="press" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">Download on the App Store</a>
           <a href="mailto:hello@cardhabitapp.com" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">hello@cardhabitapp.com</a>
           <a href="https://x.com/KessingerBuilds" target="_blank" rel="noopener" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">@KessingerBuilds</a>
           <a href="https://cardhabitapp.com" style="font-family:'Jost',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;color:#6E1E22;text-decoration:none;">cardhabitapp.com</a>

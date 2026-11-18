@@ -46,7 +46,7 @@ export const SUITS: Record<Suit, { name: string; ink: string; plate: string; pip
     ink: '#9C7A2E',
     plate: '/z/plate-joker.webp',
     pip: 'star',
-    line: 'The wild card. Two in the deck, and they ask for something you would not pick.',
+    line: 'The wild cards. They sit outside the five suits.',
   },
 };
 

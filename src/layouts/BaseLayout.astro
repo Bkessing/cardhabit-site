@@ -10,17 +10,17 @@ interface Props {
   noindex?: boolean;
 }
 
-const APP_DESCRIPTION = 'CardHabit is a daily card draw for your life. Every morning it deals you five habit cards on iPhone; you commit to what you can handle, and every card you finish goes into your binder. Five suits, a Joker, and soon a deck you can deal friends into. Free on the App Store.';
+const APP_DESCRIPTION = 'CardHabit is a daily card draw for your life. Every morning it deals you four small habit cards on iPhone. Keep what you can handle, hold a card to finish it, and every finished card goes into your binder. The deck has five suits plus the Jokers. CardHabit is free on the App Store.';
 
-const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
+const STORE_URL = 'https://apps.apple.com/app/id6768107296';
 
 // The canonical entity sentence. Used verbatim on every surface (site, App
 // Store, directories) so answer engines can pattern-match one identity string.
 const CANONICAL_ENTITY =
-  'CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day.';
+  'CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you four small habit cards, and you keep what you can handle that day.';
 
 // Exact App Store title. Sanctioned keyword surface; matches the listing verbatim.
-const APP_STORE_TITLE = 'CardHabit: TCG Habit Tracker';
+const APP_STORE_TITLE = 'CardHabit: Daily Habit Cards';
 
 // Refresh on deploy (hardcoded on purpose so builds stay hermetic):
 //   curl -s "https://itunes.apple.com/lookup?id=6768107296" | jq '.results[0].averageUserRating, .results[0].userRatingCount'
@@ -28,7 +28,7 @@ const APP_STORE_TITLE = 'CardHabit: TCG Habit Tracker';
 const APP_RATING = { value: 5, count: 2 };
 
 const {
-  title = 'CardHabit: A Daily Card Draw for Your Life | TCG Habit Tracker for iPhone',
+  title = 'CardHabit: Daily Habit Cards for iPhone | Four Small Cards, Dealt Daily',
   description = APP_DESCRIPTION,
   noindex = false,
 } = Astro.props;
