@@ -12,54 +12,62 @@ const { variant = 'full' } = Astro.props;
 const faqs = [
   {
     q: 'What is CardHabit?',
-    a: 'CardHabit is a daily card draw for your life, made for people who read Atomic Habits, tried 75 Hard, and want a system they can sustain instead of one that burns them out. Every morning it deals you five habit cards, and you commit to the ones you can handle. Every card you finish goes into your binder, a growing collection of the days you showed up.',
+    a: 'CardHabit is a daily card draw for your life. It is made for people who read Atomic Habits, tried 75 Hard, and want a system they can sustain instead of one that burns them out. Every morning it deals you four small habit cards, and you keep the ones you can handle. Every card you finish goes into your binder, a growing collection of the days you showed up.',
   },
   {
     q: 'What kind of app is CardHabit?',
-    a: 'CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day. The cards come first. Rank and XP sit quietly underneath as a progression layer, and the habits are what the daily deal leaves behind.',
+    a: 'CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you four small habit cards, and you keep what you can handle that day. The cards come first. Rank and XP sit quietly underneath as a progression layer, and the habits are what the daily deal leaves behind.',
   },
   {
     q: 'Who is CardHabit for?',
-    a: 'CardHabit is for people who read Atomic Habits and want a system instead of willpower, and for people who did 75 Hard, burned out, and want something sustainable that still feels real. If you want a daily practice you can keep up for years, with friends dealt in instead of grinding alone, it was built for you.',
+    a: 'CardHabit is for people who read Atomic Habits and want a system instead of willpower, and for people who did 75 Hard, burned out, and want something sustainable that still feels real. If you want a daily practice you can keep up for years, CardHabit was built for you.',
   },
   {
     q: 'Is this another 75 Hard?',
-    a: 'No, and the difference is the point. 75 Hard asks for extreme things once, over a 75-day pass-or-fail run. CardHabit asks for hard things every day: each card is scoped small enough to actually do every morning and hard enough to feel real, and the system survives missed days instead of sending you back to Day 1.',
+    a: 'No, and the difference is the point. 75 Hard asks for extreme things once, over a 75-day pass-or-fail run. CardHabit asks for small, real things every day: each card is scoped small enough to actually do every morning, and the system survives missed days instead of sending you back to Day 1.',
   },
   {
     q: 'What if I miss a day?',
-    a: 'Your streak counts on days you finish what you committed to. If you miss a day, that streak ends and a new one starts the next morning. There is no purity test and no restart-from-zero penance, and the cards already in your binder stay there. The whole system is built to survive missed days rather than punish you for being human.',
+    a: 'A day counts when you finish one card, so a light day still counts. If you miss a day, nothing you have earned goes away: the cards already in your binder stay there. The whole system is built to survive missed days rather than punish you for being human.',
   },
   {
     q: 'How does the daily draw work?',
-    a: 'Every morning you are dealt five cards. You hold a card to commit to it: two cards a day on the free tier, all five on Pro. Each card you finish fills a slot in your binder, the collection the app calls the Codex. Rarer cards carry a richer printed finish, from plain to a foil edge to full gold foil.',
+    a: 'Every morning you are dealt four small cards, and the whole hand fits on one screen. Keep what you can handle, redraw a card you cannot, and hold a card to finish it. A day counts when you finish one card, and finishing every card you kept is a clean hand. A Stoic line from Marcus Aurelius, Seneca or Epictetus sits under every hand, checked against public-domain editions, with its source one tap away.',
   },
   {
     q: 'What are the suits?',
-    a: 'With CardHabit 2.0, the deck has five suits: Physical, Mind, Nutrition, Recovery, and Connection, plus the Joker, a wild card that can ask for anything (the base deck holds two). Connection is new in 2.0 and covers the people in your life. The current app deals from the earlier set of categories until 2.0 arrives.',
+    a: 'The deck has five suits: Physical, Mind, Nutrition, Recovery and Connection, plus the Jokers, the wild cards. You can build your deck: set a suit aside, or shuffle packs in or out. The Deck screen shows what your hand is dealt from.',
   },
   {
-    q: 'What can your friends actually do?',
-    a: 'Coming in CardHabit 2.0, you can deal a friend in. From any card in your hand, you deal the same card into a friend\'s hand for today, by share link if they do not have the app yet. If you both finish it, you each get a paired foil card with both names on it in your binders. If one of you does not finish, nothing bad happens.',
+    q: 'What are packs?',
+    a: 'Packs live in the Packs tab. A pack adds a fixed set of cards to your deck, every card listed and never random, and each pack gets its own page in your binder. Desk Job is free. The Stoics is twelve cards built on old Stoic practices, $2.99, and once you buy it, it is yours. Turn on "Tell me when a pack is free" and the app lets you know, at most once a week.',
   },
   {
-    q: 'What if a friend deals me a card I cannot do today?',
-    a: 'Then you leave it. A dealt card is an invitation, not an obligation: it does not replace your own hand, it does not count against your streak, and the friend who dealt it loses nothing. You only commit to what you can handle that day.',
+    q: 'What happens to a card I finish?',
+    a: 'Every finished card is kept in your binder, suit by suit. Finish the same card again and it rises from bronze to silver to gold. Your strongest suit shows on your profile.',
+  },
+  {
+    q: 'What can my friends do?',
+    a: 'Add friends and you follow each other\'s days in one feed.',
+  },
+  {
+    q: 'I used CardHabit before 2.0. Do I keep my progress?',
+    a: 'Yes. Everything you earned before 2.0 stays: your rank, XP, streak and finished cards.',
   },
   {
     q: 'Is CardHabit available now?',
-    a: 'Yes. CardHabit launched on the iOS App Store in July 2026. Download the app today and draw your first hand of cards tomorrow morning.',
+    a: 'Yes. CardHabit launched on the iOS App Store in July 2026. It is free to download on iPhone.',
   },
   {
     q: 'What does CardHabit cost?',
-    a: 'The free tier covers the daily draw and lets you commit to two cards a day. CardHabit Pro unlocks all five daily commits and the full record of everything you have played, with a 7-day free trial. Founder pricing is live in the app now: $4.99 a month or $39.99 a year, locked in at signup for as long as your subscription stays active.',
+    a: 'CardHabit is free to start. The free tier deals you a hand every morning and lets you keep 2 cards a day, with 1 redraw a day, one suit set aside, and the Desk Job pack. CardHabit Pro is an auto-renewing subscription, monthly or yearly, with a free trial for new subscribers. Pro lets you keep the whole hand, gives you 3 redraws a day and full stats, shuffles in every pack while you are subscribed, lets you build any deck, and works with Family Sharing.',
   },
   // 2.11: moved below the substantive questions (what it is, the 75 Hard
   // difference, pricing). Disambiguation trivia shouldn't be the first
-  // thing a reader hits. Content unchanged.
+  // thing a reader hits.
   {
     q: 'Is CardHabit the same as Habit Card or cardhabit.com?',
-    a: 'No. CardHabit is the iOS app that deals you five habit cards every morning, and its only website is cardhabitapp.com. It is not affiliated with cardhabit.com, and it is not Habit Card, a tile-grid tracker. The App Store listing is CardHabit: TCG Habit Tracker (id 6768107296).',
+    a: 'No. CardHabit is the iOS app that deals you four small habit cards every morning, and its only website is cardhabitapp.com. It is not affiliated with cardhabit.com, and it is not Habit Card, a tile-grid tracker. The App Store listing is CardHabit: Daily Habit Cards (id 6768107296).',
   },
 ];
 

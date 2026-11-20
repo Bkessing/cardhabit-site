@@ -11,8 +11,8 @@ import GetTheApp from '../components/GetTheApp.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { SUITS, SUIT_ORDER } from '../lib/suits';
 
-const title = 'The Five Suits: Physical, Mind, Nutrition, Recovery, Connection and the Joker | CardHabit';
-const description = 'Every CardHabit card belongs to one of five suits, Physical, Mind, Nutrition, Recovery and Connection, plus the Joker. Each suit has its own symbol and ink, and your binder shows your strongest suit.';
+const title = 'The Five Suits: Physical, Mind, Nutrition, Recovery, Connection and the Jokers | CardHabit';
+const description = 'Every CardHabit card belongs to one of five suits, Physical, Mind, Nutrition, Recovery and Connection, plus the Jokers. Each suit has its own symbol and ink, and your strongest suit shows on your profile.';
 
 const detail: Record<string, string> = {
   physical: 'Cards that ask your body for something: a set of push-ups, a walk with no destination, twenty flights of stairs. Scoped small enough to do on a busy day, real enough to feel.',
@@ -20,7 +20,7 @@ const detail: Record<string, string> = {
   nutrition: 'Eating on purpose rather than by default. Cook one meal yourself, eat a real breakfast, drink water before the first coffee.',
   recovery: 'Rest that counts as work. Phone down an hour before bed, five minutes of silence, a cold shower. The suit most people skip and most need.',
   connection: 'Cards that point at other people: call someone you have been meaning to call, give something away, say the honest sentence out loud. Warm, never performative.',
-  joker: 'The wild cards. The base deck holds two true Jokers, and every pack carries one more. A Joker asks for something you would not have picked, like doing the opposite of one default today.',
+  joker: 'The wild cards. The Jokers sit outside the five suits.',
 };
 ---
 
@@ -34,7 +34,7 @@ const detail: Record<string, string> = {
           The five <em>suits.</em>
         </h1>
         <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;line-height:1.55;color:#3E342B;max-width:640px;margin:0 auto;">
-          A playing-card deck has suits, and so does CardHabit. Every card belongs to one of five, Physical, Mind, Nutrition, Recovery and Connection, plus the Joker. The suit tells you what kind of day the card asks for. It never changes, and it never locks you out of anything.
+          A playing-card deck has suits, and so does CardHabit. Every card belongs to one of five, Physical, Mind, Nutrition, Recovery and Connection, plus the Jokers, the wild cards. The suit tells you what kind of day the card asks for. You can build your deck around them: set a suit aside, or shuffle packs in or out, and the Deck screen shows what your hand is dealt from.
         </p>
       </div>
     </section>
@@ -65,8 +65,8 @@ const detail: Record<string, string> = {
         <h2 style="font-size:clamp(1.6rem,4.5vw,2.25rem);line-height:1.12;color:#2B211B;margin:0 0 1.25rem;text-align:center;">
           Your strongest <em>suit.</em>
         </h2>
-        <p style="margin:0 0 1rem;">Every card you finish goes into your binder, and the binder counts by suit. Your strongest suit is simply the one you have finished most, for example "Mind, 42 cards". It comes with no perks and no penalties. It is a mirror: the part of your life you actually show up for, measured in cards rather than intentions.</p>
-        <p style="margin:0;">Each card also carries a finish. Most are plain card stock, rarer cards carry a foil edge, and the rarest come in full gold foil. The suit says what kind of card it is; the finish says how rare.</p>
+        <p style="margin:0 0 1rem;">Every card you finish is kept in your binder, suit by suit, and your strongest suit shows on your profile. It is a mirror: the part of your life you actually show up for, measured in cards rather than intentions.</p>
+        <p style="margin:0;">Finish a card again and it rises from bronze to silver to gold. The suit says what kind of card it is, and the finish says how often you have come back to it.</p>
       </div>
     </section>
 

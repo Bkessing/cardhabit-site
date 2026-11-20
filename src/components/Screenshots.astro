@@ -1,0 +1,94 @@
+---
+// The six CardHabit 2.0 App Store screenshots, in listing order. Each image
+// already carries its caption, so the caption is the alt text. Phone first:
+// a row you swipe through (scroll-snap) on narrow screens, a grid on wide.
+interface Props {
+  /** Drop the eyebrow and heading when the page already has its own. */
+  bare?: boolean;
+}
+const { bare = false } = Astro.props;
+
+const shots = [
+  { src: '/app/v2/01-four-cards.jpg', alt: 'Four cards. Every morning.' },
+  { src: '/app/v2/02-hold-to-finish.jpg', alt: 'Hold to finish.' },
+  { src: '/app/v2/03-keep-every-card.jpg', alt: 'Keep every card.' },
+  { src: '/app/v2/04-build-your-deck.jpg', alt: 'Build your own deck.' },
+  { src: '/app/v2/05-shuffle-in-a-pack.jpg', alt: 'Shuffle in a pack.' },
+  { src: '/app/v2/06-small-wins.jpg', alt: 'Small wins. Every day.' },
+];
+---
+
+<section id="screenshots" class="section-pad">
+  <div class="shots-wrap">
+    {!bare && <p class="fade-in z-eyebrow">Inside the app</p>}
+    {!bare && <h2 class="fade-in" style="font-size:clamp(1.8rem,5vw,2.75rem);line-height:1.12;color:#2B211B;margin:0 0 2.25rem;">
+      CardHabit, <em>on your iPhone.</em>
+    </h2>}
+
+    <ul class="fade-in shots" aria-label="CardHabit screenshots">
+      {shots.map((s, i) => (
+        <li class="shot">
+          <img
+            src={s.src}
+            alt={s.alt}
+            width="600"
+            height="1304"
+            loading={i < 2 ? 'eager' : 'lazy'}
+            decoding="async"
+            class="warm-shadow"
+          />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .shots-wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  .shots {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+  }
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(176, 138, 62, 0.45);
+    background: #F8F3E8;
+  }
+  @media (max-width: 1040px) {
+    .shots { grid-template-columns: repeat(3, 1fr); max-width: 640px; margin: 0 auto; row-gap: 20px; }
+  }
+  /* Phone: one row you swipe through, each screenshot snapping into place,
+     with the next one peeking in so the row reads as scrollable. */
+  @media (max-width: 640px) {
+    .shots-wrap { padding: 0; }
+    .shots-wrap > :not(.shots) { padding: 0 1.25rem; }
+    .shots {
+      display: flex;
+      gap: 12px;
+      max-width: none;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding: 0 1.25rem;
+      padding: 0.25rem 1.25rem 1rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .shots::-webkit-scrollbar { display: none; }
+    .shot {
+      flex: 0 0 62%;
+      scroll-snap-align: start;
+    }
+  }
+</style>

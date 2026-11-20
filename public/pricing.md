@@ -1,29 +1,37 @@
 # Pricing: CardHabit (iOS)
 
-Last updated: 2026-07-15. Prices in USD, billed through the Apple App Store.
-App Store page: https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296
+Last updated: 2026-11-18. Billed through the Apple App Store.
+App Store page: https://apps.apple.com/app/id6768107296
 
 ## Free
 
 - Price: $0
-- The full daily game: five cards dealt every morning, commit and complete real-world challenge cards
-- Daily commit cap: a starter number of commits per day
-- Starter vault: earn and play action cards on yourself and friends
-- Friends, Challenges, and Buffs included (social play is not paywalled)
-- Streaks, archetypes, and progression included
+- A hand of four small cards every morning
+- Keep 2 cards a day
+- 1 redraw a day
+- Set one suit aside
+- The Desk Job pack
 
 ## CardHabit Pro (auto-renewing subscription)
 
-- Price: $4.99/month or $39.99/year (founder pricing, locked in at signup for as long as the subscription stays active)
-- Free trial: 7 days
-- More daily commits than Free
-- Larger hand: hold more vault cards at once
-- Family Sharing enabled
+- Billed monthly or yearly; current prices are shown in the App Store listing
+- Free trial for new subscribers
+- Keep the whole hand
+- 3 redraws a day
+- Full stats
+- Every pack shuffled in while subscribed
+- Build any deck
+- Family Sharing
+
+## Packs
+
+- Desk Job: free
+- The Stoics: $2.99, a one-time purchase. Twelve cards built on old Stoic practices. Buy it once and it is yours.
+- Pack contents are fixed and listed, never random.
 
 ## Notes for evaluation
 
-- No ads on any tier.
-- The full game is playable free; Pro raises intensity (commit to all five daily cards, hold 7 vault cards instead of 3) rather than gating core features.
 - Subscriptions are managed through the App Store; cancel anytime in iOS Settings.
+- Everything earned before 2.0 stays: rank, XP, streak and finished cards.
 - Privacy policy: https://cardhabitapp.com/privacy
 - Terms (Apple standard EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/

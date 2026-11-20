@@ -1,14 +1,13 @@
 ---
-// Hero: today's hand of five look Z cards fanned on the linen table, with the
-// identity line (decided 2026-11-10) and the canonical entity sentence,
-// verbatim (brain Locked.md). Real card titles from the live deck.
+// Hero: today's hand of four look Z cards fanned on the linen table, with the
+// identity line (decided 2026-11-10) and the canonical entity sentence
+// (updated for the 2.0 four-card hand). Real card titles from the live deck.
 import ZCard from './ZCard.astro';
 
-const STORE_URL = 'https://apps.apple.com/us/app/cardhabit-tcg-habit-tracker/id6768107296';
+const STORE_URL = 'https://apps.apple.com/app/id6768107296';
 
 const hand = [
   { suit: 'physical', title: 'Open Air', finish: 'plain', done: true },
-  { suit: 'physical', title: 'Iron Discipline', finish: 'foil', plate: '/z/plate-kettlebell.webp' },
   { suit: 'mind', title: 'The Deep Read', finish: 'gold' },
   { suit: 'nutrition', title: 'Green Plate', finish: 'plain' },
   { suit: 'recovery', title: 'Still Water', finish: 'plain' },
@@ -22,7 +21,7 @@ const hand = [
     <h1 class="fade-in hero-h1">A daily card draw <em>for your life.</em></h1>
 
     <p class="fade-in hero-sub">
-      CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you five habit cards, and you commit to what you can handle that day.
+      CardHabit is an iOS daily challenge app built on trading-card-game mechanics: every morning it deals you four small habit cards, and you keep what you can handle that day.
     </p>
 
     <div class="fade-in hero-ctas">
@@ -30,12 +29,12 @@ const hand = [
       <a href="#printed-deck" class="z-btn z-btn--ghost">Get the printed deck</a>
     </div>
 
-    <p class="fade-in hero-note">Free to start &nbsp;·&nbsp; The new deck arrives with CardHabit 2.0</p>
+    <p class="fade-in hero-note">Free to start &nbsp;·&nbsp; Four small cards, dealt daily</p>
   </div>
 
-  <div class="fade-in hand" role="img" aria-label="Today's hand: five cards fanned on a linen table. Open Air, finished. Iron Discipline, The Deep Read, Green Plate and Still Water.">
+  <div class="fade-in hand" role="img" aria-label="Today's hand: four cards fanned on a linen table. Open Air, finished. The Deep Read, Green Plate and Still Water.">
     {hand.map((c, i) => (
-      <div class="hand-slot" style={`--i:${i - 2};`}>
+      <div class="hand-slot" style={`--i:${i - 1.5};`}>
         <ZCard suit={c.suit} title={c.title} finish={c.finish} done={'done' in c && c.done} plate={'plate' in c ? c.plate : undefined} width="var(--cw)" />
       </div>
     ))}
@@ -97,7 +96,7 @@ const hand = [
     margin: 1.25rem 0 0;
   }
 
-  /* The hand: five cards fanned from a pivot below the row, with the deck's
+  /* The hand: four cards fanned from a pivot below the row, with the deck's
      card back stacked to the right like a dealt table. */
   .hand {
     --cw: 168px;
@@ -110,7 +109,7 @@ const hand = [
     position: absolute;
     left: 50%;
     top: 0;
-    margin-left: calc(var(--cw) / -2 - var(--cw) * 0.45);
+    margin-left: calc(var(--cw) / -2 - var(--cw) * 0.4);
     transform-origin: 50% 160%;
     transform: translateX(calc(var(--i) * var(--cw) * 0.78)) rotate(calc(var(--i) * 6deg)) translateY(calc(var(--i) * var(--i) * 4px));
   }
@@ -118,7 +117,7 @@ const hand = [
     position: absolute;
     left: 50%;
     top: calc(var(--cw) * 0.12);
-    margin-left: calc(var(--cw) * 2.05);
+    margin-left: calc(var(--cw) * 1.7);
     transform: rotate(8deg);
   }
 

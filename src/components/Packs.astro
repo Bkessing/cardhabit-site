@@ -1,0 +1,91 @@
+---
+// Packs (CardHabit 2.0, the Packs tab). Kept small on purpose: what a pack
+// is, the two packs in the listing, and the free-pack notice.
+const packs = [
+  { name: 'Desk Job', price: 'Free', line: 'Desk Job is free for everyone.' },
+  { name: 'The Stoics', price: '$2.99', line: 'The Stoics is twelve cards built on old Stoic practices. Buy it once and it is yours.' },
+];
+---
+
+<section id="packs" class="section-pad">
+  <div class="packs-wrap">
+    <p class="fade-in z-eyebrow">The Packs tab</p>
+    <h2 class="fade-in" style="font-size:clamp(1.8rem,5vw,2.75rem);line-height:1.12;color:#2B211B;margin:0 0 1rem;">
+      Shuffle in <em>a pack.</em>
+    </h2>
+    <p class="fade-in packs-p">
+      A pack adds a fixed set of cards to your deck. Every card is listed, nothing is random, and each pack gets its own page in your binder.
+    </p>
+
+    <div class="packs-grid">
+      {packs.map((p) => (
+        <div class="fade-in z-stock pack">
+          <p class="pack-name">{p.name}</p>
+          <p class="pack-price">{p.price}</p>
+          <p class="pack-line">{p.line}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="fade-in packs-note">
+      Turn on "Tell me when a pack is free" and the app lets you know, at most once a week.
+    </p>
+  </div>
+</section>
+
+<style>
+  .packs-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+  .packs-p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: #3E342B;
+    max-width: 560px;
+    margin: 0 auto 2rem;
+  }
+  .packs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 560px) {
+    .packs-grid { grid-template-columns: 1fr; }
+  }
+  .pack {
+    padding: 1.5rem 1.25rem 1.6rem;
+  }
+  .pack-name {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    color: #2B211B;
+    margin: 0 0 0.25rem;
+  }
+  .pack-price {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #7E6224;
+    margin: 0 0 0.75rem;
+  }
+  .pack-line {
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #574B40;
+    margin: 0;
+  }
+  .packs-note {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #645749;
+    margin: 2rem 0 0;
+  }
+</style>
