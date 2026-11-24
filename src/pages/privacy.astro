@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-const lastUpdated = 'June 5, 2026';
+const lastUpdated = 'November 19, 2026';
 ---
 
 <BaseLayout
@@ -33,27 +33,27 @@ const lastUpdated = 'June 5, 2026';
         </p>
         <h3>Account data</h3>
         <ul>
-          <li><strong>What:</strong> Email address, display name, account ID. Friend connections you initiate or accept.</li>
+          <li><strong>What:</strong> Email address, first name, account ID. Friend connections you make by invite link. The people you block and the reports you send (reason, optional note, and the name of the person reported).</li>
           <li><strong>Processed by:</strong> Supabase (authentication and database).</li>
         </ul>
         <h3>Habit and gameplay data</h3>
         <ul>
-          <li><strong>What:</strong> Daily habit cards drawn, cards you commit to, completions, streaks, vault cards, archetype progression, Challenge and Buff cards sent or received between friends.</li>
+          <li><strong>What:</strong> The cards dealt to you each day, the cards you keep and finish, streaks, rank and XP, the deck you build, the packs you own, and cards and reactions sent between friends.</li>
           <li><strong>Processed by:</strong> Supabase (database and realtime sync).</li>
         </ul>
-        <h3>Subscription data</h3>
+        <h3>Purchase data</h3>
         <ul>
-          <li><strong>What:</strong> Subscription tier (Pro or Elite), trial status, renewal state, purchase history. We do not store payment card details. All payments are processed by Apple.</li>
-          <li><strong>Processed by:</strong> RevenueCat (subscription management), Apple (payment processing).</li>
+          <li><strong>What:</strong> Whether you subscribe to CardHabit Pro, trial status, renewal state, and which packs you have bought as one-time purchases (for example, The Stoics). We do not store payment card details. All payments are processed by Apple.</li>
+          <li><strong>Processed by:</strong> RevenueCat (purchase records), Apple (payment processing), Supabase (which packs you own).</li>
         </ul>
         <h3>Product analytics</h3>
         <ul>
-          <li><strong>What:</strong> Anonymized device identifier, app events (screens viewed, cards drawn, features used), device type, OS version.</li>
+          <li><strong>What:</strong> Your account ID, first name and email address, a device identifier, app events (screens viewed, cards dealt and finished, features used), device type, OS version. Report notes and the names of people you report or block are never sent to analytics.</li>
           <li><strong>Processed by:</strong> PostHog (product analytics, US region).</li>
         </ul>
         <h3>Crash and diagnostic data</h3>
         <ul>
-          <li><strong>What:</strong> Crash reports, error logs, performance metrics, other diagnostic data. We have explicitly disabled screenshot capture and view-hierarchy capture in our crash reporter to avoid sending any personal content along with crash reports.</li>
+          <li><strong>What:</strong> Crash reports, error logs, performance metrics, other diagnostic data, tagged with your account ID and email address so we can fix problems you hit. We have explicitly disabled screenshot capture and view-hierarchy capture in our crash reporter to avoid sending any personal content along with crash reports.</li>
           <li><strong>Processed by:</strong> Sentry (crash and error reporting).</li>
         </ul>
         <h3>Push notifications</h3>
@@ -66,6 +66,16 @@ const lastUpdated = 'June 5, 2026';
           <li><strong>What:</strong> Email address you provided on the pre-launch waitlist form (the waitlist has since closed).</li>
           <li><strong>Processed by:</strong> Supabase.</li>
         </ul>
+        <h3>What your friends can see</h3>
+        <ul>
+          <li>Only people you connect with by invite link are your friends. They can see your first name, your streak, the cards you keep and finish each day, your weekly XP on the leaderboard, and the reactions and cards you send them. They cannot see your email address.</li>
+          <li>CardHabit has no messaging and no photos. Someone you send an invite link to sees your first name before accepting. Your cards and activity are shown only to friends.</li>
+        </ul>
+        <h3>Blocking and reporting</h3>
+        <ul>
+          <li>You can remove, block or report any friend from their page in the app. Removing and blocking are not announced to the other person.</li>
+          <li>We store who you blocked (and their first name, so you can see the list) until you unblock them or delete your account. We store each report you send so we can review it within 24 hours and act on it (for example, renaming an offensive name).</li>
+        </ul>
         <p>
           We do not collect precise location, contacts, photos, microphone audio, health data, or biometric data.
         </p>
@@ -77,6 +87,7 @@ const lastUpdated = 'June 5, 2026';
           Per Apple's privacy requirements, our app accesses the following APIs for the following reasons:
         </p>
         <ul>
+          <li><strong>User defaults (CA92.1):</strong> to store app settings on your device.</li>
           <li><strong>File timestamp (C617.1):</strong> to display the time content was last updated to the user.</li>
           <li><strong>System boot time (35F9.1):</strong> to measure time elapsed between events that occur within the app.</li>
           <li><strong>Disk space (E174.1):</strong> to write user-generated content to disk.</li>
@@ -86,11 +97,12 @@ const lastUpdated = 'June 5, 2026';
       <section class="policy-section">
         <h2>Why we collect it</h2>
         <ul>
-          <li><strong>Run the core app:</strong> deliver daily card draws, track streaks, manage your vault, sync between your devices, deliver Challenge and Buff cards between friends, assign and track your archetype.</li>
-          <li><strong>Manage your subscription:</strong> activate the right entitlement tier, handle trials, and process renewals.</li>
-          <li><strong>Send notifications:</strong> deliver morning draw reminders, incoming Challenges, Buffs, streak alerts, and archetype reveals.</li>
+          <li><strong>Run the core app:</strong> deal your daily hand, track streaks, rank and your deck, unlock the packs you own, sync between your devices, and show your progress to the friends you choose.</li>
+          <li><strong>Manage your purchases:</strong> activate CardHabit Pro and the packs you bought, handle trials, process renewals, and restore purchases.</li>
+          <li><strong>Send notifications:</strong> deliver your daily deal reminder, streak alerts, and friend activity.</li>
           <li><strong>Improve the product:</strong> understand which features are used so we can fix what is confusing and double down on what works.</li>
           <li><strong>Diagnose problems:</strong> find crashes and bugs and fix them.</li>
+          <li><strong>Keep people safe:</strong> honor blocks and review reports.</li>
         </ul>
         <p>
           We do not sell your personal information. We do not share your data with advertisers. We do not use your data to train AI models.
@@ -100,7 +112,9 @@ const lastUpdated = 'June 5, 2026';
       <section class="policy-section">
         <h2>How long we keep it</h2>
         <ul>
-          <li><strong>Account data, habit data, vault, archetype, social graph:</strong> kept for the lifetime of your account. When you delete your account from inside the app (<strong>Profile → Delete Account</strong>), everything is permanently deleted within 30 days.</li>
+          <li><strong>Account data, habit data, friends and blocks:</strong> kept for the lifetime of your account. When you delete your account from inside the app (<strong>Profile → Delete Account</strong>), your account and every record of it in our database (profile, cards, streaks, deck, packs owned, friendships, blocks) are deleted right away, and the app tells you only once that has finished. A backup copy of the database may keep deleted records for up to 90 days. If you signed in with Apple, the app asks you to confirm with Apple once and we then ask Apple to revoke CardHabit's Sign in with Apple access. You can also remove it yourself in iOS Settings, [your name], Sign in with Apple.</li>
+          <li><strong>Reports:</strong> a report stays as a moderation record after either account is deleted. It keeps the reason, the note and the first name reported, and loses the link to the deleted account.</li>
+          <li><strong>Records kept by our processors after deletion:</strong> analytics events (PostHog) and crash reports (Sentry) stay with those services until they expire (up to 12 months), and Apple and RevenueCat keep purchase records as the law requires. Email <a href="mailto:hello@cardhabitapp.com">hello@cardhabitapp.com</a> and we will ask PostHog and Sentry to delete yours sooner.</li>
           <li><strong>Subscription records:</strong> retained as required by Apple and tax law (typically up to 7 years from the last transaction).</li>
           <li><strong>Crash reports and analytics events:</strong> retained up to 12 months, then purged.</li>
           <li><strong>Waitlist email:</strong> retained until you unsubscribe or request deletion.</li>
@@ -115,7 +129,7 @@ const lastUpdated = 'June 5, 2026';
           <li><strong>Export</strong> your account and habit data in a portable format.</li>
           <li><strong>Delete</strong> your account and all associated data from inside the app at <strong>Profile → Delete Account</strong>, or by emailing us. Deletion is irreversible.</li>
           <li><strong>Object</strong> to processing or <strong>restrict</strong> specific uses.</li>
-          <li><strong>Withdraw consent</strong> to optional processing (e.g., analytics; if you opt out, we still collect crash data necessary to keep the app running).</li>
+          <li><strong>Withdraw consent</strong> to optional processing (e.g., analytics) by emailing us; we still collect crash data necessary to keep the app running.</li>
         </ul>
         <p>
           To exercise any of these rights, email <a href="mailto:hello@cardhabitapp.com">hello@cardhabitapp.com</a>. We respond within 30 days.
